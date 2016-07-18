@@ -14,6 +14,7 @@
 		754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */; };
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
+		C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		754CE18E1D3C69D0008CFE62 /* CalifornicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalifornicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.release.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.release.xcconfig"; sourceTree = "<group>"; };
+		C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.debug.xcconfig"; sourceTree = "<group>"; };
+		F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Californication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DEB6B2D50011B000ABFA368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		754CE1661D3C69D0008CFE62 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,8 @@
 				754CE1861D3C69D0008CFE62 /* CalifornicationTests */,
 				754CE1911D3C69D0008CFE62 /* CalifornicationUITests */,
 				754CE1701D3C69D0008CFE62 /* Products */,
+				DBAC04C6C0392D6BC6B1896F /* Pods */,
+				5DEB6B2D50011B000ABFA368 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +140,15 @@
 			path = CalifornicationUITests;
 			sourceTree = "<group>";
 		};
+		DBAC04C6C0392D6BC6B1896F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */,
+				843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 754CE1971D3C69D0008CFE62 /* Build configuration list for PBXNativeTarget "Californication" */;
 			buildPhases = (
+				EC18F76D4EF0D6F81796C256 /* [CP] Check Pods Manifest.lock */,
 				754CE16B1D3C69D0008CFE62 /* Sources */,
 				754CE16C1D3C69D0008CFE62 /* Frameworks */,
 				754CE16D1D3C69D0008CFE62 /* Resources */,
+				49D1B3F9875FA7724DF567B8 /* [CP] Embed Pods Frameworks */,
+				2E5B29FAB87DB47F6A0D09F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E5B29FAB87DB47F6A0D09F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Californication/Pods-Californication-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49D1B3F9875FA7724DF567B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Californication/Pods-Californication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC18F76D4EF0D6F81796C256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		754CE16B1D3C69D0008CFE62 /* Sources */ = {
@@ -399,6 +474,7 @@
 		};
 		754CE1981D3C69D0008CFE62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Californication/Info.plist;
@@ -410,6 +486,7 @@
 		};
 		754CE1991D3C69D0008CFE62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Californication/Info.plist;
@@ -484,6 +561,7 @@
 				754CE1991D3C69D0008CFE62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		754CE19A1D3C69D0008CFE62 /* Build configuration list for PBXNativeTarget "CalifornicationTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				754CE19C1D3C69D0008CFE62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		754CE19D1D3C69D0008CFE62 /* Build configuration list for PBXNativeTarget "CalifornicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				754CE19F1D3C69D0008CFE62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
