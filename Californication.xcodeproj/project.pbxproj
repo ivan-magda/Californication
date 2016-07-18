@@ -14,6 +14,7 @@
 		754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */; };
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
+		75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */; };
 		C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		754CE18E1D3C69D0008CFE62 /* CalifornicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalifornicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.release.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.release.xcconfig"; sourceTree = "<group>"; };
 		C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.debug.xcconfig"; sourceTree = "<group>"; };
 		F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Californication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,12 +114,10 @@
 		754CE1711D3C69D0008CFE62 /* Californication */ = {
 			isa = PBXGroup;
 			children = (
-				754CE1721D3C69D0008CFE62 /* AppDelegate.swift */,
-				754CE1741D3C69D0008CFE62 /* ViewController.swift */,
-				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
-				754CE1791D3C69D0008CFE62 /* Assets.xcassets */,
-				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
-				754CE17E1D3C69D0008CFE62 /* Info.plist */,
+				75D4C3671D3C6C9E00ECCD4F /* App */,
+				75D4C3681D3C6CA500ECCD4F /* Controllers */,
+				75D4C3691D3C6CB700ECCD4F /* Assets */,
+				75D4C3661D3C6C8500ECCD4F /* SupportingFiles */,
 			);
 			path = Californication;
 			sourceTree = "<group>";
@@ -138,6 +138,41 @@
 				754CE1941D3C69D0008CFE62 /* Info.plist */,
 			);
 			path = CalifornicationUITests;
+			sourceTree = "<group>";
+		};
+		75D4C3661D3C6C8500ECCD4F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				754CE17E1D3C69D0008CFE62 /* Info.plist */,
+				75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		75D4C3671D3C6C9E00ECCD4F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				754CE1721D3C69D0008CFE62 /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		75D4C3681D3C6CA500ECCD4F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				754CE1741D3C69D0008CFE62 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		75D4C3691D3C6CB700ECCD4F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
+				754CE1791D3C69D0008CFE62 /* Assets.xcassets */,
+				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		DBAC04C6C0392D6BC6B1896F /* Pods */ = {
@@ -257,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */,
+				75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */,
 				754CE17A1D3C69D0008CFE62 /* Assets.xcassets in Resources */,
 				754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */,
 			);
