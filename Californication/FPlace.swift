@@ -20,13 +20,31 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+// MARK: FPlace
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+struct FPlace {
+    
+    // MARK: Types
+    
+    enum Key: String {
+        case placeId = "place_id"
+        case summary
+        case detailDescription = "detail_description"
+        case images
+        case thumbnail
+        case medium
+        case large
     }
-
+    
+    // MARK: Properties
+    
+    let googlePlaceID: String
+    let summary: String
+    let detailDescription: String
+    let thumbnailStorageURL: String
+    let mediumStorageURL: String
+    let largeStorageURL: String
 }
 

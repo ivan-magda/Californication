@@ -20,30 +20,21 @@
  * THE SOFTWARE.
  */
 
-import UIKit
-import Firebase
+import Foundation
+import FirebaseDatabase
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: CannedFPlaceDabaseManager: FPlaceDabaseManager
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class CannedFPlaceDabaseManager: FPlaceDabaseManager {
+    
     // MARK: Properties
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
-        
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+    private let root = FIRDatabase.database().reference()
+    
+    // MARK: FPlaceDabaseManager
+    
+    func allPlaces(completion: FIRDataSnapshot -> ()) {
+        root.child("places").observeSingleEventOfType(.Value, withBlock: completion)
     }
-
+    
 }
-

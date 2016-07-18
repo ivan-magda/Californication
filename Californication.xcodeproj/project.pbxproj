@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1721D3C69D0008CFE62 /* AppDelegate.swift */; };
-		754CE1751D3C69D0008CFE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1741D3C69D0008CFE62 /* ViewController.swift */; };
+		754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */; };
 		754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE1761D3C69D0008CFE62 /* Main.storyboard */; };
 		754CE17A1D3C69D0008CFE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754CE1791D3C69D0008CFE62 /* Assets.xcassets */; };
 		754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */; };
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
 		75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */; };
+		75D4C36E1D3C756D00ECCD4F /* FPlaceDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FPlaceDirectorProtocols.swift */; };
+		75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36F1D3C784200ECCD4F /* FPlace.swift */; };
+		75D4C3731D3C795E00ECCD4F /* CannedFPlaceDabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3721D3C795E00ECCD4F /* CannedFPlaceDabaseManager.swift */; };
+		75D4C3751D3C7AAC00ECCD4F /* CannedFPlaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3741D3C7AAC00ECCD4F /* CannedFPlaceBuilder.swift */; };
+		75D4C3791D3C804000ECCD4F /* FPlaceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3781D3C804000ECCD4F /* FPlaceDirector.swift */; };
+		75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */; };
+		75D4C37D1D3C851900ECCD4F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37C1D3C851900ECCD4F /* App.swift */; };
 		C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +45,7 @@
 /* Begin PBXFileReference section */
 		754CE16F1D3C69D0008CFE62 /* Californication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Californication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1721D3C69D0008CFE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		754CE1741D3C69D0008CFE62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		754CE1771D3C69D0008CFE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		754CE1791D3C69D0008CFE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		754CE17C1D3C69D0008CFE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +57,13 @@
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75D4C36D1D3C756D00ECCD4F /* FPlaceDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlaceDirectorProtocols.swift; sourceTree = "<group>"; };
+		75D4C36F1D3C784200ECCD4F /* FPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlace.swift; sourceTree = "<group>"; };
+		75D4C3721D3C795E00ECCD4F /* CannedFPlaceDabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFPlaceDabaseManager.swift; sourceTree = "<group>"; };
+		75D4C3741D3C7AAC00ECCD4F /* CannedFPlaceBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFPlaceBuilder.swift; sourceTree = "<group>"; };
+		75D4C3781D3C804000ECCD4F /* FPlaceDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlaceDirector.swift; sourceTree = "<group>"; };
+		75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewDataSource.swift; sourceTree = "<group>"; };
+		75D4C37C1D3C851900ECCD4F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.release.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.release.xcconfig"; sourceTree = "<group>"; };
 		C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.debug.xcconfig"; sourceTree = "<group>"; };
 		F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Californication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,8 +130,10 @@
 			children = (
 				75D4C3671D3C6C9E00ECCD4F /* App */,
 				75D4C3681D3C6CA500ECCD4F /* Controllers */,
-				75D4C3691D3C6CB700ECCD4F /* Assets */,
+				75D4C36B1D3C751E00ECCD4F /* Model */,
+				75D4C3691D3C6CB700ECCD4F /* Resources */,
 				75D4C3661D3C6C8500ECCD4F /* SupportingFiles */,
+				75D4C36A1D3C739900ECCD4F /* View */,
 			);
 			path = Californication;
 			sourceTree = "<group>";
@@ -153,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				754CE1721D3C69D0008CFE62 /* AppDelegate.swift */,
+				75D4C37C1D3C851900ECCD4F /* App.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -160,19 +177,55 @@
 		75D4C3681D3C6CA500ECCD4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				754CE1741D3C69D0008CFE62 /* ViewController.swift */,
+				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
+				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		75D4C3691D3C6CB700ECCD4F /* Assets */ = {
+		75D4C3691D3C6CB700ECCD4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				754CE1791D3C69D0008CFE62 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		75D4C36A1D3C739900ECCD4F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
-				754CE1791D3C69D0008CFE62 /* Assets.xcassets */,
 				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
 			);
-			name = Assets;
+			name = View;
+			sourceTree = "<group>";
+		};
+		75D4C36B1D3C751E00ECCD4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75D4C36C1D3C753500ECCD4F /* Firebase */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		75D4C36C1D3C753500ECCD4F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				75D4C36F1D3C784200ECCD4F /* FPlace.swift */,
+				75D4C3711D3C792700ECCD4F /* PlaceDirector */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		75D4C3711D3C792700ECCD4F /* PlaceDirector */ = {
+			isa = PBXGroup;
+			children = (
+				75D4C36D1D3C756D00ECCD4F /* FPlaceDirectorProtocols.swift */,
+				75D4C3721D3C795E00ECCD4F /* CannedFPlaceDabaseManager.swift */,
+				75D4C3741D3C7AAC00ECCD4F /* CannedFPlaceBuilder.swift */,
+				75D4C3781D3C804000ECCD4F /* FPlaceDirector.swift */,
+			);
+			name = PlaceDirector;
 			sourceTree = "<group>";
 		};
 		DBAC04C6C0392D6BC6B1896F /* Pods */ = {
@@ -367,8 +420,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754CE1751D3C69D0008CFE62 /* ViewController.swift in Sources */,
+				75D4C37D1D3C851900ECCD4F /* App.swift in Sources */,
+				75D4C36E1D3C756D00ECCD4F /* FPlaceDirectorProtocols.swift in Sources */,
+				75D4C3731D3C795E00ECCD4F /* CannedFPlaceDabaseManager.swift in Sources */,
+				754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */,
+				75D4C3751D3C7AAC00ECCD4F /* CannedFPlaceBuilder.swift in Sources */,
+				75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */,
+				75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */,
 				754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */,
+				75D4C3791D3C804000ECCD4F /* FPlaceDirector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

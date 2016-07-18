@@ -21,29 +21,51 @@
  */
 
 import UIKit
-import Firebase
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: PlaceListViewController: UIViewController
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class PlaceListViewController: UIViewController {
 
+    // MARK: Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: Properties
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
-        
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+    var placeDirector: FPlaceDirectorFacade!
+    private let tableViewDataSource = PlaceListTableViewDataSource()
+    
+    // MARK: View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        loadPlaces()
     }
 
+    // MARK: Private
+    
+    private func setup() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 66
+        tableView.dataSource = tableViewDataSource
+    }
+    
+    private func loadPlaces() {
+        placeDirector.allPlaces { [weak self] places in
+            self?.tableViewDataSource.places = places
+            self?.tableView.reloadData()
+        }
+    }
+    
 }
 
+// MARK: - PlaceListViewController: UITableViewDelegate -
+
+extension PlaceListViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+}

@@ -21,29 +21,42 @@
  */
 
 import UIKit
-import Firebase
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Properties
-    
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
-        
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
-    }
-
+private enum PlaceListIdentifiers: String {
+    case placeCell = "PlaceCell"
 }
 
+// MARK: PlaceListTableViewDataSource: NSObject
+
+final class PlaceListTableViewDataSource: NSObject {
+ 
+    var places: [FPlace]?
+    
+    func placeForIndexPath(indexPath: NSIndexPath) -> FPlace? {
+        return places?[indexPath.row]
+    }
+    
+}
+
+// MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
+
+extension PlaceListTableViewDataSource: UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return places?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue)!
+        
+        let place = places![indexPath.row]
+        cell.textLabel?.text = place.summary
+        
+        return cell
+    }
+    
+}

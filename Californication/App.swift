@@ -21,29 +21,32 @@
  */
 
 import UIKit
-import Firebase
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: App
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class App {
+    
     // MARK: Properties
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
-        
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let navigationController: UINavigationController
+    
+    let placeDirector = FPlaceDirector(
+        builder: CannedFPlaceBuilder(),
+        databaseManager: CannedFPlaceDabaseManager()
+    )
+    
+    // MARK: Init
+    
+    init(window: UIWindow) {
+        navigationController = window.rootViewController as! UINavigationController
+        let placeListVC = navigationController.topViewController as! PlaceListViewController
+        placeListVC.placeDirector = placeDirector
     }
-
+    
+    // MARK: Navigation
+    
+    func showPlace(movie: FPlace) {
+    }
+    
 }
-
