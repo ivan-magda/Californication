@@ -47,4 +47,3 @@ struct FPlace {
     let mediumStorageURL: String
     let largeStorageURL: String
 }
-

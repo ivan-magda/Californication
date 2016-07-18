@@ -20,27 +20,9 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Properties
+struct Constants {
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AppConfigurator.configurate()
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
-    }
-
+    static let googleMapsAPIKey = "REPLACE_WITH_YOUR_API_KEY"
 }

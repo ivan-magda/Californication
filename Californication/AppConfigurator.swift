@@ -20,27 +20,24 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
+import Firebase
+import GoogleMaps
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: AppConfigurator
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Properties
+class AppConfigurator {
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AppConfigurator.configurate()
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+    // MARK: Init
+    
+    private init() {
     }
-
+    
+    // MARK: Methods
+    
+    class func configurate() {
+        FIRApp.configure()
+        GMSServices.provideAPIKey(Constants.googleMapsAPIKey)
+    }
+    
 }

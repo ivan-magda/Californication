@@ -20,6 +20,7 @@ PODS:
     - GoogleNetworkingUtilities (~> 1.2)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - GoogleMaps (1.13.2)
   - GoogleNetworkingUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleSymbolUtilities (1.1.1)
@@ -29,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
+  - GoogleMaps
 
 SPEC CHECKSUMS:
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
@@ -37,10 +39,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
   FirebaseStorage: fa2a87dee81f682f553af6839daa37a750e65f6a
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
 
-PODFILE CHECKSUM: 47288a01411500a53bae1e55f712290e48d50efe
+PODFILE CHECKSUM: 4cbd1fc4f0cb4fa8cb2c646e294a4d48ac01cb52
 
 COCOAPODS: 1.0.1

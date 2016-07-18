@@ -6,4 +6,5 @@ inhibit_all_warnings!
 target 'Californication' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'GoogleMaps'
 end
