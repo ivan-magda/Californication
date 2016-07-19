@@ -20,43 +20,17 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
+import Firebase
 
-private enum PlaceListIdentifiers: String {
-    case placeCell = "PlaceCell"
+protocol FirebaseDirectorFacade {
+    func allPlaces(completion: [FPlace] -> ())
 }
 
-// MARK: PlaceListTableViewDataSource: NSObject
-
-final class PlaceListTableViewDataSource: NSObject {
- 
-    var places: [Place]?
-    
-    func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
-        return places?[indexPath.row]
-    }
-    
+protocol FirebaseManager {
+    func allPlaces(completion: FIRDataSnapshot -> ())
 }
 
-// MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
-
-extension PlaceListTableViewDataSource: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue)!
-        
-        let place = places![indexPath.row]
-        cell.textLabel?.text = place.name
-        
-        return cell
-    }
-    
+protocol FirebaseBuilder {
+    func placesFromResponse(response: FIRDataSnapshot) -> [FPlace]
 }

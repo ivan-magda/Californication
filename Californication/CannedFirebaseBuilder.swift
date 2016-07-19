@@ -23,11 +23,11 @@
 import Foundation
 import FirebaseDatabase
 
-// MARK: CannedFPlaceBuilder: FPlaceBuilder
+// MARK: CannedFirebaseBuilder: FirebaseBuilder
 
-class CannedFPlaceBuilder: FPlaceBuilder {
+class CannedFirebaseBuilder: FirebaseBuilder {
     
-    // MARK: FPlaceBuilder
+    // MARK: FirebaseBuilder
     
     func placesFromResponse(response: FIRDataSnapshot) -> [FPlace] {
         return response.children.flatMap { self.placeFromSnapshot($0 as! FIRDataSnapshot) }

@@ -25,14 +25,14 @@ import UIKit
 // MARK: PlaceListViewController: UIViewController
 
 class PlaceListViewController: UIViewController {
-
+    
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Properties
     
-    var placeDirector: FPlaceDirectorFacade!
+    var placeDirector: PlaceDirectorFacade!
     private let tableViewDataSource = PlaceListTableViewDataSource()
     
     // MARK: View Life Cycle
@@ -42,7 +42,7 @@ class PlaceListViewController: UIViewController {
         setup()
         loadPlaces()
     }
-
+    
     // MARK: Private
     
     private func setup() {
@@ -52,9 +52,11 @@ class PlaceListViewController: UIViewController {
     }
     
     private func loadPlaces() {
-        placeDirector.allPlaces { [weak self] places in
+        placeDirector.allPlaces({ [weak self] places in
             self?.tableViewDataSource.places = places
             self?.tableView.reloadData()
+        }) { error in
+            guard error == nil else { return print(error!.localizedDescription)}
         }
     }
     

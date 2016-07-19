@@ -21,30 +21,20 @@
  */
 
 import Foundation
+import FirebaseDatabase
 
-// MARK: FPlaceDirector: FPlaceDirectorFacade
+// MARK: CannedFirebaseManager: FirebaseManager
 
-final class FPlaceDirector: FPlaceDirectorFacade {
+class CannedFirebaseManager: FirebaseManager {
     
     // MARK: Properties
     
-    private let builder: FPlaceBuilder
-    private let databaseManager: FPlaceDabaseManager
+    private let root = FIRDatabase.database().reference()
     
-    // MARK: Init
+    // MARK: FirebaseManager
     
-    init(builder: FPlaceBuilder, databaseManager: FPlaceDabaseManager) {
-        self.builder = builder
-        self.databaseManager = databaseManager
-    }
-    
-    // MARK: FPlaceDirectorFacade
-    
-    func allPlaces(completion: [FPlace] -> ()) {
-        databaseManager.allPlaces { [unowned self] (snapshot) in
-            let places = self.builder.placesFromResponse(snapshot)
-            completion(places)
-        }
+    func allPlaces(completion: FIRDataSnapshot -> ()) {
+        root.child("places").observeSingleEventOfType(.Value, withBlock: completion)
     }
     
 }

@@ -20,43 +20,36 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
+import GoogleMaps
 
-private enum PlaceListIdentifiers: String {
-    case placeCell = "PlaceCell"
-}
+// MARK: CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager
 
-// MARK: PlaceListTableViewDataSource: NSObject
-
-final class PlaceListTableViewDataSource: NSObject {
- 
-    var places: [Place]?
+class CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager {
     
-    func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
-        return places?[indexPath.row]
+    // MARK: GoogleMapsNetworkManager
+    
+    func placeWithID(id: String, success: GoogleMapsNetworkPlaceResponse, failure: GoogleMapsFailureBlock) {
+        GMSPlacesClient().lookUpPlaceID(id) { (place, error) in
+            guard let place = place else { return failure(error) }
+            success(place)
+        }
     }
     
-}
-
-// MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
-
-extension PlaceListTableViewDataSource: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue)!
+    func placesWithIDs(ids: [String], success: GoogleMapsNetworkPlacesResponse, failure: GoogleMapsFailureBlock) {
+        var places = [GMSPlace]()
+        let client = GMSPlacesClient()
         
-        let place = places![indexPath.row]
-        cell.textLabel?.text = place.name
+        func processOnResponse(place: GMSPlace?, error: NSError?) {
+            guard let place = place else { return failure(error) }
+            places.append(place)
+            
+            if places.count == ids.count {
+                success(places)
+            }
+        }
         
-        return cell
+        ids.forEach { client.lookUpPlaceID($0, callback: processOnResponse) }
     }
     
 }

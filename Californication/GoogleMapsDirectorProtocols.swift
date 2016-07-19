@@ -21,20 +21,20 @@
  */
 
 import Foundation
-import FirebaseDatabase
+import GoogleMaps
 
-// MARK: CannedFPlaceDabaseManager: FPlaceDabaseManager
+typealias GoogleMapsDirectorPlaceSuccess  = GMSPlace -> Void
+typealias GoogleMapsDirectorPlacesSuccess = [GMSPlace] -> Void
+typealias GoogleMapsNetworkPlaceResponse = GMSPlace -> Void
+typealias GoogleMapsNetworkPlacesResponse = [GMSPlace] -> Void
+typealias GoogleMapsFailureBlock = NSError? -> ()
 
-class CannedFPlaceDabaseManager: FPlaceDabaseManager {
-    
-    // MARK: Properties
-    
-    private let root = FIRDatabase.database().reference()
-    
-    // MARK: FPlaceDabaseManager
-    
-    func allPlaces(completion: FIRDataSnapshot -> ()) {
-        root.child("places").observeSingleEventOfType(.Value, withBlock: completion)
-    }
-    
+protocol GoogleMapsDirectorFacade {
+    func placeWithID(id: String, success: GoogleMapsDirectorPlaceSuccess, failure: GoogleMapsFailureBlock)
+    func placesWithIDs(ids: [String], success: GoogleMapsDirectorPlacesSuccess, failure: GoogleMapsFailureBlock)
+}
+
+protocol GoogleMapsNetworkManager {
+    func placeWithID(id: String, success: GoogleMapsNetworkPlaceResponse, failure: GoogleMapsFailureBlock)
+    func placesWithIDs(ids: [String], success: GoogleMapsNetworkPlacesResponse, failure: GoogleMapsFailureBlock)
 }

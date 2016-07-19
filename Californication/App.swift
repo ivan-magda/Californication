@@ -31,22 +31,26 @@ class App {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let navigationController: UINavigationController
     
-    let placeDirector = FPlaceDirector(
-        builder: CannedFPlaceBuilder(),
-        databaseManager: CannedFPlaceDabaseManager()
-    )
+    let placeDirector: PlaceDirector
     
     // MARK: Init
     
     init(window: UIWindow) {
         navigationController = window.rootViewController as! UINavigationController
         let placeListVC = navigationController.topViewController as! PlaceListViewController
+        
+        let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
+                                         databaseManager: CannedFirebaseManager())
+        let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
+        placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector)
+        
         placeListVC.placeDirector = placeDirector
     }
     
     // MARK: Navigation
     
     func showPlace(movie: FPlace) {
+        // TODO: Show place
     }
     
 }

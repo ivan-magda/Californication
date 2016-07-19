@@ -20,43 +20,24 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-private enum PlaceListIdentifiers: String {
-    case placeCell = "PlaceCell"
+typealias Block = () -> Void
+
+func performOnMain(block: Block) {
+    dispatch_async(dispatch_get_main_queue()) {
+        block()
+    }
 }
 
-// MARK: PlaceListTableViewDataSource: NSObject
-
-final class PlaceListTableViewDataSource: NSObject {
- 
-    var places: [Place]?
-    
-    func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
-        return places?[indexPath.row]
+func performAfterOnMain(time: Double, block: Block) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        block()
     }
-    
 }
 
-// MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
-
-extension PlaceListTableViewDataSource: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+func performOnBackgroud(block: Block) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        block()
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue)!
-        
-        let place = places![indexPath.row]
-        cell.textLabel?.text = place.name
-        
-        return cell
-    }
-    
 }
