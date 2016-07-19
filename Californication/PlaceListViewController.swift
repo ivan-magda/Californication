@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import MBProgressHUD
 
 // MARK: PlaceListViewController: UIViewController
 
@@ -47,17 +48,40 @@ class PlaceListViewController: UIViewController {
     
     private func setup() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 66
+        tableView.estimatedRowHeight = 120
         tableView.dataSource = tableViewDataSource
+        tableView.delegate = self
     }
     
     private func loadPlaces() {
+        showLoadingHud()
+        
         placeDirector.allPlaces({ [weak self] places in
-            self?.tableViewDataSource.places = places
+            self?.hideLoadingHud()
+            self?.tableViewDataSource.places = places.sort { $0.name < $1.name }
             self?.tableView.reloadData()
-        }) { error in
-            guard error == nil else { return print(error!.localizedDescription)}
+        }) { [weak self] error in
+            guard error == nil else {
+                self?.hideLoadingHud()
+                self?.presentAlertWithTitle("Error", message: error!.localizedDescription)
+                return
+            }
         }
+    }
+    
+}
+
+// MARK: - PlaceListViewController (UI Functions) -
+
+extension PlaceListViewController {
+    
+    private func showLoadingHud() {
+        let progressHud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        progressHud.labelText = "Loading"
+    }
+    
+    private func hideLoadingHud() {
+        MBProgressHUD.hideAllHUDsForView(view, animated: true)
     }
     
 }

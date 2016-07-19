@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hrf-sS-B5C">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,22 +22,69 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceCell" textLabel="ZI3-dW-ZLF" style="IBUITableViewCellStyleDefault" id="2jE-Pw-Rcc">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceCell" rowHeight="120" id="2jE-Pw-Rcc" customClass="PlaceTableViewCell" customModule="Californication" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2jE-Pw-Rcc" id="W5y-6X-k9Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZI3-dW-ZLF">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kq8-nE-ggS">
+                                                    <rect key="frame" x="15" y="10" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="CaD-0K-43y"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="100" id="bY1-03-T9h"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="976" verticalHuggingPriority="976" horizontalCompressionResistancePriority="976" verticalCompressionResistancePriority="976" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRF-PT-DI2" userLabel="Place Title Label">
+                                                    <rect key="frame" x="123" y="10" width="187" height="27"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="975" verticalHuggingPriority="975" horizontalCompressionResistancePriority="975" verticalCompressionResistancePriority="975" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-fi-0ra" userLabel="Place Rating View" customClass="HCSStarRatingView">
+                                                    <rect key="frame" x="115" y="91" width="195" height="18"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="999" constant="18" id="Kg7-mg-ufN"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="4.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WRF-PT-DI2" firstAttribute="leading" secondItem="kq8-nE-ggS" secondAttribute="trailing" constant="8" id="3PL-Vn-Obz"/>
+                                                <constraint firstAttribute="trailing" secondItem="wZd-fi-0ra" secondAttribute="trailing" constant="10" id="75h-3N-7hS"/>
+                                                <constraint firstItem="WRF-PT-DI2" firstAttribute="top" secondItem="W5y-6X-k9Q" secondAttribute="top" constant="10" id="Co7-CH-3Jc"/>
+                                                <constraint firstAttribute="bottom" secondItem="wZd-fi-0ra" secondAttribute="bottom" constant="10" id="NLs-Ei-Tmt"/>
+                                                <constraint firstItem="wZd-fi-0ra" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WRF-PT-DI2" secondAttribute="bottom" priority="999" constant="8" id="Qlq-Nv-JJW"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kq8-nE-ggS" secondAttribute="bottom" priority="999" constant="10" id="Qpp-AC-9ca"/>
+                                                <constraint firstAttribute="trailing" secondItem="WRF-PT-DI2" secondAttribute="trailing" constant="10" id="Wcb-kJ-WuY"/>
+                                                <constraint firstItem="wZd-fi-0ra" firstAttribute="leading" secondItem="kq8-nE-ggS" secondAttribute="trailing" id="hdJ-Y6-xbj"/>
+                                                <constraint firstItem="kq8-nE-ggS" firstAttribute="leading" secondItem="W5y-6X-k9Q" secondAttribute="leading" constant="15" id="msV-zy-sac"/>
+                                                <constraint firstItem="kq8-nE-ggS" firstAttribute="top" secondItem="W5y-6X-k9Q" secondAttribute="top" constant="10" id="xSx-rH-uYB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="placeImageView" destination="kq8-nE-ggS" id="Ysn-dM-Umq"/>
+                                            <outlet property="placeRatingView" destination="wZd-fi-0ra" id="oVX-Pd-Ep8"/>
+                                            <outlet property="placeTitleLabel" destination="WRF-PT-DI2" id="298-NP-ARU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

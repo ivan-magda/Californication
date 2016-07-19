@@ -14,6 +14,7 @@
 		754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */; };
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
+		7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */; };
 		75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */; };
 		75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */; };
 		75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36F1D3C784200ECCD4F /* FPlace.swift */; };
@@ -31,6 +32,7 @@
 		75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */; };
 		75F6D8591D3DB981000D2932 /* PlaceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8581D3DB981000D2932 /* PlaceDirector.swift */; };
 		75F6D85B1D3DBF19000D2932 /* GCDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */; };
+		75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */; };
 		C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,7 @@
 		754CE18E1D3C69D0008CFE62 /* CalifornicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalifornicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
 		75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirectorProtocols.swift; sourceTree = "<group>"; };
 		75D4C36F1D3C784200ECCD4F /* FPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlace.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDirectorProtocols.swift; sourceTree = "<group>"; };
 		75F6D8581D3DB981000D2932 /* PlaceDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDirector.swift; sourceTree = "<group>"; };
 		75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDUtils.swift; sourceTree = "<group>"; };
+		75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.release.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.release.xcconfig"; sourceTree = "<group>"; };
 		C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.debug.xcconfig"; sourceTree = "<group>"; };
 		F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Californication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +221,7 @@
 			children = (
 				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
 				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
+				75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */,
+				7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -466,7 +472,9 @@
 				75D4C3811D3C8CCE00ECCD4F /* AppConfigurator.swift in Sources */,
 				75D4C37D1D3C851900ECCD4F /* App.swift in Sources */,
 				75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */,
+				7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */,
 				75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */,
+				75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */,
 				75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */,
 				754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */,
 				75F6D85B1D3DBF19000D2932 /* GCDUtils.swift in Sources */,
@@ -572,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -612,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

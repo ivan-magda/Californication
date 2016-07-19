@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (3.4.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
   - Firebase/Analytics (3.3.0):
     - FirebaseAnalytics (= 3.2.1)
   - Firebase/Database (3.3.0):
@@ -26,13 +29,20 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - HCSStarRatingView (1.4.5)
+  - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
+  - AlamofireImage
   - Firebase/Database
   - Firebase/Storage
   - GoogleMaps
+  - HCSStarRatingView
+  - MBProgressHUD
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
   FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
@@ -43,7 +53,9 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
-PODFILE CHECKSUM: 4cbd1fc4f0cb4fa8cb2c646e294a4d48ac01cb52
+PODFILE CHECKSUM: e07067f596cac462f77e3c95970cdefa55549df7
 
 COCOAPODS: 1.0.1

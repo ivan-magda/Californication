@@ -23,44 +23,21 @@
 import UIKit
 import HCSStarRatingView
 
-// MARK: Types
+// MARK: PlaceTableViewCell: UITableViewCell
 
-private enum PlaceListIdentifiers: String {
-    case placeCell = "PlaceCell"
-}
-
-// MARK: - PlaceListTableViewDataSource: NSObject
-
-final class PlaceListTableViewDataSource: NSObject {
- 
-    var places: [Place]?
+class PlaceTableViewCell: UITableViewCell {
     
-    func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
-        return places?[indexPath.row]
+    // MARK: Outlets
+    
+    @IBOutlet weak var placeImageView: UIImageView!
+    @IBOutlet weak var placeTitleLabel: UILabel!
+    @IBOutlet weak var placeRatingView: HCSStarRatingView!
+    
+    // MARK: Methods
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        placeImageView.image = nil
     }
-    
-}
 
-// MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
-
-extension PlaceListTableViewDataSource: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue) as! PlaceTableViewCell
-        
-        let place = placeForIndexPath(indexPath)!
-        cell.placeTitleLabel.text = place.name
-        cell.placeRatingView.value = CGFloat(place.rating)
-        
-        return cell
-    }
-    
 }
