@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
 		754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1721D3C69D0008CFE62 /* AppDelegate.swift */; };
 		754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */; };
 		754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE1761D3C69D0008CFE62 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
 		754CE16F1D3C69D0008CFE62 /* Californication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Californication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1721D3C69D0008CFE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				75F6D84E1D3D9A04000D2932 /* Place.swift */,
 				75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */,
+				750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */,
 				75F6D8581D3DB981000D2932 /* PlaceDirector.swift */,
 				75D4C36C1D3C753500ECCD4F /* Firebase */,
 				75F6D84D1D3D99B8000D2932 /* Google Maps */,
@@ -489,6 +492,7 @@
 				75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */,
 				754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */,
 				75D4C3791D3C804000ECCD4F /* FirebaseDirector.swift in Sources */,
+				750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,12 +41,21 @@ class PlaceListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        loadPlaces()
     }
     
     // MARK: Private
     
     private func setup() {
+        configureTableView()
+        
+        if let places = placeDirector.persistedPlaces() {
+            tableViewDataSource.places = places
+        } else {
+            loadPlaces()
+        }
+    }
+    
+    private func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         tableView.dataSource = tableViewDataSource
@@ -57,6 +66,7 @@ class PlaceListViewController: UIViewController {
         showLoadingHud()
         
         placeDirector.allPlaces({ [weak self] places in
+            self?.placeDirector.savePlaces(places)
             self?.hideLoadingHud()
             self?.tableViewDataSource.places = places.sort { $0.name < $1.name }
             self?.tableView.reloadData()

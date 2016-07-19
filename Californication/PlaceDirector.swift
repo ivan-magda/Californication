@@ -31,12 +31,14 @@ final class PlaceDirector: PlaceDirectorFacade {
     
     var firebaseDirector: FirebaseDirector
     var googleMapsDirector: GoogleMapsDirector
+    let cacheManager: PlaceCacheManager
     
     // MARK: Init
     
-    init(firebaseDirector: FirebaseDirector, googleMapsDirector: GoogleMapsDirector) {
+    init(firebaseDirector: FirebaseDirector, googleMapsDirector: GoogleMapsDirector, cacheManager: PlaceCacheManager) {
         self.firebaseDirector = firebaseDirector
         self.googleMapsDirector = googleMapsDirector
+        self.cacheManager = cacheManager
     }
     
     // MARK: PlaceDirectorFacade
@@ -54,6 +56,14 @@ final class PlaceDirector: PlaceDirectorFacade {
                 failure: failure
             )
         }
+    }
+    
+    func savePlaces(places: [Place]) {
+        cacheManager.save(places)
+    }
+    
+    func persistedPlaces() -> [Place]? {
+        return cacheManager.unarchived()
     }
     
     // MARK: Helpers

@@ -42,8 +42,8 @@ class App {
         let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
                                          databaseManager: CannedFirebaseManager())
         let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
-        placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector)
-        
+        placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector,
+                                      cacheManager: CannedPlaceCacheManager())
         placeListVC.placeDirector = placeDirector
     }
     

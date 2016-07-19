@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="CDPlace" representedClassName=".CDPlace" syncable="YES">
+        <attribute name="detailDescription" attributeType="String" syncable="YES"/>
+        <attribute name="formattedAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placeID" attributeType="String" syncable="YES"/>
+        <attribute name="priceLevel" attributeType="Integer 32" maxValueString="4" defaultValueString="-1" syncable="YES"/>
+        <attribute name="rating" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="summary" attributeType="String" syncable="YES"/>
+        <attribute name="types" attributeType="Transformable" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDPlace" positionX="-63" positionY="-18" width="128" height="225"/>
+    </elements>
+</model>

@@ -26,6 +26,21 @@ import GoogleMaps
 
 // MARK: Types
 
+private enum Key: String {
+    case placeID
+    case name
+    case summary
+    case detailDescription
+    case phoneNumber
+    case latitude
+    case longitude
+    case formattedAddress
+    case rating
+    case priceLevel
+    case types
+    case website
+}
+
 enum PlacePriceLevel: Int {
     case Unknown = -1
     case Free
@@ -35,12 +50,18 @@ enum PlacePriceLevel: Int {
     case Expensive
 }
 
-// MARK: - Place
+// MARK: - Place: NSObject, NSCoding
 
-struct Place {
+class Place: NSObject, NSCoding {
+    
+    struct Image {
+        let thumbnailStorageURL: String
+        let mediumStorageURL: String
+        let largeStorageURL: String
+    }
     
     /** Place ID of this place. */
-    let gmsPlaceID: String
+    let placeID: String
     
     /** Name of the place. */
     let name: String
@@ -87,10 +108,54 @@ struct Place {
     /** Website for this place. */
     let website: NSURL?
     
-    struct Image {
-        let thumbnailStorageURL: String
-        let mediumStorageURL: String
-        let largeStorageURL: String
+    init(placeID: String, name: String, summary: String, detailDescription: String, phoneNumber: String?, coordinate: CLLocationCoordinate2D, formattedAddress: String?, rating: Float, priceLevel: PlacePriceLevel, types: [String], website: NSURL?) {
+        self.placeID = placeID
+        self.name = name
+        self.summary = summary
+        self.detailDescription = detailDescription
+        self.phoneNumber = phoneNumber
+        self.coordinate = coordinate
+        self.formattedAddress = formattedAddress
+        self.rating = rating
+        self.priceLevel = priceLevel
+        self.types = types
+        self.website = website
+        
+        super.init()
+    }
+    
+    // MARK: NSCoding
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(placeID, forKey: Key.placeID.rawValue)
+        aCoder.encodeObject(name, forKey: Key.name.rawValue)
+        aCoder.encodeObject(summary, forKey: Key.summary.rawValue)
+        aCoder.encodeObject(detailDescription, forKey: Key.detailDescription.rawValue)
+        aCoder.encodeObject(phoneNumber, forKey: Key.phoneNumber.rawValue)
+        aCoder.encodeDouble(coordinate.latitude, forKey: Key.latitude.rawValue)
+        aCoder.encodeDouble(coordinate.longitude, forKey: Key.longitude.rawValue)
+        aCoder.encodeObject(formattedAddress, forKey: Key.formattedAddress.rawValue)
+        aCoder.encodeFloat(rating, forKey: Key.rating.rawValue)
+        aCoder.encodeInt(Int32(priceLevel.rawValue), forKey: Key.priceLevel.rawValue)
+        aCoder.encodeObject(types, forKey: Key.types.rawValue)
+        aCoder.encodeObject(website, forKey: Key.website.rawValue)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        placeID = aDecoder.decodeObjectForKey(Key.placeID.rawValue) as! String
+        name = aDecoder.decodeObjectForKey(Key.name.rawValue) as! String
+        summary = aDecoder.decodeObjectForKey(Key.summary.rawValue) as! String
+        detailDescription = aDecoder.decodeObjectForKey(Key.detailDescription.rawValue) as! String
+        phoneNumber = aDecoder.decodeObjectForKey(Key.phoneNumber.rawValue) as? String
+        formattedAddress = aDecoder.decodeObjectForKey(Key.formattedAddress.rawValue) as? String
+        rating = aDecoder.decodeFloatForKey(Key.rating.rawValue)
+        priceLevel = PlacePriceLevel(rawValue: Int(aDecoder.decodeIntForKey(Key.priceLevel.rawValue)))!
+        types = aDecoder.decodeObjectForKey(Key.types.rawValue) as! [String]
+        website = aDecoder.decodeObjectForKey(Key.website.rawValue) as? NSURL
+        
+        let latitude = aDecoder.decodeDoubleForKey(Key.latitude.rawValue)
+        let longitude = aDecoder.decodeDoubleForKey(Key.longitude.rawValue)
+        coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
 }
@@ -99,11 +164,11 @@ struct Place {
 
 extension Place {
     
-    init(firebasePlace fPlace: FPlace, googleMapsPlace gmPlace: GMSPlace) {
+    convenience init(firebasePlace fPlace: FPlace, googleMapsPlace gmPlace: GMSPlace) {
         let types = gmPlace.types.map { $0.stringByReplacingOccurrencesOfString("_", withString: " ") }
         
-        self = Place(
-            gmsPlaceID: gmPlace.placeID,
+        self.init(
+            placeID: gmPlace.placeID,
             name: gmPlace.name,
             summary: fPlace.summary,
             detailDescription: fPlace.detailDescription,

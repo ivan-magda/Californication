@@ -59,6 +59,7 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
         let place = placeForIndexPath(indexPath)!
         cell.placeTitleLabel.text = place.name
         cell.placeRatingView.value = CGFloat(place.rating)
+        cell.placeImageView.image = UIImage(named: "thumbnail")
         
         return cell
     }

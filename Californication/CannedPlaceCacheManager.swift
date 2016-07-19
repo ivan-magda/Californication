@@ -22,21 +22,23 @@
 
 import Foundation
 
-typealias PlaceDirectorSuccessBlock = (places: [Place]) -> Void
-typealias PlaceDirectorFailureBlock = (error: NSError?) -> Void
+private let _documentsDirectoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first! as NSURL
+private let _fileURL = _documentsDirectoryURL.URLByAppendingPathComponent("Places")
 
-protocol PlaceDirectors {
-    var firebaseDirector: FirebaseDirector { get }
-    var googleMapsDirector: GoogleMapsDirector { get }
-}
+// MARK: DataCentral
 
-protocol PlaceCacheManager {
-    func save(places: [Place])
-    func unarchived() -> [Place]?
-}
+final class CannedPlaceCacheManager: PlaceCacheManager {
 
-protocol PlaceDirectorFacade: PlaceDirectors {
-    func allPlaces(success: PlaceDirectorSuccessBlock, failure: PlaceDirectorFailureBlock)
-    func savePlaces(places: [Place])
-    func persistedPlaces() -> [Place]?
+    func save(places: [Place]) {
+        NSKeyedArchiver.archiveRootObject(places, toFile: _fileURL.path!)
+    }
+    
+    func unarchived() -> [Place]? {
+        if NSFileManager.defaultManager().fileExistsAtPath(_fileURL.path!) {
+            return NSKeyedUnarchiver.unarchiveObjectWithFile(_fileURL.path!) as? [Place]
+        } else {
+            return nil
+        }
+    }
+    
 }
