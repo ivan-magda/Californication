@@ -39,6 +39,7 @@ private enum Key: String {
     case priceLevel
     case types
     case website
+    case image
 }
 
 enum PlacePriceLevel: Int {
@@ -53,12 +54,6 @@ enum PlacePriceLevel: Int {
 // MARK: - Place: NSObject, NSCoding
 
 class Place: NSObject, NSCoding {
-    
-    struct Image {
-        let thumbnailStorageURL: String
-        let mediumStorageURL: String
-        let largeStorageURL: String
-    }
     
     /** Place ID of this place. */
     let placeID: String
@@ -108,7 +103,10 @@ class Place: NSObject, NSCoding {
     /** Website for this place. */
     let website: NSURL?
     
-    init(placeID: String, name: String, summary: String, detailDescription: String, phoneNumber: String?, coordinate: CLLocationCoordinate2D, formattedAddress: String?, rating: Float, priceLevel: PlacePriceLevel, types: [String], website: NSURL?) {
+    /** Images of the place */
+    let image: PlaceImage
+    
+    init(placeID: String, name: String, summary: String, detailDescription: String, phoneNumber: String?, coordinate: CLLocationCoordinate2D, formattedAddress: String?, rating: Float, priceLevel: PlacePriceLevel, types: [String], website: NSURL?, image: PlaceImage) {
         self.placeID = placeID
         self.name = name
         self.summary = summary
@@ -120,6 +118,7 @@ class Place: NSObject, NSCoding {
         self.priceLevel = priceLevel
         self.types = types
         self.website = website
+        self.image = image
         
         super.init()
     }
@@ -139,6 +138,7 @@ class Place: NSObject, NSCoding {
         aCoder.encodeInt(Int32(priceLevel.rawValue), forKey: Key.priceLevel.rawValue)
         aCoder.encodeObject(types, forKey: Key.types.rawValue)
         aCoder.encodeObject(website, forKey: Key.website.rawValue)
+        aCoder.encodeObject(image, forKey: Key.image.rawValue)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -152,6 +152,7 @@ class Place: NSObject, NSCoding {
         priceLevel = PlacePriceLevel(rawValue: Int(aDecoder.decodeIntForKey(Key.priceLevel.rawValue)))!
         types = aDecoder.decodeObjectForKey(Key.types.rawValue) as! [String]
         website = aDecoder.decodeObjectForKey(Key.website.rawValue) as? NSURL
+        image = aDecoder.decodeObjectForKey(Key.image.rawValue) as! PlaceImage
         
         let latitude = aDecoder.decodeDoubleForKey(Key.latitude.rawValue)
         let longitude = aDecoder.decodeDoubleForKey(Key.longitude.rawValue)
@@ -166,6 +167,8 @@ extension Place {
     
     convenience init(firebasePlace fPlace: FPlace, googleMapsPlace gmPlace: GMSPlace) {
         let types = gmPlace.types.map { $0.stringByReplacingOccurrencesOfString("_", withString: " ") }
+        let image = PlaceImage(thumbnail: fPlace.thumbnailURL,
+                               medium: fPlace.mediumURL, large: fPlace.largeURL)
         
         self.init(
             placeID: gmPlace.placeID,
@@ -178,7 +181,8 @@ extension Place {
             rating: gmPlace.rating,
             priceLevel: PlacePriceLevel(rawValue: gmPlace.priceLevel.rawValue)!,
             types: types,
-            website: gmPlace.website
+            website: gmPlace.website,
+            image:  image
         )
     }
     

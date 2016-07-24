@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
+		7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511026A1D3F003D000385A3 /* PlaceImage.swift */; };
+		7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */; };
+		7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */; };
 		754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1721D3C69D0008CFE62 /* AppDelegate.swift */; };
 		754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */; };
 		754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE1761D3C69D0008CFE62 /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
 		7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */; };
-		75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */; };
+		756DB0EC1D4480AF00549027 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DB0EB1D4480AF00549027 /* ImageCache.swift */; };
 		75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */; };
 		75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36F1D3C784200ECCD4F /* FPlace.swift */; };
 		75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */; };
@@ -56,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
+		7511026A1D3F003D000385A3 /* PlaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImage.swift; sourceTree = "<group>"; };
+		7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
 		754CE16F1D3C69D0008CFE62 /* Californication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Californication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1721D3C69D0008CFE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +76,7 @@
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
-		75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		756DB0EB1D4480AF00549027 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirectorProtocols.swift; sourceTree = "<group>"; };
 		75D4C36F1D3C784200ECCD4F /* FPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlace.swift; sourceTree = "<group>"; };
 		75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFirebaseManager.swift; sourceTree = "<group>"; };
@@ -127,6 +133,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		750643021D3E4DA200E3D691 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				75F6D84E1D3D9A04000D2932 /* Place.swift */,
+				7511026A1D3F003D000385A3 /* PlaceImage.swift */,
+				750643031D3E4DAB00E3D691 /* Director */,
+			);
+			name = Place;
+			sourceTree = "<group>";
+		};
+		750643031D3E4DAB00E3D691 /* Director */ = {
+			isa = PBXGroup;
+			children = (
+				75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */,
+				750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */,
+				75F6D8581D3DB981000D2932 /* PlaceDirector.swift */,
+			);
+			name = Director;
+			sourceTree = "<group>";
+		};
+		7524B9711D41DFE000C540A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		754CE1661D3C69D0008CFE62 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +188,7 @@
 			children = (
 				75D4C3671D3C6C9E00ECCD4F /* App */,
 				75D4C3681D3C6CA500ECCD4F /* Controllers */,
+				7524B9711D41DFE000C540A3 /* Network */,
 				75D4C36B1D3C751E00ECCD4F /* Model */,
 				75D4C3691D3C6CB700ECCD4F /* Resources */,
 				75D4C3661D3C6C8500ECCD4F /* Supporting Files */,
@@ -185,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				754CE17E1D3C69D0008CFE62 /* Info.plist */,
-				75D4C3641D3C6C7D00ECCD4F /* GoogleService-Info.plist */,
+				7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,10 +266,8 @@
 		75D4C36B1D3C751E00ECCD4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				75F6D84E1D3D9A04000D2932 /* Place.swift */,
-				75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */,
-				750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */,
-				75F6D8581D3DB981000D2932 /* PlaceDirector.swift */,
+				756DB0EB1D4480AF00549027 /* ImageCache.swift */,
+				750643021D3E4DA200E3D691 /* Place */,
 				75D4C36C1D3C753500ECCD4F /* Firebase */,
 				75F6D84D1D3D99B8000D2932 /* Google Maps */,
 			);
@@ -397,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */,
-				75D4C3651D3C6C7D00ECCD4F /* GoogleService-Info.plist in Resources */,
+				7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */,
 				754CE17A1D3C69D0008CFE62 /* Assets.xcassets in Resources */,
 				754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */,
 			);
@@ -479,6 +512,7 @@
 				75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */,
 				75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */,
 				75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */,
+				7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */,
 				754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */,
 				75F6D85B1D3DBF19000D2932 /* GCDUtils.swift in Sources */,
 				75D4C3751D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift in Sources */,
@@ -487,7 +521,9 @@
 				75D4C37F1D3C8BFB00ECCD4F /* Constants.swift in Sources */,
 				75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */,
 				75F6D8551D3DA620000D2932 /* GoogleMapsDirector.swift in Sources */,
+				7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */,
 				75F6D8511D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift in Sources */,
+				756DB0EC1D4480AF00549027 /* ImageCache.swift in Sources */,
 				75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */,
 				75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */,
 				754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */,

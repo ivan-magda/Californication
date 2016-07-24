@@ -20,28 +20,44 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
+import AwesomeCache
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: ImageCache
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class ImageCache {
+    
     // MARK: Properties
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AppConfigurator.configurate()
-        
-        if let window = window {
-            app = App(window: window)
+    private let cache: Cache<UIImage>?
+    
+    // MARK: Init
+    
+    init?(name: String) {
+        do {
+            cache = try Cache<UIImage>(name: name)
+        } catch let error as NSError {
+            print("Failed to initialize cache: \(error.localizedDescription)")
+            return nil
         }
-        
-        return true
     }
-
+    
+    // MARK: Methods
+    
+    func lookUpImageInCacheWithIdentifier(identifier: String) -> UIImage? {
+        return cache?[identifier]
+    }
+    
+    func cacheImage(image: UIImage, withIdentifier identifier: String) {
+        cache?[identifier] = image
+    }
+    
+    func removeImageWithIdentifier(identifier: String) {
+        cache?.removeObjectForKey(identifier)
+    }
+    
+    func cleanUp() {
+        cache?.removeAllObjects()
+    }
+    
 }

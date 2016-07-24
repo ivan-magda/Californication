@@ -39,6 +39,7 @@ class CannedFirebaseBuilder: FirebaseBuilder {
         let dictionary = snapshot.value as! [String: AnyObject]
         
         guard let placeID = dictionary[FPlace.Key.placeId.rawValue] as? String,
+            name = dictionary[FPlace.Key.name.rawValue] as? String,
             summary = dictionary[FPlace.Key.summary.rawValue] as? String,
             description = dictionary[FPlace.Key.detailDescription.rawValue] as? String,
             images = dictionary[FPlace.Key.images.rawValue] as? [String: String],
@@ -46,7 +47,7 @@ class CannedFirebaseBuilder: FirebaseBuilder {
             medium = images[FPlace.Key.medium.rawValue],
             large = images[FPlace.Key.large.rawValue] else { return nil }
         
-        return FPlace(googlePlaceID: placeID, summary: summary, detailDescription: description, thumbnailStorageURL: thumbnail, mediumStorageURL: medium, largeStorageURL: large)
+        return FPlace(googlePlaceID: placeID, name: name, summary: summary, detailDescription: description, thumbnailURL: thumbnail, mediumURL: medium, largeURL: large)
     }
     
 }

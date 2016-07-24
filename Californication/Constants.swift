@@ -24,5 +24,5 @@ import Foundation
 
 struct Constants {
     
-    static let googleMapsAPIKey = "AIzaSyCiTE16dvgrfjXbnZZHntpX6eiMUrxDFLs"
+    static let googleMapsAPIKey = "REPLACE_WITH_YOUR_API_KEY"
 }

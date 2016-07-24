@@ -21,25 +21,49 @@
  */
 
 import Foundation
-import Firebase
-import GoogleMaps
+import Alamofire
+import AlamofireImage
 
-// MARK: AppConfigurator
+// MARK: Typealiases
 
-class AppConfigurator {
+typealias ImageDownloadManagerCompletionHandler = (image: UIImage?, error: NSError?) -> Void
+
+// MARK: Constants
+
+private let kPlaceImagesCacheName = "place-images"
+
+// MARK: - ImageDownloadManager
+
+final class ImageDownloadManager {
+    
+    // MARK: Properties
+    
+    static let sharedInstance = ImageDownloadManager()
+    let imageCache: ImageCache?
     
     // MARK: Init
     
     private init() {
+        imageCache = ImageCache(name: kPlaceImagesCacheName)
     }
     
     // MARK: Methods
     
-    class func configurate() {
-        assert(Constants.googleMapsAPIKey != "REPLACE_WITH_YOUR_API_KEY", "Please goto Constants.swift and replace Google Maps API key with your own.")
-        
-        FIRApp.configure()
-        GMSServices.provideAPIKey(Constants.googleMapsAPIKey)
+    func imageForURL(URL: String, completion: ImageDownloadManagerCompletionHandler) {
+        if let cachedImage = imageCache?.lookUpImageInCacheWithIdentifier(URL) {
+            completion(image: cachedImage, error: nil)
+        } else {
+            Alamofire.request(.GET, URL).responseImage { [unowned self] response in
+                let result = response.result
+                guard let image = result.value else {
+                    completion(image: nil, error: result.error)
+                    return
+                }
+                
+                self.imageCache?.cacheImage(image, withIdentifier: URL)
+                completion(image: image, error: nil)
+            }
+        }
     }
     
 }

@@ -30,6 +30,7 @@ struct FPlace {
     
     enum Key: String {
         case placeId = "place_id"
+        case name
         case summary
         case detailDescription = "detail_description"
         case images
@@ -41,9 +42,10 @@ struct FPlace {
     // MARK: Properties
     
     let googlePlaceID: String
+    let name: String
     let summary: String
     let detailDescription: String
-    let thumbnailStorageURL: String
-    let mediumStorageURL: String
-    let largeStorageURL: String
+    let thumbnailURL: String
+    let mediumURL: String
+    let largeURL: String
 }

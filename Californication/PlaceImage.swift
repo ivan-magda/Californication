@@ -20,28 +20,50 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: Types
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+private enum Key: String {
+    case thumbnail
+    case medium
+    case large
+}
 
+// MARK: PlaceImage: NSObject, NSCoding
+
+class PlaceImage: NSObject, NSCoding {
+    
     // MARK: Properties
     
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AppConfigurator.configurate()
+    let thumbnailURL: String
+    let mediumURL: String
+    let largeURL: String
+    
+    // MARK: Init
+    
+    init(thumbnail: String, medium: String, large: String) {
+        thumbnailURL = thumbnail
+        mediumURL = medium
+        largeURL = large
         
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+        super.init()
     }
-
+    
+    // MARK: NSCoding
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(thumbnailURL, forKey: Key.thumbnail.rawValue)
+        aCoder.encodeObject(mediumURL, forKey: Key.medium.rawValue)
+        aCoder.encodeObject(largeURL, forKey: Key.large.rawValue)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let thumbnail = aDecoder.decodeObjectForKey(Key.thumbnail.rawValue) as! String
+        let medium = aDecoder.decodeObjectForKey(Key.medium.rawValue) as! String
+        let large = aDecoder.decodeObjectForKey(Key.large.rawValue) as! String
+        
+        self.init(thumbnail: thumbnail, medium: medium, large: large)
+    }
+    
 }

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.4.1)
   - AlamofireImage (2.4.0):
     - Alamofire (~> 3.3)
+  - AwesomeCache (3.0.1)
   - Firebase/Analytics (3.3.0):
     - FirebaseAnalytics (= 3.2.1)
   - Firebase/Database (3.3.0):
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - AwesomeCache
   - Firebase/Database
   - Firebase/Storage
   - GoogleMaps
@@ -43,6 +45,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  AwesomeCache: a1561c926b6cf812c5f3f4262ea22e20bf8323c1
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
   FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
@@ -56,6 +59,6 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
-PODFILE CHECKSUM: e07067f596cac462f77e3c95970cdefa55549df7
+PODFILE CHECKSUM: 8e69f323ca77bda5bad95efef9d99ec97295861e
 
 COCOAPODS: 1.0.1

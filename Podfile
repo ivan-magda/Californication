@@ -10,4 +10,5 @@ target 'Californication' do
   pod 'MBProgressHUD'
   pod 'HCSStarRatingView'
   pod 'AlamofireImage'
+  pod 'AwesomeCache'
 end

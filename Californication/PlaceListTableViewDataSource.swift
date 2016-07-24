@@ -22,6 +22,7 @@
 
 import UIKit
 import HCSStarRatingView
+import AlamofireImage
 
 // MARK: Types
 
@@ -45,6 +46,8 @@ final class PlaceListTableViewDataSource: NSObject {
 
 extension PlaceListTableViewDataSource: UITableViewDataSource {
     
+    // MARK: UITableViewDataSource
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -55,13 +58,23 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue) as! PlaceTableViewCell
-        
+        configureCell(cell, atIndexPath: indexPath)
+        return cell
+    }
+    
+    // MARK: Helpers
+    
+    private func configureCell(cell: PlaceTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let place = placeForIndexPath(indexPath)!
+        
         cell.placeTitleLabel.text = place.name
         cell.placeRatingView.value = CGFloat(place.rating)
-        cell.placeImageView.image = UIImage(named: "thumbnail")
         
-        return cell
+        weak var weakCell = cell
+        ImageDownloadManager.sharedInstance.imageForURL(place.image.thumbnailURL) { (image, error) in
+            guard error == nil else { return print("Failed to load thumbnail: \(error!.localizedDescription)") }
+            weakCell?.placeImageView.image = image
+        }
     }
     
 }
