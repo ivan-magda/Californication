@@ -134,6 +134,33 @@
             </objects>
             <point key="canvasLocation" x="895" y="-342"/>
         </scene>
+        <!--Place Details View Controller-->
+        <scene sceneID="uOI-0Q-PBw">
+            <objects>
+                <viewController storyboardIdentifier="PlaceDetails" id="q1B-O0-cQQ" customClass="PlaceDetailsViewController" customModule="Californication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sJh-pA-iwI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ivl-is-vzn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SD9-lE-7vA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-VN-rH0">
+                                <rect key="frame" x="139" y="273" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5A-oe-qmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385" y="-342"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FtI-4J-Zjt">
             <objects>

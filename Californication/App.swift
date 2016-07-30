@@ -45,12 +45,15 @@ class App {
         placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector,
                                       cacheManager: CannedPlaceCacheManager())
         placeListVC.placeDirector = placeDirector
+        placeListVC.didSelect = showPlace
     }
     
     // MARK: Navigation
     
-    func showPlace(movie: FPlace) {
-        // TODO: Show place
+    func showPlace(place: Place) {
+        let detailVC = storyboard.instantiateViewControllerWithIdentifier("PlaceDetails") as! PlaceDetailsViewController
+        detailVC.place = place
+        navigationController.pushViewController(detailVC, animated: true)
     }
     
 }

@@ -33,6 +33,7 @@ class PlaceListViewController: UIViewController {
     
     // MARK: Properties
     
+    var didSelect: (Place) -> () = { _ in }
     var placeDirector: PlaceDirectorFacade!
     private let tableViewDataSource = PlaceListTableViewDataSource()
     
@@ -101,6 +102,11 @@ extension PlaceListViewController {
 extension PlaceListViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard let selectedPlace = tableViewDataSource.placeForIndexPath(indexPath) else {
+            return
+        }
+        
+        didSelect(selectedPlace)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

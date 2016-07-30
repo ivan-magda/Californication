@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
+		750F08DC1D4D00D2007B44BC /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */; };
 		7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511026A1D3F003D000385A3 /* PlaceImage.swift */; };
 		7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */; };
 		7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
+		750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		7511026A1D3F003D000385A3 /* PlaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImage.swift; sourceTree = "<group>"; };
 		7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
 				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
+				750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D4C3811D3C8CCE00ECCD4F /* AppConfigurator.swift in Sources */,
+				750F08DC1D4D00D2007B44BC /* PlaceDetailsViewController.swift in Sources */,
 				75D4C37D1D3C851900ECCD4F /* App.swift in Sources */,
 				75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */,
 				7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */,
