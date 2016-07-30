@@ -31,6 +31,7 @@ class PlaceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var placeTitleLabel: UILabel!
+    @IBOutlet weak var placeSummaryLabel: UILabel!
     @IBOutlet weak var placeRatingView: HCSStarRatingView!
     
     // MARK: Methods

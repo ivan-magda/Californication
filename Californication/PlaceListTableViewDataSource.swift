@@ -68,6 +68,7 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
         let place = placeForIndexPath(indexPath)!
         
         cell.placeTitleLabel.text = place.name
+        cell.placeSummaryLabel.text = place.summary
         cell.placeRatingView.value = CGFloat(place.rating)
         
         weak var weakCell = cell

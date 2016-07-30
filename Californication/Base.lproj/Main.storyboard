@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hrf-sS-B5C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hrf-sS-B5C">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -42,12 +42,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" horizontalHuggingPriority="975" verticalHuggingPriority="975" horizontalCompressionResistancePriority="975" verticalCompressionResistancePriority="975" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-fi-0ra" userLabel="Place Rating View" customClass="HCSStarRatingView">
-                                                    <rect key="frame" x="115" y="91" width="195" height="18"/>
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="974" verticalHuggingPriority="974" horizontalCompressionResistancePriority="974" verticalCompressionResistancePriority="974" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-fi-0ra" userLabel="Place Rating View" customClass="HCSStarRatingView">
+                                                    <rect key="frame" x="115" y="93" width="195" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" priority="999" constant="18" id="Kg7-mg-ufN"/>
+                                                        <constraint firstAttribute="width" constant="195" id="8mn-2F-q7D"/>
+                                                        <constraint firstAttribute="height" constant="16" id="Kg7-mg-ufN"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
@@ -66,23 +67,42 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="975" verticalHuggingPriority="975" horizontalCompressionResistancePriority="975" verticalCompressionResistancePriority="975" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb1-jf-SeC" userLabel="Place Summary Label">
+                                                    <rect key="frame" x="123" y="45" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="sb1-jf-SeC" secondAttribute="trailing" constant="10" id="2XY-fM-USk"/>
                                                 <constraint firstItem="WRF-PT-DI2" firstAttribute="leading" secondItem="kq8-nE-ggS" secondAttribute="trailing" constant="8" id="3PL-Vn-Obz"/>
-                                                <constraint firstAttribute="trailing" secondItem="wZd-fi-0ra" secondAttribute="trailing" constant="10" id="75h-3N-7hS"/>
+                                                <constraint firstAttribute="bottom" secondItem="wZd-fi-0ra" secondAttribute="bottom" constant="10" id="BC6-Se-ZAX"/>
                                                 <constraint firstItem="WRF-PT-DI2" firstAttribute="top" secondItem="W5y-6X-k9Q" secondAttribute="top" constant="10" id="Co7-CH-3Jc"/>
+                                                <constraint firstItem="wZd-fi-0ra" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sb1-jf-SeC" secondAttribute="bottom" priority="999" constant="8" symbolic="YES" id="IOE-Na-Fdg"/>
                                                 <constraint firstAttribute="bottom" secondItem="wZd-fi-0ra" secondAttribute="bottom" constant="10" id="NLs-Ei-Tmt"/>
+                                                <constraint firstItem="sb1-jf-SeC" firstAttribute="leading" secondItem="kq8-nE-ggS" secondAttribute="trailing" constant="8" id="Oaz-nM-Yye"/>
                                                 <constraint firstItem="wZd-fi-0ra" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WRF-PT-DI2" secondAttribute="bottom" priority="999" constant="8" id="Qlq-Nv-JJW"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kq8-nE-ggS" secondAttribute="bottom" priority="999" constant="10" id="Qpp-AC-9ca"/>
+                                                <constraint firstItem="sb1-jf-SeC" firstAttribute="top" secondItem="WRF-PT-DI2" secondAttribute="bottom" constant="8" symbolic="YES" id="SZJ-0h-Sr7"/>
                                                 <constraint firstAttribute="trailing" secondItem="WRF-PT-DI2" secondAttribute="trailing" constant="10" id="Wcb-kJ-WuY"/>
                                                 <constraint firstItem="wZd-fi-0ra" firstAttribute="leading" secondItem="kq8-nE-ggS" secondAttribute="trailing" id="hdJ-Y6-xbj"/>
                                                 <constraint firstItem="kq8-nE-ggS" firstAttribute="leading" secondItem="W5y-6X-k9Q" secondAttribute="leading" constant="15" id="msV-zy-sac"/>
+                                                <constraint firstItem="wZd-fi-0ra" firstAttribute="bottom" secondItem="kq8-nE-ggS" secondAttribute="bottom" id="rMP-Cs-evo"/>
                                                 <constraint firstItem="kq8-nE-ggS" firstAttribute="top" secondItem="W5y-6X-k9Q" secondAttribute="top" constant="10" id="xSx-rH-uYB"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="NLs-Ei-Tmt"/>
+                                                    <exclude reference="Qlq-Nv-JJW"/>
+                                                    <exclude reference="rMP-Cs-evo"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="placeImageView" destination="kq8-nE-ggS" id="Ysn-dM-Umq"/>
                                             <outlet property="placeRatingView" destination="wZd-fi-0ra" id="oVX-Pd-Ep8"/>
+                                            <outlet property="placeSummaryLabel" destination="sb1-jf-SeC" id="EBM-tL-ka7"/>
                                             <outlet property="placeTitleLabel" destination="WRF-PT-DI2" id="298-NP-ARU"/>
                                         </connections>
                                     </tableViewCell>
