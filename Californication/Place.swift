@@ -49,6 +49,23 @@ enum PlacePriceLevel: Int {
     case Medium
     case High
     case Expensive
+    
+    func title() -> String? {
+        switch self {
+        case .Unknown:
+            return nil
+        case .Free:
+            return "Free"
+        case .Cheap:
+            return "$"
+        case .Medium:
+            return "$$"
+        case .High:
+            return "$$$"
+        case .Expensive:
+            return "$$$$"
+        }
+    }
 }
 
 // MARK: - Place: NSObject, NSCoding

@@ -21,11 +21,28 @@
  */
 
 import UIKit
+import HCSStarRatingView
 
 // MARK: PlaceDetailsViewController: UIViewController
 
 class PlaceDetailsViewController: UIViewController {
-
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var placeImageView: UIImageView!
+    @IBOutlet weak var placeTitleLabel: UILabel!
+    @IBOutlet weak var placeTypesLabel: UILabel!
+    @IBOutlet weak var placeSummaryLabel: UILabel!
+    @IBOutlet weak var placeDescriptionLabel: UILabel!
+    @IBOutlet weak var placeAddressLabel: UILabel!
+    @IBOutlet weak var placePhoneNumberLabel: UILabel!
+    @IBOutlet weak var placeWebsiteLabel: UILabel!
+    @IBOutlet weak var placeRatingView: HCSStarRatingView!
+    @IBOutlet weak var placePriceLevelLabel: UILabel!
+    
+    
+    // MARK: Instance Variables
+    
     var place: Place!
     
     // MARK: View Life Cycle
@@ -36,7 +53,7 @@ class PlaceDetailsViewController: UIViewController {
         
         configureUI()
     }
-
+    
 }
 
 // MARK: - PlaceDetailsViewController (UI Functions)  -
@@ -45,6 +62,30 @@ extension PlaceDetailsViewController {
     
     private func configureUI() {
         title = place.name
+        
+        placeTitleLabel.text = place.name
+        placeTypesLabel.text = "Types: \(place.types.joinWithSeparator(", "))"
+        placeSummaryLabel.text = "Summary: \(place.summary)"
+        placeDescriptionLabel.text = "Description: \(place.detailDescription)"
+        placeRatingView.value = CGFloat(place.rating)
+        
+        placeAddressLabel.text = (place.formattedAddress != nil
+            ? "Address: \(place.formattedAddress!)"
+            : nil)
+        placePhoneNumberLabel.text = (place.phoneNumber != nil
+            ? "Phone number: \(place.phoneNumber!)"
+            : nil)
+        placeWebsiteLabel.text = (place.website != nil
+            ? "Website: \(place.website!.host!)"
+            : nil)
+        placePriceLevelLabel.text = (place.priceLevel.title() != nil
+            ? "Price level: \(place.priceLevel.title())"
+            : nil)
+        
+        ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
+            guard error == nil else { return print("Failed to load image: \(error!.localizedDescription)") }
+            self?.placeImageView.image = image
+        }
     }
     
 }
