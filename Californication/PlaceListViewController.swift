@@ -35,7 +35,9 @@ class PlaceListViewController: UIViewController {
     
     var didSelect: (Place) -> () = { _ in }
     var placeDirector: PlaceDirectorFacade!
+    
     private let tableViewDataSource = PlaceListTableViewDataSource()
+    private let refreshControl = UIRefreshControl()
     
     // MARK: View Life Cycle
     
@@ -61,19 +63,22 @@ class PlaceListViewController: UIViewController {
         tableView.estimatedRowHeight = 120
         tableView.dataSource = tableViewDataSource
         tableView.delegate = self
+        
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(loadPlaces), forControlEvents: .ValueChanged)
     }
     
-    private func loadPlaces() {
+    func loadPlaces() {
         showLoadingHud()
         
         placeDirector.allPlaces({ [weak self] places in
             self?.placeDirector.savePlaces(places)
-            self?.hideLoadingHud()
+            self?.didStopLoading()
             self?.tableViewDataSource.places = places.sort { $0.name < $1.name }
             self?.tableView.reloadData()
         }) { [weak self] error in
             guard error == nil else {
-                self?.hideLoadingHud()
+                self?.didStopLoading()
                 self?.presentAlertWithTitle("Error", message: error!.localizedDescription)
                 return
             }
@@ -91,8 +96,9 @@ extension PlaceListViewController {
         progressHud.labelText = "Loading"
     }
     
-    private func hideLoadingHud() {
+    private func didStopLoading() {
         MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        refreshControl.endRefreshing()
     }
     
 }
