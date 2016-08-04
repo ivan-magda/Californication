@@ -189,7 +189,7 @@ extension Place {
         
         self.init(
             placeID: gmPlace.placeID,
-            name: gmPlace.name,
+            name: fPlace.name,
             summary: fPlace.summary,
             detailDescription: fPlace.detailDescription,
             phoneNumber: gmPlace.phoneNumber,
