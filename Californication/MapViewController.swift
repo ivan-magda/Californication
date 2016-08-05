@@ -71,8 +71,7 @@ class MapViewController: UIViewController {
     
     private func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            mapView.settings.myLocationButton = true
-            mapView.myLocationEnabled = true
+            setAuthorizedWhenInUseState()
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
@@ -99,10 +98,26 @@ class MapViewController: UIViewController {
 
 extension MapViewController: CLLocationManagerDelegate {
     
+    // MARK: CLLocationManagerDelegate
+    
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {
-            mapView.myLocationEnabled = true
+            setAuthorizedWhenInUseState()
+        } else {
+            setUserNotAuthorizedState()
         }
+    }
+    
+    // MARK: Helpers
+    
+    private func setAuthorizedWhenInUseState() {
+        mapView.myLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+    
+    private func setUserNotAuthorizedState() {
+        mapView.myLocationEnabled = false
+        mapView.settings.myLocationButton = false
     }
     
 }
