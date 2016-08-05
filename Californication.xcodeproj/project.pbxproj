@@ -19,6 +19,7 @@
 		754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */; };
 		754CE1881D3C69D0008CFE62 /* CalifornicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1871D3C69D0008CFE62 /* CalifornicationTests.swift */; };
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
+		75570C8A1D5474C6001DC58C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75570C891D5474C6001DC58C /* MapViewController.swift */; };
 		7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */; };
 		756DB0EC1D4480AF00549027 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DB0EB1D4480AF00549027 /* ImageCache.swift */; };
 		75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */; };
@@ -77,6 +78,7 @@
 		754CE18E1D3C69D0008CFE62 /* CalifornicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalifornicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalifornicationUITests.swift; sourceTree = "<group>"; };
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75570C891D5474C6001DC58C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
 		756DB0EB1D4480AF00549027 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirectorProtocols.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
 				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
 				750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */,
+				75570C891D5474C6001DC58C /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				75F6D8551D3DA620000D2932 /* GoogleMapsDirector.swift in Sources */,
 				7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */,
 				75F6D8511D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift in Sources */,
+				75570C8A1D5474C6001DC58C /* MapViewController.swift in Sources */,
 				756DB0EC1D4480AF00549027 /* ImageCache.swift in Sources */,
 				75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */,
 				75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */,

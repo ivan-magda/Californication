@@ -29,6 +29,7 @@ class PlaceDetailsViewController: UIViewController {
     
     // MARK: Outlets
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var placeTitleLabel: UILabel!
     @IBOutlet weak var placeTypesLabel: UILabel!
@@ -39,7 +40,7 @@ class PlaceDetailsViewController: UIViewController {
     @IBOutlet weak var placeWebsiteLabel: UILabel!
     @IBOutlet weak var placeRatingView: HCSStarRatingView!
     @IBOutlet weak var placePriceLevelLabel: UILabel!
-    
+    @IBOutlet weak var closeButton: UIButton!
     
     // MARK: Instance Variables
     
@@ -54,6 +55,10 @@ class PlaceDetailsViewController: UIViewController {
         configureUI()
     }
     
+    @IBAction func closeDidPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
 
 // MARK: - PlaceDetailsViewController (UI Functions)  -
@@ -61,7 +66,13 @@ class PlaceDetailsViewController: UIViewController {
 extension PlaceDetailsViewController {
     
     private func configureUI() {
-        title = place.name
+        if let _ = navigationController {
+            closeButton.enabled = false
+            closeButton.hidden = true
+        } else {
+            closeButton.enabled = true
+            closeButton.hidden = false
+        }
         
         placeTitleLabel.text = place.name
         placeTypesLabel.text = "Types: \(place.types.joinWithSeparator(", "))"
