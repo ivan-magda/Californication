@@ -15,7 +15,7 @@ Discover only the best points of the interests in the California. View detail in
 - Obtain an Google API Key with selected Google Maps and Places SDK for iOS.
 - In `Constants.swift`, change the properties with your own instances.
 - Build & run, enjoy.
-- 
+
 ## Author
 I'm [Ivan Magda](https://www.facebook.com/ivan.magda).
 Email: [imagda15@gmail.com](mailto:imagda15@gmail.com).
