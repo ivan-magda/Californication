@@ -69,6 +69,11 @@ class PlaceListViewController: UIViewController {
         setup()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
     // MARK: Actions
     
     @IBAction func sortDidPressed(sender: AnyObject) {

@@ -51,6 +51,11 @@ class MapViewController: UIViewController {
         configureMapView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().statusBarStyle = .Default
+    }
+    
     // MARK: Private
     
     private func configureMapView() {
@@ -81,8 +86,8 @@ class MapViewController: UIViewController {
             locationMarker.userData = ["id": place.placeID]
             locationMarker.title = place.name
             locationMarker.appearAnimation = kGMSMarkerAnimationPop
-            locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-            locationMarker.opacity = 0.75
+            locationMarker.icon = GMSMarker.markerImageWithColor(.redColor())
+            locationMarker.opacity = 0.95
             locationMarker.flat = true
             locationMarker.snippet = place.summary
         }
