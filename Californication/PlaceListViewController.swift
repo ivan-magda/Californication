@@ -23,9 +23,13 @@
 import UIKit
 import MBProgressHUD
 
+// MARK: Constants
+
+private let kSortingTypeIdentifier = "sortingType"
+
 // MARK: Types
 
-private enum SortingType {
+private enum SortingType: Int {
     case Name, Rating
 }
 
@@ -43,7 +47,18 @@ class PlaceListViewController: UIViewController {
     var didSelect: (Place) -> () = { _ in }
     var placeDirector: PlaceDirectorFacade!
     
-    private var sortingType = SortingType.Name
+    private var sortingType: SortingType {
+        get {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let value = defaults.integerForKey(kSortingTypeIdentifier)
+            return SortingType(rawValue: value) ?? .Name
+        }
+        
+        set {
+            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: kSortingTypeIdentifier)
+        }
+    }
+    
     private let tableViewDataSource = PlaceListTableViewDataSource()
     private let refreshControl = UIRefreshControl()
     
