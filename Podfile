@@ -6,7 +6,7 @@ inhibit_all_warnings!
 target 'Californication' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'GoogleMaps'
+  pod 'GoogleMaps’, '1.13.2'
   pod 'MBProgressHUD'
   pod 'HCSStarRatingView'
   pod 'AlamofireImage'

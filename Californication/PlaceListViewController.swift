@@ -159,13 +159,13 @@ extension PlaceListViewController {
     
     private func startLoading() {
         let progressHud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        progressHud.labelText = "Loading"
+        progressHud.label.text = "Loading"
         
         sortingButton.enabled = false
     }
     
     private func didStopLoading() {
-        MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        MBProgressHUD.hideHUDForView(view, animated: true)
         refreshControl.endRefreshing()
         
         sortingButton.enabled = true
