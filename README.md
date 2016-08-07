@@ -7,7 +7,7 @@
 width="600" height="600" hspace="100">
 
 ## Description
-Discover only the best points of the interests in the California. View detail information aboout the place and also see it's location on the map.
+Discover only the best points of interest in the California. View detail information about the place and also see it's location on the map.
 
 ## Installation
 - Run `pod install` on project directory([CocoaPods Installation](https://guides.cocoapods.org/using/getting-started.html)).
