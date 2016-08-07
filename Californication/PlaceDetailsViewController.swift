@@ -90,7 +90,7 @@ extension PlaceDetailsViewController {
             ? "Website: \(place.website!.host!)"
             : nil)
         placePriceLevelLabel.text = (place.priceLevel.title() != nil
-            ? "Price level: \(place.priceLevel.title())"
+            ? "Price level: \(place.priceLevel.title()!)"
             : nil)
         
         ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in

@@ -51,7 +51,7 @@ class PlaceListViewController: UIViewController {
         get {
             let defaults = NSUserDefaults.standardUserDefaults()
             let value = defaults.integerForKey(kSortingTypeIdentifier)
-            return SortingType(rawValue: value) ?? .Name
+            return SortingType(rawValue: value) ?? .Rating
         }
         
         set {
@@ -78,8 +78,9 @@ class PlaceListViewController: UIViewController {
     
     @IBAction func sortDidPressed(sender: AnyObject) {
         func didSelectSortingType(type: SortingType) {
+            guard type != sortingType else { return }
             sortingType = type
-            updateData()
+            reloadData()
         }
         
         let actionController = UIAlertController(title: "Sorting", message: nil, preferredStyle: .ActionSheet)
@@ -94,31 +95,13 @@ class PlaceListViewController: UIViewController {
         presentViewController(actionController, animated: true, completion: nil)
     }
     
-    // MARK: Public
-    
-    func loadPlaces() {
-        startLoading()
-        
-        placeDirector.allPlaces({ [weak self] places in
-            self?.didStopLoading()
-            self?.placeDirector.savePlaces(places)
-            self?.updateData(places)
-        }) { [weak self] error in
-            guard error == nil else {
-                self?.didStopLoading()
-                self?.presentAlertWithTitle("Error", message: error!.localizedDescription)
-                return
-            }
-        }
-    }
-    
-    // MARK: Private
+    // MARK: Configure
     
     private func setup() {
         configureTableView()
         
         if let places = placeDirector.persistedPlaces() {
-            updateData(places)
+            updateWithNewData(places)
         } else {
             loadPlaces()
         }
@@ -134,21 +117,54 @@ class PlaceListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(loadPlaces), forControlEvents: .ValueChanged)
     }
     
-    private func updateData(places: [Place]? = nil) {
-        if let places = places {
-            tableViewDataSource.places = places
-        }
+    private func updateWithNewData(places: [Place]) {
+        tableViewDataSource.places = places
+        reloadData()
+    }
+    
+    // MARK: Data
+    
+    func loadPlaces() {
+        startLoading()
         
-        switch sortingType {
-        case .Name:
-            tableViewDataSource.places = tableViewDataSource.places?.sort { $0.name < $1.name }
-        case .Rating:
-            tableViewDataSource.places = tableViewDataSource.places?.sort { $0.rating > $1.rating }
+        placeDirector.allPlaces({ [weak self] places in
+            self?.didStopLoading()
+            self?.placeDirector.savePlaces(places)
+            self?.updateWithNewData(places)
+        }) { [weak self] error in
+            guard error == nil else {
+                self?.didStopLoading()
+                self?.presentAlertWithTitle("Error", message: error!.localizedDescription)
+                return
+            }
         }
+    }
+    
+    private func reloadData() {
+        sortPlaces()
         
         let numberOfSection = tableViewDataSource.numberOfSectionsInTableView(tableView)
         let range = NSRange(location: 0, length: numberOfSection)
         tableView.reloadSections(NSIndexSet(indexesInRange: range), withRowAnimation: .Automatic)
+    }
+    
+    private func sortPlaces() {
+        func sortByName() -> [Place] {
+            return tableViewDataSource.places!.sort { $0.name < $1.name }
+        }
+        
+        func sortByRating() -> [Place] {
+            return sortByName().sort { $0.rating > $1.rating }
+        }
+        
+        guard let _ = tableViewDataSource.places else { return }
+        
+        switch sortingType {
+        case .Name:
+            tableViewDataSource.places = sortByName()
+        case .Rating:
+            tableViewDataSource.places = sortByRating()
+        }
     }
     
 }
