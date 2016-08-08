@@ -102,8 +102,6 @@ class PlaceListViewController: UIViewController {
         
         if let places = placeDirector.persistedPlaces() {
             updateWithNewData(places)
-        } else {
-            loadPlaces()
         }
     }
     
@@ -115,11 +113,6 @@ class PlaceListViewController: UIViewController {
         
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(loadPlaces), forControlEvents: .ValueChanged)
-    }
-    
-    private func updateWithNewData(places: [Place]) {
-        tableViewDataSource.places = places
-        reloadData()
     }
     
     // MARK: Data
@@ -140,12 +133,14 @@ class PlaceListViewController: UIViewController {
         }
     }
     
+    private func updateWithNewData(places: [Place]) {
+        tableViewDataSource.places = places
+        reloadData()
+    }
+    
     private func reloadData() {
         sortPlaces()
-        
-        let numberOfSection = tableViewDataSource.numberOfSectionsInTableView(tableView)
-        let range = NSRange(location: 0, length: numberOfSection)
-        tableView.reloadSections(NSIndexSet(indexesInRange: range), withRowAnimation: .Automatic)
+        tableView.reloadData()
     }
     
     private func sortPlaces() {

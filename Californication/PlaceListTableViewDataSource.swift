@@ -30,11 +30,21 @@ private enum PlaceListIdentifiers: String {
     case placeCell = "PlaceCell"
 }
 
+private enum DataSourceState {
+    case Empty, Default
+}
+
 // MARK: - PlaceListTableViewDataSource: NSObject
 
 final class PlaceListTableViewDataSource: NSObject {
  
+    // MARK: Properties
+    
     var places: [Place]?
+    
+    private var dataSourceState = DataSourceState.Default
+    
+    // MARK: Public Methods
     
     func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
         return places?[indexPath.row]
@@ -49,7 +59,12 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
     // MARK: UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        let isEmpty = (places == nil)
+        
+        dataSourceState = isEmpty ? .Empty : .Default
+        configureTableView(tableView)
+        
+        return isEmpty ? 0 : 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,6 +78,25 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
     }
     
     // MARK: Helpers
+    
+    private func configureTableView(tableView: UITableView) {
+        switch dataSourceState {
+        case .Default:
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .SingleLine
+        case .Empty:
+            let messageLabel = UILabel(frame: CGRect(origin: CGPointZero, size: tableView.bounds.size))
+            messageLabel.text = "No data is currently available. Please pull down to refresh."
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .Center
+            messageLabel.font = UIFont.boldSystemFontOfSize(28)
+            messageLabel.textColor = .lightGrayColor()
+            messageLabel.sizeToFit()
+            
+            tableView.backgroundView = messageLabel
+            tableView.separatorStyle = .None
+        }
+    }
     
     private func configureCell(cell: PlaceTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let place = placeForIndexPath(indexPath)!
