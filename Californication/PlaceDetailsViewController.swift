@@ -21,82 +21,72 @@
  */
 
 import UIKit
-import HCSStarRatingView
 
-// MARK: PlaceDetailsViewController: UIViewController
+// MARK: Constants
+
+private let kTableHeaderHeight: CGFloat = 300.0
+
+// MARK: - PlaceDetailsViewController: UIViewController -
 
 class PlaceDetailsViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: Properties
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var placeImageView: UIImageView!
-    @IBOutlet weak var placeTitleLabel: UILabel!
-    @IBOutlet weak var placeTypesLabel: UILabel!
-    @IBOutlet weak var placeSummaryLabel: UILabel!
-    @IBOutlet weak var placeDescriptionLabel: UILabel!
-    @IBOutlet weak var placeAddressLabel: UILabel!
-    @IBOutlet weak var placePhoneNumberLabel: UILabel!
-    @IBOutlet weak var placeWebsiteLabel: UILabel!
-    @IBOutlet weak var placeRatingView: HCSStarRatingView!
-    @IBOutlet weak var placePriceLevelLabel: UILabel!
-    @IBOutlet weak var closeButton: UIButton!
-    
-    // MARK: Instance Variables
+    @IBOutlet weak var tableView: UITableView!
+    private var headerView: PlaceImageHeaderView!
     
     var place: Place!
-    
+    private var tableViewDataSource: PlaceDetailsTableViewDataSource!
+
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assert(place != nil, "Place must exist!")
-        
+        assert(place != nil)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        configureTableView()
         configureUI()
     }
     
-    @IBAction func closeDidPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    private func configureTableView() {
+        tableViewDataSource = PlaceDetailsTableViewDataSource(place: place)
+        tableView.dataSource = tableViewDataSource
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
+        
+        headerView = tableView.tableHeaderView as! PlaceImageHeaderView
+        headerView.headerHeight = kTableHeaderHeight
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        
+        (tableView as UIScrollView).delegate = self
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        headerView.layoutSubviewsWithContentOffset(tableView.contentOffset)
+    }
+    
+    private func configureUI() {
+        headerView.activityIndicator.startAnimating()
+        ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
+            self?.headerView.activityIndicator.stopAnimating()
+            guard error == nil else { return print("Failed to load image: \(error!.localizedDescription)") }
+            self?.headerView.imageView.image = image
+        }
     }
     
 }
 
-// MARK: - PlaceDetailsViewController (UI Functions)  -
+// MARK: - PlaceDetailsViewController: UIScrollViewDelegate -
 
-extension PlaceDetailsViewController {
+extension PlaceDetailsViewController: UIScrollViewDelegate {
     
-    private func configureUI() {
-        if let _ = navigationController {
-            closeButton.enabled = false
-            closeButton.hidden = true
-        } else {
-            closeButton.enabled = true
-            closeButton.hidden = false
-        }
-        
-        placeTitleLabel.text = place.name
-        placeTypesLabel.text = "Types: \(place.types.joinWithSeparator(", "))"
-        placeSummaryLabel.text = "Summary: \(place.summary)"
-        placeDescriptionLabel.text = "Description: \(place.detailDescription)"
-        placeRatingView.value = CGFloat(place.rating)
-        
-        placeAddressLabel.text = (place.formattedAddress != nil
-            ? "Address: \(place.formattedAddress!)"
-            : nil)
-        placePhoneNumberLabel.text = (place.phoneNumber != nil
-            ? "Phone number: \(place.phoneNumber!)"
-            : nil)
-        placeWebsiteLabel.text = (place.website != nil
-            ? "Website: \(place.website!.host!)"
-            : nil)
-        placePriceLevelLabel.text = (place.priceLevel.title() != nil
-            ? "Price level: \(place.priceLevel.title()!)"
-            : nil)
-        
-        ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
-            guard error == nil else { return print("Failed to load image: \(error!.localizedDescription)") }
-            self?.placeImageView.image = image
-        }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        headerView.layoutSubviewsWithContentOffset(scrollView.contentOffset)
     }
     
 }

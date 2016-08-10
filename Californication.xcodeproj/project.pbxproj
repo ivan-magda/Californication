@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
-		750F08DC1D4D00D2007B44BC /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */; };
 		7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511026A1D3F003D000385A3 /* PlaceImage.swift */; };
 		7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */; };
 		7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */; };
@@ -21,7 +20,9 @@
 		754CE1931D3C69D0008CFE62 /* CalifornicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1921D3C69D0008CFE62 /* CalifornicationUITests.swift */; };
 		75570C8A1D5474C6001DC58C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75570C891D5474C6001DC58C /* MapViewController.swift */; };
 		7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */; };
+		756955B81D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756955B71D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift */; };
 		756DB0EC1D4480AF00549027 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DB0EB1D4480AF00549027 /* ImageCache.swift */; };
+		759CB7751D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */; };
 		75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */; };
 		75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36F1D3C784200ECCD4F /* FPlace.swift */; };
 		75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */; };
@@ -31,6 +32,10 @@
 		75D4C37D1D3C851900ECCD4F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37C1D3C851900ECCD4F /* App.swift */; };
 		75D4C37F1D3C8BFB00ECCD4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37E1D3C8BFB00ECCD4F /* Constants.swift */; };
 		75D4C3811D3C8CCE00ECCD4F /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3801D3C8CCE00ECCD4F /* AppConfigurator.swift */; };
+		75E2D6D71D599E5800A9CFFF /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D6D61D599E5800A9CFFF /* PlaceDetailsViewController.swift */; };
+		75E2D6D91D59A34900A9CFFF /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D6D81D59A34900A9CFFF /* TitleTableViewCell.swift */; };
+		75E2D6DB1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */; };
+		75E2D6DD1D59A38200A9CFFF /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */; };
 		75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D84E1D3D9A04000D2932 /* Place.swift */; };
 		75F6D8511D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8501D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift */; };
 		75F6D8531D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8521D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift */; };
@@ -61,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
-		750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		7511026A1D3F003D000385A3 /* PlaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImage.swift; sourceTree = "<group>"; };
 		7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
@@ -80,7 +84,9 @@
 		754CE1941D3C69D0008CFE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75570C891D5474C6001DC58C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
+		756955B71D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsTableViewDataSource.swift; sourceTree = "<group>"; };
 		756DB0EB1D4480AF00549027 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImageHeaderView.swift; sourceTree = "<group>"; };
 		75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirectorProtocols.swift; sourceTree = "<group>"; };
 		75D4C36F1D3C784200ECCD4F /* FPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlace.swift; sourceTree = "<group>"; };
 		75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFirebaseManager.swift; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 		75D4C37C1D3C851900ECCD4F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		75D4C37E1D3C8BFB00ECCD4F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		75D4C3801D3C8CCE00ECCD4F /* AppConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
+		75E2D6D61D599E5800A9CFFF /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		75E2D6D81D59A34900A9CFFF /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
+		75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 		75F6D84E1D3D9A04000D2932 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		75F6D8501D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirectorProtocols.swift; sourceTree = "<group>"; };
 		75F6D8521D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedGoogleMapsNetworkManager.swift; sourceTree = "<group>"; };
@@ -220,6 +230,24 @@
 			path = CalifornicationUITests;
 			sourceTree = "<group>";
 		};
+		756955B91D5AF84B0025B0D2 /* PlaceList */ = {
+			isa = PBXGroup;
+			children = (
+				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
+				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
+			);
+			name = PlaceList;
+			sourceTree = "<group>";
+		};
+		756955BA1D5AF85E0025B0D2 /* PlaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				75E2D6D61D599E5800A9CFFF /* PlaceDetailsViewController.swift */,
+				756955B71D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift */,
+			);
+			name = PlaceDetails;
+			sourceTree = "<group>";
+		};
 		75D4C3661D3C6C8500ECCD4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,9 +271,8 @@
 		75D4C3681D3C6CA500ECCD4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
-				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
-				750F08DB1D4D00D2007B44BC /* PlaceDetailsViewController.swift */,
+				756955B91D5AF84B0025B0D2 /* PlaceList */,
+				756955BA1D5AF85E0025B0D2 /* PlaceDetails */,
 				75570C891D5474C6001DC58C /* MapViewController.swift */,
 			);
 			name = Controllers;
@@ -265,6 +292,10 @@
 				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
 				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
 				75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */,
+				75E2D6D81D59A34900A9CFFF /* TitleTableViewCell.swift */,
+				75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */,
+				75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */,
+				759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -511,11 +542,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E2D6D91D59A34900A9CFFF /* TitleTableViewCell.swift in Sources */,
+				756955B81D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift in Sources */,
 				75D4C3811D3C8CCE00ECCD4F /* AppConfigurator.swift in Sources */,
-				750F08DC1D4D00D2007B44BC /* PlaceDetailsViewController.swift in Sources */,
+				75E2D6DD1D59A38200A9CFFF /* RatingTableViewCell.swift in Sources */,
+				75E2D6D71D599E5800A9CFFF /* PlaceDetailsViewController.swift in Sources */,
 				75D4C37D1D3C851900ECCD4F /* App.swift in Sources */,
 				75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */,
 				7564CD251D3DF0E50066EE42 /* UIViewController+PresentAlert.swift in Sources */,
+				759CB7751D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift in Sources */,
 				75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */,
 				75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */,
 				75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */,
@@ -527,6 +562,7 @@
 				75F6D8531D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift in Sources */,
 				75D4C37F1D3C8BFB00ECCD4F /* Constants.swift in Sources */,
 				75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */,
+				75E2D6DB1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift in Sources */,
 				75F6D8551D3DA620000D2932 /* GoogleMapsDirector.swift in Sources */,
 				7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */,
 				75F6D8511D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift in Sources */,
