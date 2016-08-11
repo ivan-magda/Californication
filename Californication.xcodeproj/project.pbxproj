@@ -248,6 +248,17 @@
 			name = PlaceDetails;
 			sourceTree = "<group>";
 		};
+		756955BB1D5B04F00025B0D2 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */,
+				75E2D6D81D59A34900A9CFFF /* TitleTableViewCell.swift */,
+				75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */,
+				75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */,
+			);
+			name = UITableViewCell;
+			sourceTree = "<group>";
+		};
 		75D4C3661D3C6C8500ECCD4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,11 +302,8 @@
 			children = (
 				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
 				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
-				75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */,
-				75E2D6D81D59A34900A9CFFF /* TitleTableViewCell.swift */,
-				75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */,
-				75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */,
 				759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */,
+				756955BB1D5B04F00025B0D2 /* UITableViewCell */,
 			);
 			name = View;
 			sourceTree = "<group>";

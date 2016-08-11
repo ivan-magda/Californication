@@ -22,6 +22,10 @@
 
 import UIKit
 
+protocol PlaceImageHeaderViewDelegate {
+    func placeImageHeaderViewCloseDidPressed(view: PlaceImageHeaderView)
+}
+
 // MARK: PlaceImageHeaderView: UIView
 
 class PlaceImageHeaderView: UIView {
@@ -30,6 +34,9 @@ class PlaceImageHeaderView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var closeButton: UIButton!
+    
+    var delegate: PlaceImageHeaderViewDelegate?
     
     // MARK: Properties
     
@@ -45,6 +52,10 @@ class PlaceImageHeaderView: UIView {
         }
         
         frame = headerRect
+    }
+    
+    @IBAction func closeButtonDidPressed(sender: AnyObject) {
+        delegate?.placeImageHeaderViewCloseDidPressed(self)
     }
 
 }

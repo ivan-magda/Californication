@@ -201,18 +201,28 @@
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0xE-Sf-2el">
                                             <rect key="frame" x="150" y="140" width="20" height="20"/>
                                         </activityIndicatorView>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsc-cR-dBq" userLabel="Close Button">
+                                            <rect key="frame" x="8" y="20" width="30" height="30"/>
+                                            <state key="normal" image="Close"/>
+                                            <connections>
+                                                <action selector="closeButtonDidPressed:" destination="2rD-Qf-3fh" eventType="touchUpInside" id="qQw-10-ttN"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="0xE-Sf-2el" firstAttribute="centerX" secondItem="2rD-Qf-3fh" secondAttribute="centerX" id="21M-b9-GV1"/>
                                         <constraint firstItem="AgN-Bo-DAr" firstAttribute="leading" secondItem="2rD-Qf-3fh" secondAttribute="leading" id="6aH-5D-Q6P"/>
                                         <constraint firstItem="AgN-Bo-DAr" firstAttribute="top" secondItem="2rD-Qf-3fh" secondAttribute="top" id="7cQ-hs-FFw"/>
+                                        <constraint firstItem="Wsc-cR-dBq" firstAttribute="leading" secondItem="2rD-Qf-3fh" secondAttribute="leading" constant="8" id="8b6-vF-cIE"/>
                                         <constraint firstItem="0xE-Sf-2el" firstAttribute="centerY" secondItem="2rD-Qf-3fh" secondAttribute="centerY" id="F6R-Dt-FJX"/>
                                         <constraint firstAttribute="trailing" secondItem="AgN-Bo-DAr" secondAttribute="trailing" id="Ub0-7t-CgT"/>
+                                        <constraint firstItem="Wsc-cR-dBq" firstAttribute="top" secondItem="2rD-Qf-3fh" secondAttribute="top" constant="20" symbolic="YES" id="mAp-hk-0aQ"/>
                                         <constraint firstAttribute="bottom" secondItem="AgN-Bo-DAr" secondAttribute="bottom" id="tfD-6K-Wpo"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="activityIndicator" destination="0xE-Sf-2el" id="nV0-TD-Hne"/>
+                                        <outlet property="closeButton" destination="Wsc-cR-dBq" id="X0A-u0-ThV"/>
                                         <outlet property="imageView" destination="AgN-Bo-DAr" id="IWP-CJ-7IK"/>
                                     </connections>
                                 </view>
@@ -332,9 +342,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zDs-WI-36a" secondAttribute="trailing" id="Puh-JG-veT"/>
+                            <constraint firstItem="zDs-WI-36a" firstAttribute="top" secondItem="a5M-1T-jzJ" secondAttribute="topMargin" id="U55-5x-2of"/>
                             <constraint firstAttribute="bottomMargin" secondItem="zDs-WI-36a" secondAttribute="bottom" id="bSQ-QQ-THr"/>
                             <constraint firstItem="zDs-WI-36a" firstAttribute="leading" secondItem="a5M-1T-jzJ" secondAttribute="leading" id="eU5-rG-zc9"/>
-                            <constraint firstItem="zDs-WI-36a" firstAttribute="top" secondItem="a5M-1T-jzJ" secondAttribute="top" id="lsP-6e-L7V"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -386,6 +396,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close" width="30" height="30"/>
         <image name="List" width="30" height="30"/>
         <image name="MapMarker" width="30" height="30"/>
         <image name="sorting" width="22" height="22"/>

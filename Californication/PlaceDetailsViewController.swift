@@ -61,6 +61,7 @@ class PlaceDetailsViewController: UIViewController {
         
         headerView = tableView.tableHeaderView as! PlaceImageHeaderView
         headerView.headerHeight = kTableHeaderHeight
+        headerView.delegate = self
         tableView.tableHeaderView = nil
         tableView.addSubview(headerView)
         
@@ -71,10 +72,17 @@ class PlaceDetailsViewController: UIViewController {
     }
     
     private func configureUI() {
+        let showCloseButton = navigationController == nil
+        headerView.closeButton.enabled = showCloseButton
+        headerView.closeButton.hidden = !showCloseButton
+        
         headerView.activityIndicator.startAnimating()
         ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
             self?.headerView.activityIndicator.stopAnimating()
-            guard error == nil else { return print("Failed to load image: \(error!.localizedDescription)") }
+            guard error == nil else {
+                self?.presentAlertWithTitle("Failed to load image", message: error!.localizedDescription)
+                return
+            }
             self?.headerView.imageView.image = image
         }
     }
@@ -87,6 +95,16 @@ extension PlaceDetailsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         headerView.layoutSubviewsWithContentOffset(scrollView.contentOffset)
+    }
+    
+}
+
+// MARK: - PlaceDetailsViewController: PlaceImageHeaderViewDelegate -
+
+extension PlaceDetailsViewController: PlaceImageHeaderViewDelegate {
+    
+    func placeImageHeaderViewCloseDidPressed(view: PlaceImageHeaderView) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
