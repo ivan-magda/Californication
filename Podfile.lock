@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (3.4.1)
-  - AlamofireImage (2.4.1):
-    - Alamofire (~> 3.3)
-  - AwesomeCache (3.0.1)
+  - Alamofire (4.2.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - AwesomeCache (5.0)
   - Firebase/Analytics (3.4.0):
     - FirebaseAnalytics (~> 3.3)
   - Firebase/Database (3.4.0):
@@ -34,8 +34,8 @@ PODS:
   - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
-  - AlamofireImage
-  - AwesomeCache
+  - AlamofireImage (~> 3.2)
+  - AwesomeCache (~> 5.0)
   - Firebase/Database
   - Firebase/Storage
   - GoogleMaps (= 1.13.2)
@@ -43,9 +43,9 @@ DEPENDENCIES:
   - MBProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
-  AwesomeCache: a1561c926b6cf812c5f3f4262ea22e20bf8323c1
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AwesomeCache: d8906955242173357caa0be0214d5e77dec32cc5
   Firebase: 754562547af419cc2f4b15247fee419081924bc2
   FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
@@ -59,6 +59,6 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: 1e518b8491d4a05ed240e7758df4a4f1516d53aa
+PODFILE CHECKSUM: 77847c5bb3e7e59d47fdd89fee6bfce6fe72e204
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

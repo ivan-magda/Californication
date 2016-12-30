@@ -25,45 +25,45 @@ import Foundation
 // MARK: Types
 
 private enum Key: String {
-    case thumbnail
-    case medium
-    case large
+  case thumbnail
+  case medium
+  case large
 }
 
 // MARK: PlaceImage: NSObject, NSCoding
 
 class PlaceImage: NSObject, NSCoding {
+  
+  // MARK: Properties
+  
+  let thumbnailURL: String
+  let mediumURL: String
+  let largeURL: String
+  
+  // MARK: Init
+  
+  init(thumbnail: String, medium: String, large: String) {
+    thumbnailURL = thumbnail
+    mediumURL = medium
+    largeURL = large
     
-    // MARK: Properties
+    super.init()
+  }
+  
+  // MARK: NSCoding
+  
+  func encode(with aCoder: NSCoder) {
+    aCoder.encode(thumbnailURL, forKey: Key.thumbnail.rawValue)
+    aCoder.encode(mediumURL, forKey: Key.medium.rawValue)
+    aCoder.encode(largeURL, forKey: Key.large.rawValue)
+  }
+  
+  required convenience init?(coder aDecoder: NSCoder) {
+    let thumbnail = aDecoder.decodeObject(forKey: Key.thumbnail.rawValue) as! String
+    let medium = aDecoder.decodeObject(forKey: Key.medium.rawValue) as! String
+    let large = aDecoder.decodeObject(forKey: Key.large.rawValue) as! String
     
-    let thumbnailURL: String
-    let mediumURL: String
-    let largeURL: String
-    
-    // MARK: Init
-    
-    init(thumbnail: String, medium: String, large: String) {
-        thumbnailURL = thumbnail
-        mediumURL = medium
-        largeURL = large
-        
-        super.init()
-    }
-    
-    // MARK: NSCoding
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(thumbnailURL, forKey: Key.thumbnail.rawValue)
-        aCoder.encodeObject(mediumURL, forKey: Key.medium.rawValue)
-        aCoder.encodeObject(largeURL, forKey: Key.large.rawValue)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let thumbnail = aDecoder.decodeObjectForKey(Key.thumbnail.rawValue) as! String
-        let medium = aDecoder.decodeObjectForKey(Key.medium.rawValue) as! String
-        let large = aDecoder.decodeObjectForKey(Key.large.rawValue) as! String
-        
-        self.init(thumbnail: thumbnail, medium: medium, large: large)
-    }
-    
+    self.init(thumbnail: thumbnail, medium: medium, large: large)
+  }
+  
 }

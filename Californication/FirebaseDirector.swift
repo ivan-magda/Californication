@@ -25,26 +25,26 @@ import Foundation
 // MARK: FirebaseDirector: FirebaseDirectorFacade
 
 final class FirebaseDirector: FirebaseDirectorFacade {
-    
-    // MARK: Properties
-    
-    private let builder: FirebaseBuilder
-    private let manager: FirebaseManager
-    
-    // MARK: Init
-    
-    init(builder: FirebaseBuilder, databaseManager: FirebaseManager) {
-        self.builder = builder
-        self.manager = databaseManager
+  
+  // MARK: Properties
+  
+  fileprivate let builder: FirebaseBuilder
+  fileprivate let manager: FirebaseManager
+  
+  // MARK: Init
+  
+  init(builder: FirebaseBuilder, databaseManager: FirebaseManager) {
+    self.builder = builder
+    self.manager = databaseManager
+  }
+  
+  // MARK: FPlaceDirectorFacade
+  
+  func allPlaces(_ completion: @escaping ([FPlace]) -> ()) {
+    manager.allPlaces { [unowned self] (snapshot) in
+      let places = self.builder.placesFromResponse(snapshot)
+      completion(places)
     }
-    
-    // MARK: FPlaceDirectorFacade
-    
-    func allPlaces(completion: [FPlace] -> ()) {
-        manager.allPlaces { [unowned self] (snapshot) in
-            let places = self.builder.placesFromResponse(snapshot)
-            completion(places)
-        }
-    }
-    
+  }
+  
 }

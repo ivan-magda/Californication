@@ -26,28 +26,28 @@ import FirebaseDatabase
 // MARK: CannedFirebaseBuilder: FirebaseBuilder
 
 class CannedFirebaseBuilder: FirebaseBuilder {
+  
+  // MARK: FirebaseBuilder
+  
+  func placesFromResponse(_ response: FIRDataSnapshot) -> [FPlace] {
+    return response.children.flatMap { self.placeFromSnapshot($0 as! FIRDataSnapshot) }
+  }
+  
+  // MARK: Helpers
+  
+  fileprivate func placeFromSnapshot(_ snapshot: FIRDataSnapshot) -> FPlace? {
+    let dictionary = snapshot.value as! [String: AnyObject]
     
-    // MARK: FirebaseBuilder
+    guard let placeID = dictionary[FPlace.Key.placeId.rawValue] as? String,
+      let name = dictionary[FPlace.Key.name.rawValue] as? String,
+      let summary = dictionary[FPlace.Key.summary.rawValue] as? String,
+      let description = dictionary[FPlace.Key.detailDescription.rawValue] as? String,
+      let images = dictionary[FPlace.Key.images.rawValue] as? [String: String],
+      let thumbnail = images[FPlace.Key.thumbnail.rawValue],
+      let medium = images[FPlace.Key.medium.rawValue],
+      let large = images[FPlace.Key.large.rawValue] else { return nil }
     
-    func placesFromResponse(response: FIRDataSnapshot) -> [FPlace] {
-        return response.children.flatMap { self.placeFromSnapshot($0 as! FIRDataSnapshot) }
-    }
-    
-    // MARK: Helpers
-    
-    private func placeFromSnapshot(snapshot: FIRDataSnapshot) -> FPlace? {
-        let dictionary = snapshot.value as! [String: AnyObject]
-        
-        guard let placeID = dictionary[FPlace.Key.placeId.rawValue] as? String,
-            name = dictionary[FPlace.Key.name.rawValue] as? String,
-            summary = dictionary[FPlace.Key.summary.rawValue] as? String,
-            description = dictionary[FPlace.Key.detailDescription.rawValue] as? String,
-            images = dictionary[FPlace.Key.images.rawValue] as? [String: String],
-            thumbnail = images[FPlace.Key.thumbnail.rawValue],
-            medium = images[FPlace.Key.medium.rawValue],
-            large = images[FPlace.Key.large.rawValue] else { return nil }
-        
-        return FPlace(googlePlaceID: placeID, name: name, summary: summary, detailDescription: description, thumbnailURL: thumbnail, mediumURL: medium, largeURL: large)
-    }
-    
+    return FPlace(googlePlaceID: placeID, name: name, summary: summary, detailDescription: description, thumbnailURL: thumbnail, mediumURL: medium, largeURL: large)
+  }
+  
 }

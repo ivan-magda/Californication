@@ -26,7 +26,7 @@ import AlamofireImage
 
 // MARK: Typealiases
 
-typealias ImageDownloadManagerCompletionHandler = (image: UIImage?, error: NSError?) -> Void
+typealias ImageDownloadManagerCompletionHandler = (_ image: UIImage?, _ error: NSError?) -> Void
 
 // MARK: Constants
 
@@ -35,35 +35,35 @@ private let kPlaceImagesCacheName = "place-images"
 // MARK: - ImageDownloadManager
 
 final class ImageDownloadManager {
-    
-    // MARK: Properties
-    
-    static let sharedInstance = ImageDownloadManager()
-    let imageCache: ImageCache?
-    
-    // MARK: Init
-    
-    private init() {
-        imageCache = ImageCache(name: kPlaceImagesCacheName)
-    }
-    
-    // MARK: Methods
-    
-    func imageForURL(URL: String, completion: ImageDownloadManagerCompletionHandler) {
-        if let cachedImage = imageCache?.lookUpImageInCacheWithIdentifier(URL) {
-            completion(image: cachedImage, error: nil)
-        } else {
-            Alamofire.request(.GET, URL).responseImage { [unowned self] response in
-                let result = response.result
-                guard let image = result.value else {
-                    completion(image: nil, error: result.error)
-                    return
-                }
-                
-                self.imageCache?.cacheImage(image, withIdentifier: URL)
-                completion(image: image, error: nil)
-            }
+  
+  // MARK: Properties
+  
+  static let sharedInstance = ImageDownloadManager()
+  let imageCache: ImageCache?
+  
+  // MARK: Init
+  
+  fileprivate init() {
+    imageCache = ImageCache(name: kPlaceImagesCacheName)
+  }
+  
+  // MARK: Methods
+  
+  func imageForURL(_ URL: String, completion: @escaping ImageDownloadManagerCompletionHandler) {
+    if let cachedImage = imageCache?.lookUpImageInCacheWithIdentifier(URL) {
+      completion(cachedImage, nil)
+    } else {
+      Alamofire.request(URL).responseImage { [unowned self] response in
+        let result = response.result
+        guard let image = result.value else {
+          completion(nil, result.error as NSError?)
+          return
         }
+        
+        self.imageCache?.cacheImage(image, withIdentifier: URL)
+        completion(image, nil)
+      }
     }
-    
+  }
+  
 }

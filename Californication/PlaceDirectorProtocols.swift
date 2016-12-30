@@ -22,21 +22,22 @@
 
 import Foundation
 
-typealias PlaceDirectorSuccessBlock = (places: [Place]) -> Void
-typealias PlaceDirectorFailureBlock = (error: NSError?) -> Void
+typealias PlaceDirectorSuccessBlock = (_ places: [Place]) -> Void
+typealias PlaceDirectorFailureBlock = (_ error: Error?) -> Void
 
 protocol PlaceDirectors {
-    var firebaseDirector: FirebaseDirector { get }
-    var googleMapsDirector: GoogleMapsDirector { get }
+  var firebaseDirector: FirebaseDirector { get }
+  var googleMapsDirector: GoogleMapsDirector { get }
 }
 
 protocol PlaceCacheManager {
-    func save(places: [Place])
-    func unarchived() -> [Place]?
+  func save(_ places: [Place])
+  func unarchived() -> [Place]?
 }
 
 protocol PlaceDirectorFacade: PlaceDirectors {
-    func allPlaces(success: PlaceDirectorSuccessBlock, failure: PlaceDirectorFailureBlock)
-    func savePlaces(places: [Place])
-    func persistedPlaces() -> [Place]?
+  func allPlaces(_ success: @escaping PlaceDirectorSuccessBlock,
+                 failure: @escaping PlaceDirectorFailureBlock)
+  func savePlaces(_ places: [Place])
+  func persistedPlaces() -> [Place]?
 }

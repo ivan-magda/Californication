@@ -23,7 +23,7 @@
 import UIKit
 
 protocol PlaceImageHeaderViewDelegate {
-    func placeImageHeaderViewCloseDidPressed(view: PlaceImageHeaderView)
+    func placeImageHeaderViewCloseDidPressed(_ view: PlaceImageHeaderView)
 }
 
 // MARK: PlaceImageHeaderView: UIView
@@ -44,7 +44,7 @@ class PlaceImageHeaderView: UIView {
     
     // MARK: Public
     
-    func layoutSubviewsWithContentOffset(offset: CGPoint) {
+    func layoutSubviewsWithContentOffset(_ offset: CGPoint) {
         var headerRect = CGRect(x: 0, y: -headerHeight, width: bounds.width, height: headerHeight)
         if offset.y < -headerHeight {
             headerRect.origin.y = offset.y
@@ -54,7 +54,7 @@ class PlaceImageHeaderView: UIView {
         frame = headerRect
     }
     
-    @IBAction func closeButtonDidPressed(sender: AnyObject) {
+    @IBAction func closeButtonDidPressed(_ sender: AnyObject) {
         delegate?.placeImageHeaderViewCloseDidPressed(self)
     }
 

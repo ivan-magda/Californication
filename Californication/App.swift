@@ -25,56 +25,56 @@ import UIKit
 // MARK: App
 
 class App {
+  
+  // MARK: Properties
+  
+  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+  let tabBarController: UITabBarController
+  let placeListViewController: PlaceListViewController
+  let mapViewController: MapViewController
+  
+  let placeDirector: PlaceDirector
+  
+  // MARK: Init
+  
+  init(window: UIWindow) {
+    let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
+                                     databaseManager: CannedFirebaseManager())
+    let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
+    placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector,
+                                  cacheManager: CannedPlaceCacheManager())
     
-    // MARK: Properties
+    tabBarController = window.rootViewController as! UITabBarController
     
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let tabBarController: UITabBarController
-    let placeListViewController: PlaceListViewController
-    let mapViewController: MapViewController
+    mapViewController = tabBarController.viewControllers![1] as! MapViewController
+    mapViewController.placeDirector = placeDirector
     
-    let placeDirector: PlaceDirector
+    let navigationController = tabBarController.viewControllers![0] as! UINavigationController
+    placeListViewController = navigationController.topViewController as! PlaceListViewController
+    placeListViewController.placeDirector = placeDirector
     
-    // MARK: Init
+    placeListViewController.didSelect = pushPlace
+    mapViewController.didSelect = presentPlace
+  }
+  
+  // MARK: Navigation
+  
+  func pushPlace(_ place: Place) {
+    let detailVC = placeDetailsViewControllerWithPlace(place)
+    detailVC.title = "Detail"
+    placeListViewController.navigationController?.pushViewController(detailVC, animated: true)
+  }
+  
+  func presentPlace(_ place: Place) {
+    let detailVC = placeDetailsViewControllerWithPlace(place)
+    tabBarController.present(detailVC, animated: true, completion: nil)
+  }
+  
+  fileprivate func placeDetailsViewControllerWithPlace(_ place: Place) -> PlaceDetailsViewController {
+    let controller = storyboard.instantiateViewController(withIdentifier: "PlaceDetails") as! PlaceDetailsViewController
+    controller.place = place
     
-    init(window: UIWindow) {
-        let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
-                                         databaseManager: CannedFirebaseManager())
-        let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
-        placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector,
-                                      cacheManager: CannedPlaceCacheManager())
-        
-        tabBarController = window.rootViewController as! UITabBarController
-        
-        mapViewController = tabBarController.viewControllers![1] as! MapViewController
-        mapViewController.placeDirector = placeDirector
-        
-        let navigationController = tabBarController.viewControllers![0] as! UINavigationController
-        placeListViewController = navigationController.topViewController as! PlaceListViewController
-        placeListViewController.placeDirector = placeDirector
-        
-        placeListViewController.didSelect = pushPlace
-        mapViewController.didSelect = presentPlace
-    }
-    
-    // MARK: Navigation
-    
-    func pushPlace(place: Place) {
-        let detailVC = placeDetailsViewControllerWithPlace(place)
-        detailVC.title = "Detail"
-        placeListViewController.navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    func presentPlace(place: Place) {
-        let detailVC = placeDetailsViewControllerWithPlace(place)
-        tabBarController.presentViewController(detailVC, animated: true, completion: nil)
-    }
-    
-    private func placeDetailsViewControllerWithPlace(place: Place) -> PlaceDetailsViewController {
-        let controller = storyboard.instantiateViewControllerWithIdentifier("PlaceDetails") as! PlaceDetailsViewController
-        controller.place = place
-        
-        return controller
-    }
-    
+    return controller
+  }
+  
 }

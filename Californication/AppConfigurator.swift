@@ -27,19 +27,19 @@ import GoogleMaps
 // MARK: AppConfigurator
 
 class AppConfigurator {
+  
+  // MARK: Init
+  
+  fileprivate init() {
+  }
+  
+  // MARK: Methods
+  
+  class func configurate() {
+    assert(Constants.googleMapsAPIKey != "REPLACE_WITH_YOUR_API_KEY", "Please goto Constants.swift and replace Google Maps API key with your own.")
     
-    // MARK: Init
-    
-    private init() {
-    }
-    
-    // MARK: Methods
-    
-    class func configurate() {
-        assert(Constants.googleMapsAPIKey != "REPLACE_WITH_YOUR_API_KEY", "Please goto Constants.swift and replace Google Maps API key with your own.")
-        
-        FIRApp.configure()
-        GMSServices.provideAPIKey(Constants.googleMapsAPIKey)
-    }
-    
+    FIRApp.configure()
+    GMSServices.provideAPIKey(Constants.googleMapsAPIKey)
+  }
+  
 }

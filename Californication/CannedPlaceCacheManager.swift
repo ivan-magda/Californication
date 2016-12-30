@@ -22,23 +22,23 @@
 
 import Foundation
 
-private let _documentsDirectoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first! as NSURL
-private let _fileURL = _documentsDirectoryURL.URLByAppendingPathComponent("Places")
+private let _documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as URL
+private let _fileURL = _documentsDirectoryURL.appendingPathComponent("Places")
 
 // MARK: DataCentral
 
 final class CannedPlaceCacheManager: PlaceCacheManager {
-
-    func save(places: [Place]) {
-        NSKeyedArchiver.archiveRootObject(places, toFile: _fileURL.path!)
+  
+  func save(_ places: [Place]) {
+    NSKeyedArchiver.archiveRootObject(places, toFile: _fileURL.path)
+  }
+  
+  func unarchived() -> [Place]? {
+    if FileManager.default.fileExists(atPath: _fileURL.path) {
+      return NSKeyedUnarchiver.unarchiveObject(withFile: _fileURL.path) as? [Place]
+    } else {
+      return nil
     }
-    
-    func unarchived() -> [Place]? {
-        if NSFileManager.defaultManager().fileExistsAtPath(_fileURL.path!) {
-            return NSKeyedUnarchiver.unarchiveObjectWithFile(_fileURL.path!) as? [Place]
-        } else {
-            return nil
-        }
-    }
-    
+  }
+  
 }

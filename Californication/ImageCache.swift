@@ -26,38 +26,38 @@ import AwesomeCache
 // MARK: ImageCache
 
 class ImageCache {
-    
-    // MARK: Properties
-    
-    private let cache: Cache<UIImage>?
-    
-    // MARK: Init
-    
-    init?(name: String) {
-        do {
-            cache = try Cache<UIImage>(name: name)
-        } catch let error as NSError {
-            print("Failed to initialize cache: \(error.localizedDescription)")
-            return nil
-        }
+  
+  // MARK: Properties
+  
+  fileprivate let cache: Cache<UIImage>?
+  
+  // MARK: Init
+  
+  init?(name: String) {
+    do {
+      cache = try Cache<UIImage>(name: name)
+    } catch let error as NSError {
+      print("Failed to initialize cache: \(error.localizedDescription)")
+      return nil
     }
-    
-    // MARK: Methods
-    
-    func lookUpImageInCacheWithIdentifier(identifier: String) -> UIImage? {
-        return cache?[identifier]
-    }
-    
-    func cacheImage(image: UIImage, withIdentifier identifier: String) {
-        cache?[identifier] = image
-    }
-    
-    func removeImageWithIdentifier(identifier: String) {
-        cache?.removeObjectForKey(identifier)
-    }
-    
-    func cleanUp() {
-        cache?.removeAllObjects()
-    }
-    
+  }
+  
+  // MARK: Methods
+  
+  func lookUpImageInCacheWithIdentifier(_ identifier: String) -> UIImage? {
+    return cache?[identifier]
+  }
+  
+  func cacheImage(_ image: UIImage, withIdentifier identifier: String) {
+    cache?[identifier] = image
+  }
+  
+  func removeImageWithIdentifier(_ identifier: String) {
+    cache?.removeObject(forKey: identifier)
+  }
+  
+  func cleanUp() {
+    cache?.removeAllObjects()
+  }
+  
 }
