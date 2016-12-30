@@ -24,11 +24,11 @@ import UIKit
 
 // MARK: Constants
 
-private let kTableHeaderHeight: CGFloat = 300.0
+private let tableHeaderHeight: CGFloat = 300.0
 
 // MARK: - PlaceDetailsViewController: UIViewController -
 
-class PlaceDetailsViewController: UIViewController {
+final class PlaceDetailsViewController: UIViewController {
   
   // MARK: Properties
   
@@ -48,36 +48,36 @@ class PlaceDetailsViewController: UIViewController {
   
   // MARK: Setup
   
-  fileprivate func setup() {
+  private func setup() {
     configureTableView()
     configureUI()
   }
   
-  fileprivate func configureTableView() {
-    tableViewDataSource = PlaceDetailsTableViewDataSource(place: place)
+  private func configureTableView() {
+    tableViewDataSource = PlaceDetailsTableViewDataSource(place)
     tableView.dataSource = tableViewDataSource
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 44.0
     
     headerView = tableView.tableHeaderView as! PlaceImageHeaderView
-    headerView.headerHeight = kTableHeaderHeight
+    headerView.headerHeight = tableHeaderHeight
     headerView.delegate = self
     tableView.tableHeaderView = nil
     tableView.addSubview(headerView)
     
     (tableView as UIScrollView).delegate = self
-    tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
-    tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+    tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
+    tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
     headerView.layoutSubviewsWithContentOffset(tableView.contentOffset)
   }
   
-  fileprivate func configureUI() {
+  private func configureUI() {
     let showCloseButton = navigationController == nil
     headerView.closeButton.isEnabled = showCloseButton
     headerView.closeButton.isHidden = !showCloseButton
     
     headerView.activityIndicator.startAnimating()
-    ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
+    ImageDownloadManager.shared.image(for: place.image.mediumURL) { [weak self] (image, error) in
       self?.headerView.activityIndicator.stopAnimating()
       guard error == nil else {
         self?.presentAlertWithTitle("Failed to load image", message: error!.localizedDescription)

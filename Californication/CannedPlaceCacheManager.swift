@@ -22,7 +22,8 @@
 
 import Foundation
 
-private let _documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as URL
+private let _documentsDirectoryURL = FileManager.default
+  .urls(for: .documentDirectory, in: .userDomainMask).first! as URL
 private let _fileURL = _documentsDirectoryURL.appendingPathComponent("Places")
 
 // MARK: DataCentral

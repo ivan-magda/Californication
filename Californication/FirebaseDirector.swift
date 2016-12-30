@@ -40,9 +40,9 @@ final class FirebaseDirector: FirebaseDirectorFacade {
   
   // MARK: FPlaceDirectorFacade
   
-  func allPlaces(_ completion: @escaping ([FPlace]) -> ()) {
-    manager.allPlaces { [unowned self] (snapshot) in
-      let places = self.builder.placesFromResponse(snapshot)
+  func all(_ completion: @escaping ([FPlace]) -> ()) {
+    manager.all { [unowned self] (snapshot) in
+      let places = self.builder.build(from: snapshot)
       completion(places)
     }
   }

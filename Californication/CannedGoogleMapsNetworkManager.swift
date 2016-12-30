@@ -29,16 +29,16 @@ class CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager {
   
   // MARK: GoogleMapsNetworkManager
   
-  func placeWithID(_ id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
-                   failure: @escaping GoogleMapsFailureBlock) {
+  func place(with id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
+             failure: @escaping GoogleMapsFailureBlock) {
     GMSPlacesClient().lookUpPlaceID(id) { (place, error) in
       guard let place = place else { return failure(error) }
       success(place)
     }
   }
   
-  func placesWithIDs(_ ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
-                     failure: @escaping GoogleMapsFailureBlock) {
+  func places(with ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
+              failure: @escaping GoogleMapsFailureBlock) {
     var places = [GMSPlace]()
     let client = GMSPlacesClient()
     

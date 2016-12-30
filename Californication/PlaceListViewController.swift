@@ -25,17 +25,17 @@ import MBProgressHUD
 
 // MARK: Constants
 
-private let kSortingTypeIdentifier = "sortingType"
+private let kSortingTypeIdentifier = "sortType"
 
 // MARK: Types
 
-private enum SortingType: Int {
+private enum SortType: Int {
   case name, rating
 }
 
 // MARK: - PlaceListViewController: UIViewController
 
-class PlaceListViewController: UIViewController {
+final class PlaceListViewController: UIViewController {
   
   // MARK: Outlets
   
@@ -47,11 +47,10 @@ class PlaceListViewController: UIViewController {
   var didSelect: (Place) -> () = { _ in }
   var placeDirector: PlaceDirectorFacade!
   
-  fileprivate var sortingType: SortingType {
+  private var sortType: SortType {
     get {
-      let defaults = UserDefaults.standard
-      let value = defaults.integer(forKey: kSortingTypeIdentifier)
-      return SortingType(rawValue: value) ?? .rating
+      let value = UserDefaults.standard.integer(forKey: kSortingTypeIdentifier)
+      return SortType(rawValue: value) ?? .rating
     }
     
     set {
@@ -77,19 +76,19 @@ class PlaceListViewController: UIViewController {
   // MARK: Actions
   
   @IBAction func sortDidPressed(_ sender: AnyObject) {
-    func didSelectSortingType(_ type: SortingType) {
-      guard type != sortingType else { return }
-      sortingType = type
+    func sort(by type: SortType) {
+      guard type != sortType else { return }
+      sortType = type
       reloadData()
     }
     
-    let actionController = UIAlertController(title: "Sorting", message: nil, preferredStyle: .actionSheet)
+    let actionController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-    actionController.addAction(UIAlertAction(title: "By name", style: .default, handler: { action in
-      didSelectSortingType(.name)
+    actionController.addAction(UIAlertAction(title: "By name", style: .default, handler: { _ in
+      sort(by: .name)
     }))
-    actionController.addAction(UIAlertAction(title: "By rating", style: .default, handler: { action in
-      didSelectSortingType(.rating)
+    actionController.addAction(UIAlertAction(title: "By rating", style: .default, handler: { _ in
+      sort(by: .rating)
     }))
     
     present(actionController, animated: true, completion: nil)
@@ -97,15 +96,7 @@ class PlaceListViewController: UIViewController {
   
   // MARK: Configure
   
-  fileprivate func setup() {
-    configureTableView()
-    
-    if let places = placeDirector.persistedPlaces() {
-      updateWithNewData(places)
-    }
-  }
-  
-  fileprivate func configureTableView() {
+  private func setup() {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 120
     tableView.dataSource = tableViewDataSource
@@ -113,52 +104,58 @@ class PlaceListViewController: UIViewController {
     
     tableView.addSubview(refreshControl)
     refreshControl.addTarget(self, action: #selector(loadPlaces), for: .valueChanged)
+    
+    if let places = placeDirector.persisted() {
+      update(with: places)
+    }
   }
   
   // MARK: Data
   
-  func loadPlaces() {
+  @objc private func loadPlaces() {
     startLoading()
     
-    placeDirector.allPlaces({ [weak self] places in
-      self?.didStopLoading()
-      self?.placeDirector.savePlaces(places)
-      self?.updateWithNewData(places)
+    placeDirector.all({ [weak self] places in
+      guard let strongSelf = self else { return }
+      strongSelf.stopLoading()
+      strongSelf.placeDirector.save(places)
+      strongSelf.update(with: places)
     }) { [weak self] error in
+      guard let strongSelf = self else { return }
       guard error == nil else {
-        self?.didStopLoading()
-        self?.presentAlertWithTitle("Error", message: error!.localizedDescription)
+        strongSelf.stopLoading()
+        strongSelf.presentAlertWithTitle("Error", message: error!.localizedDescription)
         return
       }
     }
   }
   
-  fileprivate func updateWithNewData(_ places: [Place]) {
-    tableViewDataSource.places = places
+  private func update(with newPlaces: [Place]) {
+    tableViewDataSource.places = newPlaces
     reloadData()
   }
   
-  fileprivate func reloadData() {
-    sortPlaces()
+  private func reloadData() {
+    tableViewDataSource.places = sortedPlaces()
     tableView.reloadData()
   }
   
-  fileprivate func sortPlaces() {
-    func sortByName() -> [Place] {
+  private func sortedPlaces() -> [Place] {
+    func sortedByName() -> [Place] {
       return tableViewDataSource.places!.sorted { $0.name < $1.name }
     }
     
-    func sortByRating() -> [Place] {
-      return sortByName().sorted { $0.rating > $1.rating }
+    func sortedByRating() -> [Place] {
+      return sortedByName().sorted { $0.rating > $1.rating }
     }
     
-    guard let _ = tableViewDataSource.places else { return }
+    guard let _ = tableViewDataSource.places else { return [] }
     
-    switch sortingType {
+    switch sortType {
     case .name:
-      tableViewDataSource.places = sortByName()
+      return sortedByName()
     case .rating:
-      tableViewDataSource.places = sortByRating()
+      return sortedByRating()
     }
   }
   
@@ -171,14 +168,12 @@ extension PlaceListViewController {
   fileprivate func startLoading() {
     let progressHud = MBProgressHUD.showAdded(to: view, animated: true)
     progressHud.label.text = "Loading"
-    
     sortingButton.isEnabled = false
   }
   
-  fileprivate func didStopLoading() {
+  fileprivate func stopLoading() {
     MBProgressHUD.hide(for: view, animated: true)
     refreshControl.endRefreshing()
-    
     sortingButton.isEnabled = true
   }
   
@@ -189,10 +184,7 @@ extension PlaceListViewController {
 extension PlaceListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let selectedPlace = tableViewDataSource.placeForIndexPath(indexPath) else {
-      return
-    }
-    
+    guard let selectedPlace = tableViewDataSource.place(for: indexPath) else { return }
     didSelect(selectedPlace)
     tableView.deselectRow(at: indexPath, animated: true)
   }

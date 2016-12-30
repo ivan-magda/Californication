@@ -36,7 +36,7 @@ class MapViewController: UIViewController {
   var didSelect: (Place) -> () = { _ in }
   var placeDirector: PlaceDirectorFacade!
   
-  fileprivate lazy var locationManager: CLLocationManager = {
+  private lazy var locationManager: CLLocationManager = {
     let locationManager = CLLocationManager()
     locationManager.delegate = self
     return locationManager
@@ -47,7 +47,6 @@ class MapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     assert(placeDirector != nil)
-    
     configureMapView()
   }
   
@@ -58,7 +57,7 @@ class MapViewController: UIViewController {
   
   // MARK: Private
   
-  fileprivate func configureMapView() {
+  private func configureMapView() {
     mapView.delegate = self
     
     // Center on California.
@@ -69,7 +68,7 @@ class MapViewController: UIViewController {
     addLocationMarkers()
   }
   
-  fileprivate func checkLocationAuthorizationStatus() {
+  private func checkLocationAuthorizationStatus() {
     if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
       setAuthorizedWhenInUseState()
     } else {
@@ -77,8 +76,8 @@ class MapViewController: UIViewController {
     }
   }
   
-  fileprivate func addLocationMarkers() {
-    guard let places = placeDirector.persistedPlaces() else { return }
+  private func addLocationMarkers() {
+    guard let places = placeDirector.persisted() else { return }
     places.forEach { place in
       let locationMarker = GMSMarker(position: place.coordinate)
       locationMarker.map = mapView
@@ -129,10 +128,9 @@ extension MapViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
     guard let dictionary = marker.userData as? [String: String],
       let id = dictionary["id"],
-      let places = placeDirector.persistedPlaces(),
+      let places = placeDirector.persisted(),
       let index = places.index(where: { $0.placeID == id }) else { return }
     let place = places[index]
-    
     didSelect(place)
   }
   

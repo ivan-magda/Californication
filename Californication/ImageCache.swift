@@ -25,15 +25,15 @@ import AwesomeCache
 
 // MARK: ImageCache
 
-class ImageCache {
+final class ImageCache {
   
   // MARK: Properties
   
-  fileprivate let cache: Cache<UIImage>?
+  private let cache: Cache<UIImage>?
   
   // MARK: Init
   
-  init?(name: String) {
+  init?(_ name: String) {
     do {
       cache = try Cache<UIImage>(name: name)
     } catch let error as NSError {
@@ -44,19 +44,19 @@ class ImageCache {
   
   // MARK: Methods
   
-  func lookUpImageInCacheWithIdentifier(_ identifier: String) -> UIImage? {
+  func lookUpImageInCache(with identifier: String) -> UIImage? {
     return cache?[identifier]
   }
   
-  func cacheImage(_ image: UIImage, withIdentifier identifier: String) {
+  func cache(_ image: UIImage, with identifier: String) {
     cache?[identifier] = image
   }
   
-  func removeImageWithIdentifier(_ identifier: String) {
+  func removeImage(with identifier: String) {
     cache?.removeObject(forKey: identifier)
   }
   
-  func cleanUp() {
+  func removeAll() {
     cache?.removeAllObjects()
   }
   

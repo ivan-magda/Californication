@@ -48,4 +48,5 @@ struct FPlace {
   let thumbnailURL: String
   let mediumURL: String
   let largeURL: String
+  
 }

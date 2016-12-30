@@ -36,8 +36,8 @@ protocol PlaceCacheManager {
 }
 
 protocol PlaceDirectorFacade: PlaceDirectors {
-  func allPlaces(_ success: @escaping PlaceDirectorSuccessBlock,
+  func all(_ success: @escaping PlaceDirectorSuccessBlock,
                  failure: @escaping PlaceDirectorFailureBlock)
-  func savePlaces(_ places: [Place])
-  func persistedPlaces() -> [Place]?
+  func save(_ places: [Place])
+  func persisted() -> [Place]?
 }

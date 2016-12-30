@@ -53,20 +53,19 @@ final class PlaceDetailsTableViewDataSource: NSObject {
     buildTableStructure()
   }
   
-  convenience init(place: Place) {
+  convenience init(_ place: Place) {
     self.init()
     self.place = place
   }
   
   // MARK: Private
   
-  fileprivate func buildTableStructure() {
+  private func buildTableStructure() {
     sections = [
       Section(type: .title, items: [.title]),
       Section(type: .detail, items: [.types, .summary, .description, .address, .phoneNumber,
                                      .website, .rating, .priceLevel]
-      )
-    ]
+      )]
   }
   
 }
@@ -90,19 +89,22 @@ extension PlaceDetailsTableViewDataSource: UITableViewDataSource {
     
     switch section.type {
     case .title:
-      let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.reuseIdentifier) as! TitleTableViewCell
+      let cell = tableView
+        .dequeueReusableCell(withIdentifier: TitleTableViewCell.reuseIdentifier) as! TitleTableViewCell
       cell.titleLabel.text = place.name
       
       return cell
     case .detail:
       switch section.items[indexPath.row] {
       case .rating:
-        let cell = tableView.dequeueReusableCell(withIdentifier: RatingTableViewCell.reuseIdentifier) as! RatingTableViewCell
+        let cell = tableView
+          .dequeueReusableCell(withIdentifier: RatingTableViewCell.reuseIdentifier) as! RatingTableViewCell
         cell.starRatingView.value = CGFloat(place.rating)
         
         return cell
       default:
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlaceDetailTableViewCell.reuseIdentifier) as! PlaceDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlaceDetailTableViewCell.reuseIdentifier)
+          as! PlaceDetailTableViewCell
         configureDetailCell(cell, atIndexPath: indexPath)
         
         return cell
@@ -112,7 +114,7 @@ extension PlaceDetailsTableViewDataSource: UITableViewDataSource {
   
   // MARK: Helpers
   
-  fileprivate func configureDetailCell(_ cell: PlaceDetailTableViewCell, atIndexPath indexPath: IndexPath) {
+  private func configureDetailCell(_ cell: PlaceDetailTableViewCell, atIndexPath indexPath: IndexPath) {
     func clearLabelText() {
       cell.placeTitleLabel.text = nil
       cell.placeDetailLabel.text = nil

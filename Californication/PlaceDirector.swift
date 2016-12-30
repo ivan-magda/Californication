@@ -35,7 +35,8 @@ final class PlaceDirector: PlaceDirectorFacade {
   
   // MARK: Init
   
-  init(firebaseDirector: FirebaseDirector, googleMapsDirector: GoogleMapsDirector, cacheManager: PlaceCacheManager) {
+  init(firebaseDirector: FirebaseDirector, googleMapsDirector: GoogleMapsDirector,
+       cacheManager: PlaceCacheManager) {
     self.firebaseDirector = firebaseDirector
     self.googleMapsDirector = googleMapsDirector
     self.cacheManager = cacheManager
@@ -43,15 +44,14 @@ final class PlaceDirector: PlaceDirectorFacade {
   
   // MARK: PlaceDirectorFacade
   
-  func allPlaces(_ success: @escaping PlaceDirectorSuccessBlock,
-                 failure: @escaping PlaceDirectorFailureBlock) {
-    firebaseDirector.allPlaces { [unowned self] fPlaces in
+  func all(_ success: @escaping PlaceDirectorSuccessBlock, failure: @escaping PlaceDirectorFailureBlock) {
+    firebaseDirector.all { [unowned self] fPlaces in
       let ids = fPlaces.map { $0.googlePlaceID }
       
-      self.googleMapsDirector.placesWithIDs(
+      self.googleMapsDirector.places(with:
         ids,
         success: { [unowned self] gmPlaces in
-          let places = self.linkedPlaces(from: fPlaces, and: gmPlaces)
+          let places = self.link(fPlaces, with: gmPlaces)
           success(places)
         },
         failure: failure
@@ -59,17 +59,17 @@ final class PlaceDirector: PlaceDirectorFacade {
     }
   }
   
-  func savePlaces(_ places: [Place]) {
+  func save(_ places: [Place]) {
     cacheManager.save(places)
   }
   
-  func persistedPlaces() -> [Place]? {
+  func persisted() -> [Place]? {
     return cacheManager.unarchived()
   }
   
   // MARK: Helpers
   
-  fileprivate func linkedPlaces(from fPlaces: [FPlace], and gmPlaces: [GMSPlace]) -> [Place] {
+  private func link(_ fPlaces: [FPlace], with gmPlaces: [GMSPlace]) -> [Place] {
     guard fPlaces.count == gmPlaces.count else { return [] }
     
     var places = [Place]()

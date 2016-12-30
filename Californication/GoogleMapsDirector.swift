@@ -28,7 +28,7 @@ final class GoogleMapsDirector: GoogleMapsDirectorFacade {
   
   // MARK: Properties
   
-  fileprivate let networkManager: GoogleMapsNetworkManager
+  private let networkManager: GoogleMapsNetworkManager
   
   // MARK: Init
   
@@ -38,14 +38,14 @@ final class GoogleMapsDirector: GoogleMapsDirectorFacade {
   
   // MARK: GoogleMapsDirectorFacade
   
-  func placeWithID(_ id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
-                   failure: @escaping GoogleMapsFailureBlock) {
-    networkManager.placeWithID(id, success: success, failure: failure)
+  func place(with id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
+             failure: @escaping GoogleMapsFailureBlock) {
+    networkManager.place(with: id, success: success, failure: failure)
   }
   
-  func placesWithIDs(_ ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
-                     failure: @escaping GoogleMapsFailureBlock) {
-    networkManager.placesWithIDs(ids, success: success, failure: failure)
+  func places(with ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
+              failure: @escaping GoogleMapsFailureBlock) {
+    networkManager.places(with: ids, success: success, failure: failure)
   }
   
 }

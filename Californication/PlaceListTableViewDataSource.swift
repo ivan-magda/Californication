@@ -26,7 +26,7 @@ import AlamofireImage
 
 // MARK: Types
 
-private enum PlaceListIdentifiers: String {
+private enum PlaceListIdentifier: String {
   case placeCell = "PlaceCell"
 }
 
@@ -46,7 +46,7 @@ final class PlaceListTableViewDataSource: NSObject {
   
   // MARK: Public Methods
   
-  func placeForIndexPath(_ indexPath: IndexPath) -> Place? {
+  func place(for indexPath: IndexPath) -> Place? {
     return places?[indexPath.row]
   }
   
@@ -62,7 +62,7 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
     let isEmpty = (places == nil)
     
     dataSourceState = isEmpty ? .empty : .default
-    configureTableView(tableView)
+    configure(tableView)
     
     return isEmpty ? 0 : 1
   }
@@ -72,14 +72,14 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: PlaceListIdentifiers.placeCell.rawValue) as! PlaceTableViewCell
-    configureCell(cell, atIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: PlaceListIdentifier.placeCell.rawValue) as! PlaceTableViewCell
+    configure(cell, at: indexPath)
     return cell
   }
   
   // MARK: Helpers
   
-  fileprivate func configureTableView(_ tableView: UITableView) {
+  private func configure(_ tableView: UITableView) {
     switch dataSourceState {
     case .default:
       tableView.backgroundView = nil
@@ -89,7 +89,7 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
       messageLabel.text = "No data is currently available. Please pull down to refresh."
       messageLabel.numberOfLines = 0
       messageLabel.textAlignment = .center
-      messageLabel.font = UIFont.boldSystemFont(ofSize: 28)
+      messageLabel.font = .systemFont(ofSize: 18)
       messageLabel.textColor = .lightGray
       messageLabel.sizeToFit()
       
@@ -98,15 +98,15 @@ extension PlaceListTableViewDataSource: UITableViewDataSource {
     }
   }
   
-  fileprivate func configureCell(_ cell: PlaceTableViewCell, atIndexPath indexPath: IndexPath) {
-    let place = placeForIndexPath(indexPath)!
+  private func configure(_ cell: PlaceTableViewCell, at indexPath: IndexPath) {
+    let selectedPlace = place(for: indexPath)!
     
-    cell.placeTitleLabel.text = place.name
-    cell.placeSummaryLabel.text = place.summary
-    cell.placeRatingView.value = CGFloat(place.rating)
+    cell.placeTitleLabel.text = selectedPlace.name
+    cell.placeSummaryLabel.text = selectedPlace.summary
+    cell.placeRatingView.value = CGFloat(selectedPlace.rating)
     
     weak var weakCell = cell
-    ImageDownloadManager.sharedInstance.imageForURL(place.image.thumbnailURL) { (image, error) in
+    ImageDownloadManager.shared.image(for: selectedPlace.image.thumbnailURL) { (image, error) in
       guard error == nil else { return print("Failed to load thumbnail: \(error!.localizedDescription)") }
       weakCell?.placeImageView.image = image
     }

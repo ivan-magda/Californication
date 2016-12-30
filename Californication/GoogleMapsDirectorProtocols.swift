@@ -30,15 +30,15 @@ typealias GoogleMapsNetworkPlacesResponse = ([GMSPlace]) -> Void
 typealias GoogleMapsFailureBlock = (Error?) -> ()
 
 protocol GoogleMapsDirectorFacade {
-  func placeWithID(_ id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
-                   failure: @escaping GoogleMapsFailureBlock)
-  func placesWithIDs(_ ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
-                     failure: @escaping GoogleMapsFailureBlock)
+  func place(with id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
+             failure: @escaping GoogleMapsFailureBlock)
+  func places(with ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
+              failure: @escaping GoogleMapsFailureBlock)
 }
 
 protocol GoogleMapsNetworkManager {
-  func placeWithID(_ id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
-                   failure: @escaping GoogleMapsFailureBlock)
-  func placesWithIDs(_ ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
-                     failure: @escaping GoogleMapsFailureBlock)
+  func place(with id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
+             failure: @escaping GoogleMapsFailureBlock)
+  func places(with ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
+              failure: @escaping GoogleMapsFailureBlock)
 }

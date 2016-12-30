@@ -25,14 +25,12 @@ import Foundation
 // MARK: Types
 
 private enum Key: String {
-  case thumbnail
-  case medium
-  case large
+  case thumbnail, medium, large
 }
 
 // MARK: PlaceImage: NSObject, NSCoding
 
-class PlaceImage: NSObject, NSCoding {
+final class PlaceImage: NSObject, NSCoding {
   
   // MARK: Properties
   

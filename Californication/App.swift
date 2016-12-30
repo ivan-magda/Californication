@@ -37,7 +37,7 @@ class App {
   
   // MARK: Init
   
-  init(window: UIWindow) {
+  init(_ window: UIWindow) {
     let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
                                      databaseManager: CannedFirebaseManager())
     let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
@@ -53,27 +53,27 @@ class App {
     placeListViewController = navigationController.topViewController as! PlaceListViewController
     placeListViewController.placeDirector = placeDirector
     
-    placeListViewController.didSelect = pushPlace
-    mapViewController.didSelect = presentPlace
+    placeListViewController.didSelect = push(place:)
+    mapViewController.didSelect = present(place:)
   }
   
   // MARK: Navigation
   
-  func pushPlace(_ place: Place) {
-    let detailVC = placeDetailsViewControllerWithPlace(place)
+  func push(place: Place) {
+    let detailVC = placeDetailsViewController(with: place)
     detailVC.title = "Detail"
-    placeListViewController.navigationController?.pushViewController(detailVC, animated: true)
+    placeListViewController.navigationController!.pushViewController(detailVC, animated: true)
   }
   
-  func presentPlace(_ place: Place) {
-    let detailVC = placeDetailsViewControllerWithPlace(place)
+  func present(place: Place) {
+    let detailVC = placeDetailsViewController(with: place)
     tabBarController.present(detailVC, animated: true, completion: nil)
   }
   
-  fileprivate func placeDetailsViewControllerWithPlace(_ place: Place) -> PlaceDetailsViewController {
-    let controller = storyboard.instantiateViewController(withIdentifier: "PlaceDetails") as! PlaceDetailsViewController
+  fileprivate func placeDetailsViewController(with place: Place) -> PlaceDetailsViewController {
+    let controller = storyboard
+      .instantiateViewController(withIdentifier: "PlaceDetails") as! PlaceDetailsViewController
     controller.place = place
-    
     return controller
   }
   

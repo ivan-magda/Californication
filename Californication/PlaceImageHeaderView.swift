@@ -28,7 +28,7 @@ protocol PlaceImageHeaderViewDelegate {
 
 // MARK: PlaceImageHeaderView: UIView
 
-class PlaceImageHeaderView: UIView {
+final class PlaceImageHeaderView: UIView {
     
     // MARK: Outlets
 
@@ -50,7 +50,6 @@ class PlaceImageHeaderView: UIView {
             headerRect.origin.y = offset.y
             headerRect.size.height = -offset.y
         }
-        
         frame = headerRect
     }
     

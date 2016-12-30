@@ -26,11 +26,11 @@ import AlamofireImage
 
 // MARK: Typealiases
 
-typealias ImageDownloadManagerCompletionHandler = (_ image: UIImage?, _ error: NSError?) -> Void
+typealias ImageDownloadManagerCompletionHandler = (_ image: UIImage?, _ error: Error?) -> Void
 
 // MARK: Constants
 
-private let kPlaceImagesCacheName = "place-images"
+private let placeImagesCacheName = "place-images"
 
 // MARK: - ImageDownloadManager
 
@@ -38,29 +38,29 @@ final class ImageDownloadManager {
   
   // MARK: Properties
   
-  static let sharedInstance = ImageDownloadManager()
+  static let shared = ImageDownloadManager()
   let imageCache: ImageCache?
   
   // MARK: Init
   
-  fileprivate init() {
-    imageCache = ImageCache(name: kPlaceImagesCacheName)
+  private init() {
+    imageCache = ImageCache(placeImagesCacheName)
   }
   
   // MARK: Methods
   
-  func imageForURL(_ URL: String, completion: @escaping ImageDownloadManagerCompletionHandler) {
-    if let cachedImage = imageCache?.lookUpImageInCacheWithIdentifier(URL) {
+  func image(for url: String, completion: @escaping ImageDownloadManagerCompletionHandler) {
+    if let cachedImage = imageCache?.lookUpImageInCache(with: url) {
       completion(cachedImage, nil)
     } else {
-      Alamofire.request(URL).responseImage { [unowned self] response in
+      Alamofire.request(url).responseImage { [unowned self] response in
         let result = response.result
         guard let image = result.value else {
-          completion(nil, result.error as NSError?)
+          completion(nil, result.error)
           return
         }
         
-        self.imageCache?.cacheImage(image, withIdentifier: URL)
+        self.imageCache?.cache(image, with: url)
         completion(image, nil)
       }
     }

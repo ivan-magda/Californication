@@ -27,19 +27,8 @@ import GoogleMaps
 // MARK: Types
 
 private enum Key: String {
-  case placeID
-  case name
-  case summary
-  case detailDescription
-  case phoneNumber
-  case latitude
-  case longitude
-  case formattedAddress
-  case rating
-  case priceLevel
-  case types
-  case website
-  case image
+  case placeID, name, summary, detailDescription, phoneNumber, latitude, longitude, formattedAddress,
+  rating, priceLevel, types, website, image
 }
 
 enum PlacePriceLevel: Int {
@@ -70,7 +59,7 @@ enum PlacePriceLevel: Int {
 
 // MARK: - Place: NSObject, NSCoding
 
-class Place: NSObject, NSCoding {
+final class Place: NSObject, NSCoding {
   
   /** Place ID of this place. */
   let placeID: String
@@ -123,7 +112,9 @@ class Place: NSObject, NSCoding {
   /** Images of the place */
   let image: PlaceImage
   
-  init(placeID: String, name: String, summary: String, detailDescription: String, phoneNumber: String?, coordinate: CLLocationCoordinate2D, formattedAddress: String?, rating: Float, priceLevel: PlacePriceLevel, types: [String], website: URL?, image: PlaceImage) {
+  init(placeID: String, name: String, summary: String, detailDescription: String, phoneNumber: String?,
+       coordinate: CLLocationCoordinate2D, formattedAddress: String?, rating: Float,
+       priceLevel: PlacePriceLevel, types: [String], website: URL?, image: PlaceImage) {
     self.placeID = placeID
     self.name = name
     self.summary = summary

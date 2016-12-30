@@ -24,13 +24,13 @@ import Foundation
 import Firebase
 
 protocol FirebaseDirectorFacade {
-  func allPlaces(_ completion: @escaping ([FPlace]) -> ())
+  func all(_ completion: @escaping ([FPlace]) -> ())
 }
 
 protocol FirebaseManager {
-  func allPlaces(_ completion: @escaping (FIRDataSnapshot) -> ())
+  func all(_ completion: @escaping (FIRDataSnapshot) -> ())
 }
 
 protocol FirebaseBuilder {
-  func placesFromResponse(_ response: FIRDataSnapshot) -> [FPlace]
+  func build(from response: FIRDataSnapshot) -> [FPlace]
 }

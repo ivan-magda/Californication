@@ -35,26 +35,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: UIApplicationDelegate
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    AppConfigurator.configurate()
-    themeApplication()
-    
-    if let window = window {
-      app = App(window: window)
-    }
-    
+    setup()
     return true
   }
   
   // MARK: Private
   
-  fileprivate func themeApplication() {
+  private func setup() {
+    guard let window = window else {
+      fatalError("Application window is nil.")
+    }
+    
+    AppConfigurator.configure()
+    
+    app = App(window)
+    themeApplication()
+  }
+  
+  private func themeApplication() {
     // Mexican red color.
-    window?.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
+    window!.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
     
     // Kaitoke green.
-    UINavigationBar.appearance().barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
-    UINavigationBar.appearance().tintColor = UIColor.white
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+    let appearance = UINavigationBar.appearance()
+    appearance.barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
+    appearance.tintColor = UIColor.white
+    appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
   }
   
 }
