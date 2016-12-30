@@ -25,27 +25,28 @@ import Foundation
 // MARK: FPlace
 
 struct FPlace {
-    
-    // MARK: Types
-    
-    enum Key: String {
-        case placeId = "place_id"
-        case name
-        case summary
-        case detailDescription = "detail_description"
-        case images
-        case thumbnail
-        case medium
-        case large
-    }
-    
-    // MARK: Properties
-    
-    let googlePlaceID: String
-    let name: String
-    let summary: String
-    let detailDescription: String
-    let thumbnailURL: String
-    let mediumURL: String
-    let largeURL: String
+  
+  // MARK: Types
+  
+  enum Key: String {
+    case placeId = "place_id"
+    case name
+    case summary
+    case detailDescription = "detail_description"
+    case images
+    case thumbnail
+    case medium
+    case large
+  }
+  
+  // MARK: Properties
+  
+  let googlePlaceID: String
+  let name: String
+  let summary: String
+  let detailDescription: String
+  let thumbnailURL: String
+  let mediumURL: String
+  let largeURL: String
+  
 }

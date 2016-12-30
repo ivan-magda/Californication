@@ -1,14 +1,27 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
-inhibit_all_warnings!
+platform :ios, '9.0'
 
 target 'Californication' do
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'GoogleMaps’, '1.13.2'
-  pod 'MBProgressHUD'
-  pod 'HCSStarRatingView'
-  pod 'AlamofireImage'
-  pod 'AwesomeCache'
+  use_frameworks!
+  inhibit_all_warnings!
+
+  # Pods for Californication
+  pod 'Firebase/Database', '3.11'
+  pod 'Firebase/Storage', '3.11'
+  pod 'GoogleMaps', '1.13.2'
+  pod 'MBProgressHUD', '1.0'
+  pod 'HCSStarRatingView', '1.4'
+  pod 'AlamofireImage', '3.2'
+  pod 'AwesomeCache', '5.0'
+
+  target 'CalifornicationTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CalifornicationUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end

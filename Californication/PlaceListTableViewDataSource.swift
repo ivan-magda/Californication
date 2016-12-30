@@ -26,90 +26,90 @@ import AlamofireImage
 
 // MARK: Types
 
-private enum PlaceListIdentifiers: String {
-    case placeCell = "PlaceCell"
+private enum PlaceListIdentifier: String {
+  case placeCell = "PlaceCell"
 }
 
 private enum DataSourceState {
-    case Empty, Default
+  case empty, `default`
 }
 
 // MARK: - PlaceListTableViewDataSource: NSObject
 
 final class PlaceListTableViewDataSource: NSObject {
- 
-    // MARK: Properties
-    
-    var places: [Place]?
-    
-    private var dataSourceState = DataSourceState.Default
-    
-    // MARK: Public Methods
-    
-    func placeForIndexPath(indexPath: NSIndexPath) -> Place? {
-        return places?[indexPath.row]
-    }
-    
+  
+  // MARK: Properties
+  
+  var places: [Place]?
+  
+  fileprivate var dataSourceState = DataSourceState.default
+  
+  // MARK: Public Methods
+  
+  func place(for indexPath: IndexPath) -> Place? {
+    return places?[indexPath.row]
+  }
+  
 }
 
 // MARK: - PlaceListTableViewDataSource: UITableViewDataSource -
 
 extension PlaceListTableViewDataSource: UITableViewDataSource {
+  
+  // MARK: UITableViewDataSource
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    let isEmpty = (places == nil)
     
-    // MARK: UITableViewDataSource
+    dataSourceState = isEmpty ? .empty : .default
+    configure(tableView)
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        let isEmpty = (places == nil)
-        
-        dataSourceState = isEmpty ? .Empty : .Default
-        configureTableView(tableView)
-        
-        return isEmpty ? 0 : 1
+    return isEmpty ? 0 : 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return places?.count ?? 0
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: PlaceListIdentifier.placeCell.rawValue) as! PlaceTableViewCell
+    configure(cell, at: indexPath)
+    return cell
+  }
+  
+  // MARK: Helpers
+  
+  private func configure(_ tableView: UITableView) {
+    switch dataSourceState {
+    case .default:
+      tableView.backgroundView = nil
+      tableView.separatorStyle = .singleLine
+    case .empty:
+      let messageLabel = UILabel(frame: CGRect(origin: CGPoint.zero, size: tableView.bounds.size))
+      messageLabel.text = "No data is currently available. Please pull down to refresh."
+      messageLabel.numberOfLines = 0
+      messageLabel.textAlignment = .center
+      messageLabel.font = .systemFont(ofSize: 18)
+      messageLabel.textColor = .lightGray
+      messageLabel.sizeToFit()
+      
+      tableView.backgroundView = messageLabel
+      tableView.separatorStyle = .none
     }
+  }
+  
+  private func configure(_ cell: PlaceTableViewCell, at indexPath: IndexPath) {
+    let selectedPlace = place(for: indexPath)!
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places?.count ?? 0
+    cell.placeTitleLabel.text = selectedPlace.name
+    cell.placeSummaryLabel.text = selectedPlace.summary
+    cell.placeRatingView.value = CGFloat(selectedPlace.rating)
+    
+    weak var weakCell = cell
+    ImageDownloadManager.shared.image(for: selectedPlace.image.thumbnailURL) { (image, error) in
+      guard error == nil else { return print("Failed to load thumbnail: \(error!.localizedDescription)") }
+      weakCell?.placeImageView.image = image
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PlaceListIdentifiers.placeCell.rawValue) as! PlaceTableViewCell
-        configureCell(cell, atIndexPath: indexPath)
-        return cell
-    }
-    
-    // MARK: Helpers
-    
-    private func configureTableView(tableView: UITableView) {
-        switch dataSourceState {
-        case .Default:
-            tableView.backgroundView = nil
-            tableView.separatorStyle = .SingleLine
-        case .Empty:
-            let messageLabel = UILabel(frame: CGRect(origin: CGPointZero, size: tableView.bounds.size))
-            messageLabel.text = "No data is currently available. Please pull down to refresh."
-            messageLabel.numberOfLines = 0
-            messageLabel.textAlignment = .Center
-            messageLabel.font = UIFont.boldSystemFontOfSize(28)
-            messageLabel.textColor = .lightGrayColor()
-            messageLabel.sizeToFit()
-            
-            tableView.backgroundView = messageLabel
-            tableView.separatorStyle = .None
-        }
-    }
-    
-    private func configureCell(cell: PlaceTableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let place = placeForIndexPath(indexPath)!
-        
-        cell.placeTitleLabel.text = place.name
-        cell.placeSummaryLabel.text = place.summary
-        cell.placeRatingView.value = CGFloat(place.rating)
-        
-        weak var weakCell = cell
-        ImageDownloadManager.sharedInstance.imageForURL(place.image.thumbnailURL) { (image, error) in
-            guard error == nil else { return print("Failed to load thumbnail: \(error!.localizedDescription)") }
-            weakCell?.placeImageView.image = image
-        }
-    }
-    
+  }
+  
 }

@@ -24,87 +24,87 @@ import UIKit
 
 // MARK: Constants
 
-private let kTableHeaderHeight: CGFloat = 300.0
+private let tableHeaderHeight: CGFloat = 300.0
 
 // MARK: - PlaceDetailsViewController: UIViewController -
 
-class PlaceDetailsViewController: UIViewController {
+final class PlaceDetailsViewController: UIViewController {
+  
+  // MARK: Properties
+  
+  @IBOutlet weak var tableView: UITableView!
+  fileprivate var headerView: PlaceImageHeaderView!
+  
+  var place: Place!
+  fileprivate var tableViewDataSource: PlaceDetailsTableViewDataSource!
+  
+  // MARK: View Life Cycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    assert(place != nil)
+    setup()
+  }
+  
+  // MARK: Setup
+  
+  private func setup() {
+    configureTableView()
+    configureUI()
+  }
+  
+  private func configureTableView() {
+    tableViewDataSource = PlaceDetailsTableViewDataSource(place)
+    tableView.dataSource = tableViewDataSource
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 44.0
     
-    // MARK: Properties
+    headerView = tableView.tableHeaderView as! PlaceImageHeaderView
+    headerView.headerHeight = tableHeaderHeight
+    headerView.delegate = self
+    tableView.tableHeaderView = nil
+    tableView.addSubview(headerView)
     
-    @IBOutlet weak var tableView: UITableView!
-    private var headerView: PlaceImageHeaderView!
+    (tableView as UIScrollView).delegate = self
+    tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
+    tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
+    headerView.layoutSubviewsWithContentOffset(tableView.contentOffset)
+  }
+  
+  private func configureUI() {
+    let showCloseButton = navigationController == nil
+    headerView.closeButton.isEnabled = showCloseButton
+    headerView.closeButton.isHidden = !showCloseButton
     
-    var place: Place!
-    private var tableViewDataSource: PlaceDetailsTableViewDataSource!
-
-    // MARK: View Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        assert(place != nil)
-        setup()
+    headerView.activityIndicator.startAnimating()
+    ImageDownloadManager.shared.image(for: place.image.mediumURL) { [weak self] (image, error) in
+      self?.headerView.activityIndicator.stopAnimating()
+      guard error == nil else {
+        self?.presentAlertWithTitle("Failed to load image", message: error!.localizedDescription)
+        return
+      }
+      self?.headerView.imageView.image = image
     }
-    
-    // MARK: Setup
-    
-    private func setup() {
-        configureTableView()
-        configureUI()
-    }
-    
-    private func configureTableView() {
-        tableViewDataSource = PlaceDetailsTableViewDataSource(place: place)
-        tableView.dataSource = tableViewDataSource
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44.0
-        
-        headerView = tableView.tableHeaderView as! PlaceImageHeaderView
-        headerView.headerHeight = kTableHeaderHeight
-        headerView.delegate = self
-        tableView.tableHeaderView = nil
-        tableView.addSubview(headerView)
-        
-        (tableView as UIScrollView).delegate = self
-        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
-        headerView.layoutSubviewsWithContentOffset(tableView.contentOffset)
-    }
-    
-    private func configureUI() {
-        let showCloseButton = navigationController == nil
-        headerView.closeButton.enabled = showCloseButton
-        headerView.closeButton.hidden = !showCloseButton
-        
-        headerView.activityIndicator.startAnimating()
-        ImageDownloadManager.sharedInstance.imageForURL(place.image.mediumURL) { [weak self] (image, error) in
-            self?.headerView.activityIndicator.stopAnimating()
-            guard error == nil else {
-                self?.presentAlertWithTitle("Failed to load image", message: error!.localizedDescription)
-                return
-            }
-            self?.headerView.imageView.image = image
-        }
-    }
-    
+  }
+  
 }
 
 // MARK: - PlaceDetailsViewController: UIScrollViewDelegate -
 
 extension PlaceDetailsViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        headerView.layoutSubviewsWithContentOffset(scrollView.contentOffset)
-    }
-    
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    headerView.layoutSubviewsWithContentOffset(scrollView.contentOffset)
+  }
+  
 }
 
 // MARK: - PlaceDetailsViewController: PlaceImageHeaderViewDelegate -
 
 extension PlaceDetailsViewController: PlaceImageHeaderViewDelegate {
-    
-    func placeImageHeaderViewCloseDidPressed(view: PlaceImageHeaderView) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+  
+  func placeImageHeaderViewCloseDidPressed(_ view: PlaceImageHeaderView) {
+    dismiss(animated: true, completion: nil)
+  }
+  
 }

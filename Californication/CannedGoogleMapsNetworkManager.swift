@@ -26,30 +26,32 @@ import GoogleMaps
 // MARK: CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager
 
 class CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager {
+  
+  // MARK: GoogleMapsNetworkManager
+  
+  func place(with id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
+             failure: @escaping GoogleMapsFailureBlock) {
+    GMSPlacesClient().lookUpPlaceID(id) { (place, error) in
+      guard let place = place else { return failure(error) }
+      success(place)
+    }
+  }
+  
+  func places(with ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
+              failure: @escaping GoogleMapsFailureBlock) {
+    var places = [GMSPlace]()
+    let client = GMSPlacesClient()
     
-    // MARK: GoogleMapsNetworkManager
-    
-    func placeWithID(id: String, success: GoogleMapsNetworkPlaceResponse, failure: GoogleMapsFailureBlock) {
-        GMSPlacesClient().lookUpPlaceID(id) { (place, error) in
-            guard let place = place else { return failure(error) }
-            success(place)
-        }
+    func processOnResponse(_ place: GMSPlace?, error: Error?) {
+      guard let place = place else { return failure(error) }
+      places.append(place)
+      
+      if places.count == ids.count {
+        success(places)
+      }
     }
     
-    func placesWithIDs(ids: [String], success: GoogleMapsNetworkPlacesResponse, failure: GoogleMapsFailureBlock) {
-        var places = [GMSPlace]()
-        let client = GMSPlacesClient()
-        
-        func processOnResponse(place: GMSPlace?, error: NSError?) {
-            guard let place = place else { return failure(error) }
-            places.append(place)
-            
-            if places.count == ids.count {
-                success(places)
-            }
-        }
-        
-        ids.forEach { client.lookUpPlaceID($0, callback: processOnResponse) }
-    }
-    
+    ids.forEach { client.lookUpPlaceID($0, callback: processOnResponse) }
+  }
+  
 }

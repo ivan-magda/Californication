@@ -26,35 +26,41 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: Properties
-    
-    var window: UIWindow?
-    var app: App?
-
-    // MARK: UIApplicationDelegate
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        AppConfigurator.configurate()
-        themeApplication()
-        
-        if let window = window {
-            app = App(window: window)
-        }
-        
-        return true
+  
+  // MARK: Properties
+  
+  var window: UIWindow?
+  var app: App?
+  
+  // MARK: UIApplicationDelegate
+  
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    setup()
+    return true
+  }
+  
+  // MARK: Private
+  
+  private func setup() {
+    guard let window = window else {
+      fatalError("Application window is nil.")
     }
     
-    // MARK: Private
+    AppConfigurator.configure()
     
-    private func themeApplication() {
-        // Mexican red color.
-        window?.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
-        
-        // Kaitoke green.
-        UINavigationBar.appearance().barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-    }
-
+    app = App(window)
+    themeApplication()
+  }
+  
+  private func themeApplication() {
+    // Mexican red color.
+    window!.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
+    
+    // Kaitoke green.
+    let appearance = UINavigationBar.appearance()
+    appearance.barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
+    appearance.tintColor = UIColor.white
+    appearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+  }
+  
 }

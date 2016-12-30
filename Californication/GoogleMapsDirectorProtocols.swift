@@ -23,18 +23,22 @@
 import Foundation
 import GoogleMaps
 
-typealias GoogleMapsDirectorPlaceSuccess  = GMSPlace -> Void
-typealias GoogleMapsDirectorPlacesSuccess = [GMSPlace] -> Void
-typealias GoogleMapsNetworkPlaceResponse = GMSPlace -> Void
-typealias GoogleMapsNetworkPlacesResponse = [GMSPlace] -> Void
-typealias GoogleMapsFailureBlock = NSError? -> ()
+typealias GoogleMapsDirectorPlaceSuccess  = (GMSPlace) -> Void
+typealias GoogleMapsDirectorPlacesSuccess = ([GMSPlace]) -> Void
+typealias GoogleMapsNetworkPlaceResponse = (GMSPlace) -> Void
+typealias GoogleMapsNetworkPlacesResponse = ([GMSPlace]) -> Void
+typealias GoogleMapsFailureBlock = (Error?) -> ()
 
 protocol GoogleMapsDirectorFacade {
-    func placeWithID(id: String, success: GoogleMapsDirectorPlaceSuccess, failure: GoogleMapsFailureBlock)
-    func placesWithIDs(ids: [String], success: GoogleMapsDirectorPlacesSuccess, failure: GoogleMapsFailureBlock)
+  func place(with id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
+             failure: @escaping GoogleMapsFailureBlock)
+  func places(with ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
+              failure: @escaping GoogleMapsFailureBlock)
 }
 
 protocol GoogleMapsNetworkManager {
-    func placeWithID(id: String, success: GoogleMapsNetworkPlaceResponse, failure: GoogleMapsFailureBlock)
-    func placesWithIDs(ids: [String], success: GoogleMapsNetworkPlacesResponse, failure: GoogleMapsFailureBlock)
+  func place(with id: String, success: @escaping GoogleMapsNetworkPlaceResponse,
+             failure: @escaping GoogleMapsFailureBlock)
+  func places(with ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
+              failure: @escaping GoogleMapsFailureBlock)
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33D4516DC9A3E408C806F94E /* Pods_CalifornicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A275518BE5BC34FDFB39C4AB /* Pods_CalifornicationTests.framework */; };
 		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
 		7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511026A1D3F003D000385A3 /* PlaceImage.swift */; };
 		7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		75F6D8591D3DB981000D2932 /* PlaceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8581D3DB981000D2932 /* PlaceDirector.swift */; };
 		75F6D85B1D3DBF19000D2932 /* GCDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */; };
 		75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */; };
+		80F33B4F110DA096B734246C /* Pods_CalifornicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009E116CB24B6130208BAC6E /* Pods_CalifornicationUITests.framework */; };
 		C63AA9EE9EC76D929CD962DB /* Pods_Californication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		009E116CB24B6130208BAC6E /* Pods_CalifornicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalifornicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4CF11D19B357B52405D12A /* Pods-CalifornicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationUITests/Pods-CalifornicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		25AD54A66003CF6EEF4CDAEB /* Pods-CalifornicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D330346C63968B6F5CDE1F7 /* Pods-CalifornicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
 		7511026A1D3F003D000385A3 /* PlaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImage.swift; sourceTree = "<group>"; };
 		7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,7 +115,9 @@
 		75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDUtils.swift; sourceTree = "<group>"; };
 		75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.release.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.release.xcconfig"; sourceTree = "<group>"; };
+		A275518BE5BC34FDFB39C4AB /* Pods_CalifornicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalifornicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Californication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Californication/Pods-Californication.debug.xcconfig"; sourceTree = "<group>"; };
+		F4CD1494DFFDA972AA2B42A5 /* Pods-CalifornicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationUITests/Pods-CalifornicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Californication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D4516DC9A3E408C806F94E /* Pods_CalifornicationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F33B4F110DA096B734246C /* Pods_CalifornicationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				F671F0799D0C27EC69C63FEB /* Pods_Californication.framework */,
+				A275518BE5BC34FDFB39C4AB /* Pods_CalifornicationTests.framework */,
+				009E116CB24B6130208BAC6E /* Pods_CalifornicationUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,10 +216,9 @@
 				75D4C3681D3C6CA500ECCD4F /* Controllers */,
 				7524B9711D41DFE000C540A3 /* Network */,
 				75D4C36B1D3C751E00ECCD4F /* Model */,
-				75D4C3691D3C6CB700ECCD4F /* Resources */,
-				75D4C3661D3C6C8500ECCD4F /* Supporting Files */,
-				75D4C36A1D3C739900ECCD4F /* View */,
+				75D4C3691D3C6CB700ECCD4F /* Assets */,
 				75F6D85C1D3DC09E000D2932 /* Utils */,
+				75D4C3661D3C6C8500ECCD4F /* Supporting Files */,
 			);
 			path = Californication;
 			sourceTree = "<group>";
@@ -248,7 +259,7 @@
 			name = PlaceDetails;
 			sourceTree = "<group>";
 		};
-		756955BB1D5B04F00025B0D2 /* UITableViewCell */ = {
+		756955BB1D5B04F00025B0D2 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				75F6D85D1D3DEA52000D2932 /* PlaceTableViewCell.swift */,
@@ -256,7 +267,7 @@
 				75E2D6DA1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift */,
 				75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */,
 			);
-			name = UITableViewCell;
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		75D4C3661D3C6C8500ECCD4F /* Supporting Files */ = {
@@ -289,21 +300,22 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		75D4C3691D3C6CB700ECCD4F /* Resources */ = {
+		75D4C3691D3C6CB700ECCD4F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
+				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
 				754CE1791D3C69D0008CFE62 /* Assets.xcassets */,
+				75D4C36A1D3C739900ECCD4F /* View */,
 			);
-			name = Resources;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		75D4C36A1D3C739900ECCD4F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				754CE1761D3C69D0008CFE62 /* Main.storyboard */,
-				754CE17B1D3C69D0008CFE62 /* LaunchScreen.storyboard */,
 				759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */,
-				756955BB1D5B04F00025B0D2 /* UITableViewCell */,
+				756955BB1D5B04F00025B0D2 /* TableViewCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -363,6 +375,10 @@
 			children = (
 				C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */,
 				843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */,
+				4D330346C63968B6F5CDE1F7 /* Pods-CalifornicationTests.debug.xcconfig */,
+				25AD54A66003CF6EEF4CDAEB /* Pods-CalifornicationTests.release.xcconfig */,
+				0A4CF11D19B357B52405D12A /* Pods-CalifornicationUITests.debug.xcconfig */,
+				F4CD1494DFFDA972AA2B42A5 /* Pods-CalifornicationUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -394,9 +410,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 754CE19A1D3C69D0008CFE62 /* Build configuration list for PBXNativeTarget "CalifornicationTests" */;
 			buildPhases = (
+				53C32EBDEEB483097A347C3A /* [CP] Check Pods Manifest.lock */,
 				754CE17F1D3C69D0008CFE62 /* Sources */,
 				754CE1801D3C69D0008CFE62 /* Frameworks */,
 				754CE1811D3C69D0008CFE62 /* Resources */,
+				9251F78FE50F7DE155168589 /* [CP] Embed Pods Frameworks */,
+				D17D4EDF51A1749D7E0E5FB7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,9 +431,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 754CE19D1D3C69D0008CFE62 /* Build configuration list for PBXNativeTarget "CalifornicationUITests" */;
 			buildPhases = (
+				FF1A9938785789EC171E663B /* [CP] Check Pods Manifest.lock */,
 				754CE18A1D3C69D0008CFE62 /* Sources */,
 				754CE18B1D3C69D0008CFE62 /* Frameworks */,
 				754CE18C1D3C69D0008CFE62 /* Resources */,
+				F2257833088739A3F2324F79 /* [CP] Embed Pods Frameworks */,
+				A3FD1BB63731DA346D91C420 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,18 +455,27 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Ivan Magda";
 				TargetAttributes = {
 					754CE16E1D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6UNHY8UY6E;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					754CE1821D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6UNHY8UY6E;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 754CE16E1D3C69D0008CFE62;
 					};
 					754CE18D1D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6UNHY8UY6E;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 754CE16E1D3C69D0008CFE62;
 					};
 				};
@@ -528,6 +559,66 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Californication/Pods-Californication-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		53C32EBDEEB483097A347C3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9251F78FE50F7DE155168589 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3FD1BB63731DA346D91C420 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalifornicationUITests/Pods-CalifornicationUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D17D4EDF51A1749D7E0E5FB7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EC18F76D4EF0D6F81796C256 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,7 +631,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2257833088739A3F2324F79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CalifornicationUITests/Pods-CalifornicationUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF1A9938785789EC171E663B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -649,8 +770,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -672,7 +795,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -695,8 +818,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -712,10 +837,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "a15ca820-e81f-43fa-8668-1b9160824630";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -726,10 +852,17 @@
 			baseConfigurationReference = C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = Californication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.Californication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -738,55 +871,79 @@
 			baseConfigurationReference = 843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = Californication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.Californication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		754CE19B1D3C69D0008CFE62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D330346C63968B6F5CDE1F7 /* Pods-CalifornicationTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = CalifornicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Californication.app/Californication";
 			};
 			name = Debug;
 		};
 		754CE19C1D3C69D0008CFE62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25AD54A66003CF6EEF4CDAEB /* Pods-CalifornicationTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = CalifornicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Californication.app/Californication";
 			};
 			name = Release;
 		};
 		754CE19E1D3C69D0008CFE62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A4CF11D19B357B52405D12A /* Pods-CalifornicationUITests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = CalifornicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Californication;
 			};
 			name = Debug;
 		};
 		754CE19F1D3C69D0008CFE62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4CD1494DFFDA972AA2B42A5 /* Pods-CalifornicationUITests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6UNHY8UY6E;
 				INFOPLIST_FILE = CalifornicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Californication;
 			};
 			name = Release;

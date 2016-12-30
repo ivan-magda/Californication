@@ -25,25 +25,27 @@ import Foundation
 // MARK: GoogleMapsDirector: GoogleMapsDirectorFacade
 
 final class GoogleMapsDirector: GoogleMapsDirectorFacade {
-    
-    // MARK: Properties
-    
-    private let networkManager: GoogleMapsNetworkManager
-    
-    // MARK: Init
-    
-    init(networkManager: GoogleMapsNetworkManager) {
-        self.networkManager = networkManager
-    }
-    
-    // MARK: GoogleMapsDirectorFacade
-    
-    func placeWithID(id: String, success: GoogleMapsDirectorPlaceSuccess, failure: GoogleMapsFailureBlock) {
-        networkManager.placeWithID(id, success: success, failure: failure)
-    }
-    
-    func placesWithIDs(ids: [String], success: GoogleMapsDirectorPlacesSuccess, failure: GoogleMapsFailureBlock) {
-        networkManager.placesWithIDs(ids, success: success, failure: failure)
-    }
-    
+  
+  // MARK: Properties
+  
+  private let networkManager: GoogleMapsNetworkManager
+  
+  // MARK: Init
+  
+  init(networkManager: GoogleMapsNetworkManager) {
+    self.networkManager = networkManager
+  }
+  
+  // MARK: GoogleMapsDirectorFacade
+  
+  func place(with id: String, success: @escaping GoogleMapsDirectorPlaceSuccess,
+             failure: @escaping GoogleMapsFailureBlock) {
+    networkManager.place(with: id, success: success, failure: failure)
+  }
+  
+  func places(with ids: [String], success: @escaping GoogleMapsDirectorPlacesSuccess,
+              failure: @escaping GoogleMapsFailureBlock) {
+    networkManager.places(with: ids, success: success, failure: failure)
+  }
+  
 }
