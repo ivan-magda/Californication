@@ -1,0 +1,345 @@
+{
+  "places" : {
+    "LEGOLAND-california" : {
+      "detail_description" : "Legoland California is a theme park, miniature park, and aquarium located in Carlsbad, California, based on the Lego toy brand. Opening on March 20, 1999, it was the third Legoland park to open, and the first outside of Europe.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/legoland%2Flarge.jpg?alt=media&token=c1c0c292-d207-46e3-8178-f9284b48d008",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/legoland%2Fmedium.jpg?alt=media&token=15bc46a2-0b9b-4df2-8944-5af7e090be96",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/legoland%2Fthumbnail.jpg?alt=media&token=dc6fbb10-ba07-4017-8cac-e95f360ff40a"
+      },
+      "name" : "LEGOLAND California",
+      "place_id" : "ChIJh-SW4xxz3IARbnw0nYLuph0",
+      "summary" : "Lego-themed hotel with free breakfast & WiFi, plus a restaurant, a bar & an outdoor pool."
+    },
+    "TCL-chinese-theatre" : {
+      "detail_description" : "TCL Chinese Theatre is a cinema palace on the historic Hollywood Walk of Fame at 6925 Hollywood Boulevard in Hollywood, California, United States.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/TCL-chinese-theatre%2Flarge.jpg?alt=media&token=0f9047c5-2c32-4724-83c5-bb9c611e69b6",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/TCL-chinese-theatre%2Fmedium.jpg?alt=media&token=56c5dddc-4986-4eb9-817d-ee8a244655b7",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/TCL-chinese-theatre%2Fthumbnail.jpg?alt=media&token=946da78f-daa3-44eb-8aa2-f74d4b3da0c6"
+      },
+      "name" : "TCL Chinese Theatre",
+      "place_id" : "ChIJw4DCAdrX3IAR-1_GYNuCOfc",
+      "summary" : "This iconic, opulent theater hosts movie premieres & immortalizes hand- & footprints of the stars. "
+    },
+    "alcatraz-island" : {
+      "detail_description" : "Alcatraz Island is located in the San Francisco Bay, 1.25 miles (2.01 km) offshore from San Francisco, California, United States. The small island was developed with facilities for a lighthouse, a military fortification, a military prison (1868), and a federal prison from 1933 until 1963. Beginning in November 1969, the island was occupied for more than 19 months by a group of aboriginal people from San Francisco who were part of a wave of Native activism across the nation with public protests through the 1970s. In 1972, Alcatraz became a national recreation area and received designation as a National Historic Landmark in 1986.  Today, the island's facilities are managed by the National Park Service as part of the Golden Gate National Recreation Area; it is open to tours. Visitors can reach the island by ferry ride from Pier 33, near Fisherman's Wharf, San Francisco. Hornblower Cruises and Events, operating under the name Alcatraz Cruises, is the official ferry provider to and from the island.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/alcatraz-island%2Flarge.jpg?alt=media&token=c357cf2e-ad01-4549-9c3c-b23df7bc2326",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/alcatraz-island%2Fmedium.jpg?alt=media&token=abe155f9-92a1-4d0a-b469-ec63d5e4b328",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/alcatraz-island%2Fthumbnail.jpg?alt=media&token=af5a85ca-51da-4403-9df5-5d6168d1385a"
+      },
+      "name" : "Alcatraz Island",
+      "place_id" : "ChIJmRyMs_mAhYARpViaf6JEWNE",
+      "summary" : "Notorious prison & once home to Al Capone, now a museum with audio tour, accessible by ferry."
+    },
+    "balboa-park" : {
+      "detail_description" : "Balboa Park is a 1,200-acre (490 ha) urban cultural park in San Diego, California, United States. In addition to open space areas, natural vegetation zones, green belts, gardens, and walking paths, it contains museums, several theaters, and the world-famous San Diego Zoo. There are also many recreational facilities and several gift shops and restaurants within the boundaries of the park. Placed in reserve in 1835, the park's site is one of the oldest in the United States dedicated to public recreational use. Balboa Park is managed and maintained by the Parks and Recreation Department of the City of San Diego.  Named for the Spanish maritime explorer Vasco Núñez de Balboa, the park hosted the 1915–16 Panama–California Exposition and 1935–36 California Pacific International Exposition, both of which left architectural landmarks. The park and its historic Exposition buildings were declared a National Historic Landmark and National Historic Landmark District in 1977, and placed on the National Register of Historic Places.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/balboa-park%2Flarge.jpg?alt=media&token=ee8b8c64-5780-4975-a09b-2c8b0b4c4883",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/balboa-park%2Fmedium.jpg?alt=media&token=98163931-b25f-4c19-88c5-0dfb559be7cd",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/balboa-park%2Fthumbnail.jpg?alt=media&token=d15c97bc-c55e-4f79-a515-7e7bbd2b69f2"
+      },
+      "name" : "Balboa Park",
+      "place_id" : "ChIJA8tw-pZU2YARxPYVsDwL8-0",
+      "summary" : "Sprawling outdoor destination is home to the city's renowned zoo, 17 museums, gardens & more."
+    },
+    "death-valley-national-park" : {
+      "detail_description" : "Death Valley National Park straddles eastern California and Nevada. It’s known for Titus Canyon, with a ghost town and colorful rocks, and Badwater Basin’s salt flats, North America's lowest point. Above, Telescope Peak Trail weaves past pine trees. North of the spiky salt mounds known as the Devil’s Golf Course, rattlesnakes live in Mesquite Flat Sand Dunes. Near Nevada is the Spanish-style mansion Scotty’s Castle.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/death-valley%2Flarge.jpg?alt=media&token=2a55d3af-a454-44f4-a112-9d2801546e78",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/death-valley%2Fmedium.jpg?alt=media&token=33e1594d-a59a-4e5a-8c77-a20bdef8becf",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/death-valley%2Fthumbnail.jpg?alt=media&token=a5e137ee-4a70-4ad9-a568-c8bb9e3142a9"
+      },
+      "name" : "Death Valley National Park",
+      "place_id" : "ChIJR4qudndLx4ARVLDye3zwycw",
+      "summary" : "Vast national park with over 3.4 million acres of desert & mountains for hiking, camping & biking. "
+    },
+    "disney-california-adventure-park" : {
+      "detail_description" : "To all who come to this place of dreams, welcome. Disney California Adventure celebrates the spirit of optimism and the promise of endless opportunities, ignited by the imagination of daring dreamers such as Walt Disney and those like him who forever changed- and were forever changed by- The Golden State. This unique place embraces the richness and diversity of California... Its land, its people, its stories and, above all, the dreamers it continues to inspire.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disney-california-adventure-park%2Flarge.jpg?alt=media&token=9d33af0c-f031-4693-93a3-1dcbb42835e1",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disney-california-adventure-park%2Fmedium.jpg?alt=media&token=a6efe69f-8d64-4c9b-9f40-16fda484aedf",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disney-california-adventure-park%2Fthumbnail.jpg?alt=media&token=747c128b-32b6-45f0-acd8-eb5ff6a900db"
+      },
+      "name" : "Disney California Adventure Park",
+      "place_id" : "ChIJZeXhi9XX3IARYcIA6Qfcj2o",
+      "summary" : "Contemporary theme park with innovative attractions, multiple dining options & live entertainment."
+    },
+    "disneyland" : {
+      "detail_description" : "Enter a magical kingdom where you can sail with pirates, explore exotic jungles, meet fairy-tale princesses, dive under the ocean and rocket through the stars—all in the same day! Disneyland Park is a beloved Southern California destination where generations of families have made their Disney dreams come true. Opened in 1955, Walt Disney’s original theme park is divided into 8 extravagantly themed lands—Main Street, U.S.A., Tomorrowland, Fantasyland, Mickey's Toontown, Frontierland, Critter Country, New Orleans Square and Adventureland.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland%2Flarge.jpg?alt=media&token=d14355db-15b5-41ae-8de0-581200e65b1a",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland%2Fmedium.jpg?alt=media&token=63877647-cb55-45f3-abbf-acf504b5ee46",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland%2Fthumbnail.jpg?alt=media&token=37e32e1f-47f6-4459-81af-fff1052b3b4e"
+      },
+      "name" : "Disneyland",
+      "place_id" : "ChIJa147K9HX3IAR-lwiGIQv9i4",
+      "summary" : "Iconic amusement park featuring 8 themed \"lands\" with rides, shows & costumed characters."
+    },
+    "disneyland-resort" : {
+      "detail_description" : "The Disneyland Resort, commonly known as Disneyland, is an entertainment resort in Anaheim, California. It is owned and operated by The Walt Disney Company through its Parks and Resorts division and is home to two theme parks (Disneyland Park and Disney California Adventure).  The resort was developed by Walt Disney in the 1950s. When it opened to guests on July 17, 1955, the property consisted of Disneyland, its 100-acre (40 ha) parking lot (which had 15,167 spaces), and the Disneyland Hotel, owned and operated by Disney's business partner Jack Wrather. After succeeding with the multi-park, multi-hotel business model at Walt Disney World in Lake Buena Vista, Florida, Disney acquired large parcels of land adjacent to Disneyland to apply the same business model in Anaheim.  During the expansion, the property was named the Disneyland Resort to encompass the entire complex, while the original theme park was named Disneyland Park. The company purchased the Disneyland Hotel from the Wrather Company and the Pan Pacific Hotel from its Japanese owners. The latter became Disney's Paradise Pier Hotel. The property saw the addition of Disney's Grand Californian Hotel & Spa, a second theme park, named Disney California Adventure, and the Downtown Disney shopping, dining, and entertainment area.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland-resort%2Flarge.jpg?alt=media&token=22f54d0b-9d67-42d6-9185-8e812f0d2da6",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland-resort%2Fmedium.jpg?alt=media&token=5faacbb6-dd32-41b3-9d67-b891094edd9f",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/disneyland-resort%2Fthumbnail.jpg?alt=media&token=3b46fddd-3d2e-4a9b-8b5b-22e37d8f27fb"
+      },
+      "name" : "Disneyland Resort",
+      "place_id" : "ChIJg3XXhNrX3IARUc0M9bIC_X4",
+      "summary" : "Well-known resort featuring theme parks, shows & costumed characters, plus dining, shops & hotels."
+    },
+    "fishermans-wharf" : {
+      "detail_description" : "Fisherman's Wharf is a neighborhood and popular tourist attraction in San Francisco, California. It roughly encompasses the northern waterfront area of San Francisco from Ghirardelli Square or Van Ness Avenue east to Pier 35 or Kearny Street. The F Market streetcar runs through the area, the Powell-Hyde cable car lines runs to Aquatic Park, at the edge of Fisherman's Wharf, and the Powell-Mason cable car line runs a few blocks away.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/fisherman-wharf%2Flarge.jpg?alt=media&token=a7518f86-0dc8-47bd-ab7e-04bbacd7d745",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/fisherman-wharf%2Fmedium.jpg?alt=media&token=6aa1a560-f743-485e-bb76-124ec49f82d8",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/fisherman-wharf%2Fthumbnail.jpg?alt=media&token=75c5e0e2-878b-4b35-94ca-f624cfd2eaa1"
+      },
+      "name" : "Fisherman's Wharf",
+      "place_id" : "ChIJueOuefqAhYARapAU-YtbztA",
+      "summary" : "Whether planning a visit or seeking information, you'll find a  wealth of knowledge on how a historic era still influences the present-day culture, events, sights, sounds, and food of San Francisco's most famous waterfront community. Explore our ​​past, join in today's fun, and catch a glimpse into our future!"
+    },
+    "golden-gate-bridge" : {
+      "detail_description" : "The Golden Gate Bridge is a suspension bridge spanning the Golden Gate strait, the one-mile-wide (1.6 km), three-mile-long (4.8 km) channel between San Francisco Bay and the Pacific Ocean. The structure links the American city of San Francisco, California – the northern tip of the San Francisco Peninsula – to Marin County, carrying both U.S. Route 101 and California State Route 1 across the strait. The bridge is one of the most internationally recognized symbols of San Francisco, California, and the United States. It has been declared one of the Wonders of the Modern World by the American Society of Civil Engineers.  The Frommers travel guide describes the Golden Gate Bridge as \"possibly the most beautiful, certainly the most photographed, bridge in the world. It opened in 1937 and was, until 1964, the longest suspension bridge main span in the world, at 4,200 feet (1,300 m).",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/golden-gate-bridge%2Flarge.jpg?alt=media&token=a3ee2472-9e31-4bef-8486-cff71600c65a",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/golden-gate-bridge%2Fmedium.jpg?alt=media&token=1eb5a97b-1898-4536-be10-5ac3d1bf0344",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/golden-gate-bridge%2Fthumbnail.jpg?alt=media&token=df0a6d66-d6b7-4ace-bfe9-14f42c7ccfdb"
+      },
+      "name" : "Golden Gate Bridge",
+      "place_id" : "ChIJw____96GhYARCVVwg5cT7c0",
+      "summary" : "Famed 4,200-ft. art deco suspension bridge open to car, bike & foot traffic."
+    },
+    "griffith-observatory" : {
+      "detail_description" : "Griffith Observatory is a facility in Los Angeles, California sitting on the south-facing slope of Mount Hollywood in Los Angeles' Griffith Park. It commands a view of the Los Angeles Basin, including Downtown Los Angeles to the southeast, Hollywood to the south, and the Pacific Ocean to the southwest. The observatory is a popular tourist attraction with an excellent view of the Hollywood sign, and an extensive array of space and science-related displays. Since the observatory opened in 1935, admission has been free, in accordance with Griffith's will. However, some planetary shows inside have a small added charge.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-observatory%2Flarge.jpg?alt=media&token=e6659467-b425-48af-a558-0ae56cb66b8a",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-observatory%2Fmedium.jpg?alt=media&token=82f5ae26-0155-43d6-94d6-00dc5d00ef0a",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-observatory%2Fthumbnail.jpg?alt=media&token=055180fc-6353-4bda-8fe0-31c78a8a9ae4"
+      },
+      "name" : "Griffith Observatory",
+      "place_id" : "ChIJywjU6WG_woAR3NrWwrEH_3M",
+      "summary" : "This art deco landmark from 1935 features a high-tech planetarium, public telescopes & city views."
+    },
+    "griffith-park" : {
+      "detail_description" : "Griffith Park is a large municipal park at the eastern end of the Santa Monica Mountains, in the Los Feliz neighborhood of Los Angeles, California. The park covers 4,310 acres (1,740 ha) of land, making it one of the largest urban parks in North America. It is the second-largest city park in California, after Mission Trails Preserve in San Diego, and the 11th largest municipally owned park in the United States. It has also been referred to as the Central Park of Los Angeles[citation needed] but is much larger, more untamed, and rugged than its New York City counterpart.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-park%2Flarge.jpg?alt=media&token=e84eb52c-6420-49f6-97cf-1bf7afdc3a70",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-park%2Fmedium.jpg?alt=media&token=02a29d02-6ebd-44e8-b64f-b6551b4983a2",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/griffith-park%2Fthumbnail.jpg?alt=media&token=335b513c-d162-495b-973b-0b9d31b34740"
+      },
+      "name" : "Griffith Park",
+      "place_id" : "ChIJ9590IY3AwoARquS6ie60MUc",
+      "summary" : "Urban oasis featuring hiking & equestrian trails, plus city views, the Greek Theatre & L.A. Zoo."
+    },
+    "hearst-castle" : {
+      "detail_description" : "Hearst Castle is a National Historic Landmark and California Historical Landmark mansion located on the Central Coast of California, United States. It was designed by architect Julia Morgan, between 1919 and 1947, for newspaper magnate William Randolph Hearst, who died in 1951. The California Park Commission voted to approve its inclusion in the California State Park System, which was approved by the California State Legislature in 1954 with a proposed admission charge of $1 per person ($9 adjusted for inflation) and a 50¢ bus ride. However, ironing out the details with the Trustees of the Hearst Estate and the Hearst Corporation took several years. Agreement was finalized in 1957, and it opened in 1958. Since that time, it has been maintained within the Hearst San Simeon State Park where the estate, and its considerable collection of art and antiques, is open for public tours. Despite its location far from any urban center, the site attracts \"millions of travelers each year\". Hearst formally named the estate \"La Cuesta Encantada\" (\"The Enchanted Hill\"), but usually called it \"the ranch\". Hearst Castle and grounds are also sometimes referred to as \"San Simeon\" without distinguishing between the Hearst property and the adjacent unincorporated area of the same name. The term \"Castle\" is a bit of a misnomer when it refers to Hearst Castle, as it is really a group of mansions.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hearst-castle-california%2Flarge.jpg?alt=media&token=a8c0ca6c-c1dd-4c16-987d-b56c76e27e6a",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hearst-castle-california%2Fmedium.jpg?alt=media&token=76023bcc-5dcc-4077-a074-bdf08907a736",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hearst-castle-california%2Fthumbnail.jpg?alt=media&token=7ff8a510-2b64-4ea7-b6cc-6430e632f3c3"
+      },
+      "name" : "Hearst Castle",
+      "place_id" : "ChIJi-pozp3MkoARIC7KVSXGe8A",
+      "summary" : "Guests explore the art & grounds of the 20th-century mansion built by the eponymous media magnate. "
+    },
+    "hollywood-sign" : {
+      "detail_description" : "The Hollywood Sign (formerly the Hollywoodland Sign) is a landmark and American cultural icon located in Los Angeles, California. It is situated on Mount Lee, in the Hollywood Hills area of the Santa Monica Mountains. The sign overlooks Hollywood, Los Angeles.  \"HOLLYWOOD\" is spelled out in 45-foot-tall (14 m) white capital letters and is 350 feet (110 m) long. It was originally created in 1923 as an advertisement for a local real estate development, but it garnered increasing recognition after the sign was left up. The sign was a frequent target of pranks and vandalism, but it has since undergone restoration, including the installation of a security system to deter vandalism. The sign is protected and promoted by The Trust For Public Land, a nonprofit organization, while its site and the surrounding land are part of Griffith Park.  From the ground, the contours of the hills give the sign a \"wavy\" appearance, as reflected in the Hollywood Video logo, for example. When observed at a comparable altitude, the letters appear nearly level.  The sign makes frequent appearances in popular culture, particularly in establishing shots for films and television programs set in or around Hollywood. Signs of similar style, but spelling different words, are frequently seen as parodies. The sign inspired Los Angeles artist Ed Ruscha who rendered it in different media.  The sign was the location of the 1932 death of Hollywood starlet Peg Entwistle.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-sign%2Flarge.jpg?alt=media&token=dae4baaa-3492-4b31-87a1-2b49d66ebdcc",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-sign%2Fmedium.jpg?alt=media&token=77cae71b-226c-4c11-963b-f3747f88126e",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-sign%2Fthumbnail.jpg?alt=media&token=e9ac366a-2ed4-4c73-b67a-29a730f67bb5"
+      },
+      "name" : "Hollywood Sign",
+      "place_id" : "ChIJfVpQRQq_woARQ5hwJsast6s",
+      "summary" : "Erected in 1923, this symbolic landmark on Mount Lee is often viewed from Griffith Park Observatory."
+    },
+    "hollywood-walk-of-fame" : {
+      "detail_description" : "The Hollywood Walk of Fame comprises more than 2,500 five-pointed terrazzo and brass stars embedded in the sidewalks along 15 blocks of Hollywood Boulevard and three blocks of Vine Street in Hollywood, California. The stars are permanent public monuments to achievement in the entertainment industry, bearing the names of a mix of actors, musicians, directors, producers, musical and theatrical groups, fictional characters, and others. The Walk of Fame is administered by the Hollywood Chamber of Commerce and maintained by the self-financing Hollywood Historic Trust. It is a popular tourist destination, with a reported 10 million visitors in 2003.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-walk-of-fame%2Flarge.jpg?alt=media&token=98e9b02b-59c4-4d15-9a2f-7afd33e701db",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-walk-of-fame%2Fmedium.jpg?alt=media&token=4047c3c8-53fc-47ee-9b92-4e3245a79bc4",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/hollywood-walk-of-fame%2Fthumbnail.jpg?alt=media&token=f0e8af58-786a-4646-9dae-8f2dd405c0fd"
+      },
+      "name" : "Hollywood Walk of Fame",
+      "place_id" : "ChIJB-q06yO_woARAyI-TXl5HSM",
+      "summary" : "Legendary memorial walk adorned with stars bearing the biggest names in the entertainment industry."
+    },
+    "joshua-tree-national-park" : {
+      "detail_description" : "SeaWorld San Diego is an animal theme park, oceanarium, outside aquarium, and marine mammal park, located in San Diego, California, United States. The park is owned by SeaWorld Entertainment.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/joshua-tree-national-park%2Flarge.jpg?alt=media&token=007f1ef0-3021-44c3-9327-be6460b14e71",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/joshua-tree-national-park%2Fmedium.jpg?alt=media&token=cf36f037-3c27-4529-95b7-97b15c3cf916",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/joshua-tree-national-park%2Fthumbnail.jpg?alt=media&token=d08eae64-14e5-429b-9a80-29cc316c5a86"
+      },
+      "name" : "Joshua Tree National Park",
+      "place_id" : "ChIJe6hluYWP2oAR4p3rOqftdxk",
+      "summary" : "Marine life shows, thrill rides, aquariums & up-close encounters with dolphins, penguins & more."
+    },
+    "kings-canyon-national-park" : {
+      "detail_description" : "Kings Canyon National Park is a national park in the southern Sierra Nevada, east of Fresno, California. The park was established in 1940 and covers 461,901 acres.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/kings-canyon-national-park%2Flarge.jpg?alt=media&token=0c137d9f-190f-4eb5-970e-9d78914ee4b7",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/kings-canyon-national-park%2Fmedium.jpg?alt=media&token=1e80b33d-8313-4f3e-b725-56c645816190",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/kings-canyon-national-park%2Fthumbnail.jpg?alt=media&token=145e3d40-9824-4c4e-8145-c882d3402aa3"
+      },
+      "name" : "Kings Canyon National Park",
+      "place_id" : "ChIJe6fxX-7Vv4ARTA9DcLeDZII",
+      "summary" : "National park offers a varied landscape for hiking & other outdoor diversions among huge trees."
+    },
+    "mammoth-mountain" : {
+      "detail_description" : "Mammoth Mountain is a lava dome complex west of the town of Mammoth Lakes, California, in the Inyo National Forest of Madera and Mono Counties. It is home to a large ski area on the Mono County side.  Mammoth Mountain was formed in a series of eruptions that ended 57,000 years ago. However, Mammoth still produces hazardous volcanic gases that kill trees and caused ski patroller fatalities in 2006.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/mammoth-mountain%2Flarge.jpg?alt=media&token=9d524526-cb32-418f-b76a-cc7179cbcc03",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/mammoth-mountain%2Fmedium.jpg?alt=media&token=2876bc58-6618-4833-89fc-f710b4409367",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/mammoth-mountain%2Fthumbnail.jpg?alt=media&token=269263dd-e1df-44ae-b469-47d0c740bb1d"
+      },
+      "name" : "Mammoth Mountain",
+      "place_id" : "ChIJ0dOf1E4NloARFFYXnSjDqQ0",
+      "summary" : "For the ski area, see Mammoth Mountain Ski Area."
+    },
+    "monterey-bay-aquarium" : {
+      "detail_description" : "The Monterey Bay Aquarium (MBA) is a public aquarium located in Monterey, California, United States. The aquarium was founded in 1984 and is located on the site of a former sardine cannery on Cannery Row. It has an annual attendance of more than two million visitors. It holds thousands of plants and animals, representing more than 600 species on display. The aquarium benefits from a high circulation of fresh ocean water which is obtained through pipes which pump it in continuously from Monterey Bay.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/monterey-bay-aquarium%2Flarge.jpg?alt=media&token=e9052a22-71bb-4229-86dd-0009db0061b1",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/monterey-bay-aquarium%2Fmedium.jpg?alt=media&token=3ee0b2fe-582a-4f6d-adcc-f123676cc935",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/monterey-bay-aquarium%2Fthumbnail.jpg?alt=media&token=b266d62f-3832-4421-93fc-ede0d0d99d31"
+      },
+      "name" : "Monterey Bay Aquarium",
+      "place_id" : "ChIJ4-RmgarmjYARY5silxlKqLU",
+      "summary" : "Well-known aquarium on a rocky coastline with exhibits ranging from otter habitats to touch pools."
+    },
+    "redwood-national-and-state-parks" : {
+      "detail_description" : "The Redwood National and State Parks (RNSP) are old-growth temperate rainforests located in the United States, along the coast of northern California. Comprising Redwood National Park (established 1968) and California's Del Norte Coast, Jedediah Smith, and Prairie Creek Redwoods State Parks (dating from the 1920s), the combined RNSP contain 133,000 acres (540 km2). Located entirely within Del Norte and Humboldt Counties, the four parks, together, protect 45% of all remaining coast redwood (Sequoia sempervirens) old-growth forests, totaling at least 38,982 acres (157.75 km2). These trees are the tallest and one of the most massive tree species on Earth. In addition to the redwood forests, the parks preserve other indigenous flora, fauna, grassland prairie, cultural resources, portions of rivers and other streams, and 37 miles (60 km) of pristine coastline.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/redwood-national-park%2Flarge-min.jpeg?alt=media&token=09e57c05-4028-42ff-8acf-88d8aa4f418d",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/redwood-national-park%2Fmedium.jpeg?alt=media&token=3ab3f638-d8de-4f78-a267-97dc4e02c69a",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/redwood-national-park%2Fthumbnail.jpeg?alt=media&token=106f046e-6985-4519-815e-a3385374f719"
+      },
+      "name" : "Redwood National and State Parks",
+      "place_id" : "ChIJpX9B9TZm0FQRjl87lWYyzzY",
+      "summary" : "Immense woodland system containing many towering redwood trees, with trails, campgrounds & more. "
+    },
+    "san-diego-zoo-safari-park" : {
+      "detail_description" : "The San Diego Zoo Safari Park, known as the San Diego Wild Animal Park until 2010, is an 1,800 acre (730 ha) zoo in the San Pasqual Valley area of San Diego, California, near Escondido. It is one of the largest tourist attractions in San Diego County. The park houses a large array of wild and endangered animals including species from the continents of Africa, Asia, Europe, North and South America, and Australia. The park is in a semi-arid environment, and one of its most notable features is the Africa Tram which explores the expansive African exhibits. These free-range enclosures house such animals as antelopes, giraffes, buffalo, cranes, and rhinoceros. The park is also noted for its California condor breeding program, the most successful such program in the United States.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/san-diego-zoo-safari-park%2Flarge.jpg?alt=media&token=89788a17-567d-4cca-9e0c-c6390a401b89",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/san-diego-zoo-safari-park%2Fmedium.jpg?alt=media&token=e86bf85e-5a0c-4447-b41c-ffc53b749492",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/san-diego-zoo-safari-park%2Fthumbnail.jpg?alt=media&token=8cfc382f-0714-4994-98df-cd0bf21e3e00"
+      },
+      "name" : "San Diego Zoo Safari Park",
+      "place_id" : "ChIJ-6-oXwXy24AR6C1du6y1FtI",
+      "summary" : "Visitor tours of a 1,800-acre wildlife sanctuary with over 300 species of African & Asian animals."
+    },
+    "santa-cruz-beach-boardwalk" : {
+      "detail_description" : "The Santa Cruz Beach Boardwalk is an oceanfront amusement park in Santa Cruz, California. Founded in 1907, it is California's oldest surviving amusement park and one of the few seaside parks on the West Coast of the United States.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-cruz-beach-boardwalk%2Flarge.jpg?alt=media&token=585d06bb-8716-4782-a773-da06b0a52ed0",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-cruz-beach-boardwalk%2Fmedium.jpg?alt=media&token=43d21d08-20cb-4487-acea-1571e7a1fd91",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-cruz-beach-boardwalk%2Fthumbnail.jpg?alt=media&token=d8204a7d-5481-4825-be8e-bc605f9afea6"
+      },
+      "name" : "Santa Cruz Beach Boardwalk",
+      "place_id" : "ChIJUexFVhlAjoARpU8zCcm9Awk",
+      "summary" : "Amusement park offers a variety of games & rides right on a mile-long stretch of sandy beach."
+    },
+    "santa-monica-pier" : {
+      "detail_description" : "The Santa Monica Pier is a large double-jointed pier located at the foot of Colorado Avenue in Santa Monica, California. With an iconic entrance, the pier is popular with residents and visitors as a landmark that is over 100 years old.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-monica-pier%2Flarge.jpg?alt=media&token=680d043e-2b75-4e7d-a8e3-80591249120b",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-monica-pier%2Fmedium.jpg?alt=media&token=1a5e8ded-affe-413b-9cc5-5d66fff18666",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/santa-monica-pier%2Fthumbnail.jpg?alt=media&token=56ef2308-c108-4131-94d6-2a4899e14a64"
+      },
+      "name" : "Santa Monica Pier",
+      "place_id" : "ChIJZcs3zNCkwoARjU42dRrVZfM",
+      "summary" : "Storied seaside destination boasting a range of shops & cafes, plus an amusement park & aquarium. "
+    },
+    "seaWorld-san-diego" : {
+      "detail_description" : "SeaWorld San Diego is an animal theme park, oceanarium, outside aquarium, and marine mammal park. There are 26 animal habitats, 10 rides, 20 shows, 2 play areas, 4 special limited-time events, and 11 \"distinctive experiences\" (including special experiences such as swimming with dolphins).",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/seaworld-san-diego%2Flarge.jpg?alt=media&token=70608935-206f-4bc2-aa0d-8dcb2a4c1ea6",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/seaworld-san-diego%2Fmedium.jpg?alt=media&token=57266c00-8a4b-4f7d-bd1e-2a1b81b013c3",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/seaworld-san-diego%2Fthumbnail.jpg?alt=media&token=aa9682a3-c535-4bbb-9a65-53b19a5776da"
+      },
+      "name" : "SeaWorld San Diego",
+      "place_id" : "ChIJd-tZsWCq3oAR_sO70namuLg",
+      "summary" : "Marine life shows, thrill rides, aquariums & up-close encounters with dolphins, penguins & more."
+    },
+    "sequoia-national-park" : {
+      "detail_description" : "Sequoia National Park is a national park in the southern Sierra Nevada east of Visalia, California, in the United States. It was established on September 25, 1890. The park spans 404,064 acres (631.35 sq mi; 163,518.90 ha; 1,635.19 km2). Encompassing a vertical relief of nearly 13,000 feet (4,000 m), the park contains among its natural resources the highest point in the contiguous 48 United States, Mount Whitney, at 14,494 feet (4,418 m) above sea level. The park is south of and contiguous with Kings Canyon National Park; the two are administered by the National Park Service together as the Sequoia and Kings Canyon National Parks. They were designated the UNESCO Sequoia-Kings Canyon Biosphere Reserve in 1976.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/sequoia-national-park%2Flarge.jpg?alt=media&token=b4834dda-c3ee-420b-a382-9640349bac63",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/sequoia-national-park%2Fmedium.jpg?alt=media&token=c84bce0c-e505-4677-a0bf-6c8a4f761be7",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/sequoia-national-park%2Fthumbnail.jpg?alt=media&token=bad51a09-1671-41dd-8cc9-2630663b2a47"
+      },
+      "name" : "Sequoia National Park",
+      "place_id" : "ChIJeWUZLX37v4ARZPQen_nfCkQ",
+      "summary" : "Sprawling park filled with immense sequoia trees & offering hiking, camping & other activities"
+    },
+    "six-flags-magic-mountain" : {
+      "detail_description" : "Six Flags Magic Mountain is a 262-acre (106 ha) theme park located in the Valencia neighborhood of Santa Clarita, California, north of Los Angeles. It opened on May 30, 1971, as Magic Mountain, a development of the Newhall Land and Farming Company. In 1979, Six Flags purchased the park and added the name \"Six Flags\" to the park's title.  With 19 roller coasters, Six Flags Magic Mountain holds the world record for most roller coasters in an amusement park. In 2015, the park had an estimated 3.1 million visitors ranking it eighteenth in attendance in North America.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/six-flags-magic-mountain%2Flarge.jpg?alt=media&token=640adbd6-4ffd-4e69-8022-12cf814e561f",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/six-flags-magic-mountain%2Fmedium.jpg?alt=media&token=075de2c0-4fd6-4a2e-8c96-bd8250e1e442",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/six-flags-magic-mountain%2Fthumbnail.jpg?alt=media&token=4d747213-d6db-4d45-a32e-f9ad55305376"
+      },
+      "name" : "Six Flags Magic Mountain",
+      "place_id" : "ChIJxWX6v6WAwoARQEdzPETBA48",
+      "summary" : "Popular, longtime amusement park featuring many modern roller-coasters, plus rides for young kids."
+    },
+    "the-getty" : {
+      "detail_description" : "The Getty Center, in Los Angeles, California, is a campus of the Getty Museum and other programs of the Getty Trust. The $1.3 billion Center opened to the public on December 16, 1997 and is well known for its architecture, gardens, and views overlooking Los Angeles. The Center sits atop a hill connected to a visitors' parking garage at the bottom of the hill by a three-car, cable-pulled hovertrain funicular.  Located in the Brentwood neighborhood of Los Angeles, the Center is one of two locations of the J. Paul Getty Museum and draws 1.3 million visitors annually. (The other location is the Getty Villa in the Pacific Palisades neighborhood of Los Angeles, California.) The Center branch of the Museum features pre-20th-century European paintings, drawings, illuminated manuscripts, sculpture, and decorative arts; and 19th- and 20th-century American, Asian, and European photographs.[3] In addition, the Museum’s collection at the Center includes outdoor sculpture displayed on terraces and in gardens and the large Central Garden designed by Robert Irwin. Among the artworks on display is the Vincent Van Gogh painting Irises.  Designed by architect Richard Meier, the campus also houses the Getty Research Institute (GRI), the Getty Conservation Institute, the Getty Foundation, and the J. Paul Getty Trust. The Center's design included special provisions to address concerns regarding earthquakes and fires.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/the-getty%2Flarge.jpg?alt=media&token=2926afd0-5cd7-418f-a83e-8613114fb282",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/the-getty%2Fmedium.jpg?alt=media&token=6560f4ef-9563-4b22-8903-f134db441c5c",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/the-getty%2Fthumbnail.jpg?alt=media&token=d31785bf-464a-4fe6-b2df-78386c3ffb2a"
+      },
+      "name" : "The Getty",
+      "place_id" : "ChIJbzYnQte8woARJaqqFVpKeNo",
+      "summary" : "Famous, sizable free museum highlighting American & European art, architecture & manicured gardens."
+    },
+    "the-huntington-library-art-collections-and-Botanical-Gardens" : {
+      "detail_description" : "The Huntington Library, Art Collections and Botanical Gardens (or The Huntington) is a collections-based educational and research institution established by Henry E. Huntington (1850–1927) and located in Los Angeles County at San Marino, California, on the western coast of the United States, and about 35 miles northeast of the Pacific Ocean. In addition to the library, the institution houses an extensive art collection with a focus in 18th and 19th-century European art and 17th to mid-20th-century American art. The property also includes approximately 120 acres of specialized botanical landscaped gardens, most notably the \"Japanese Garden\", the \"Desert Garden\", and the \"Chinese Garden\" (Liu Fang Yuan).",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/huntington-library%2Flarge.jpg?alt=media&token=d258d4e6-de99-4bf3-8f22-b43fecc99708",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/huntington-library%2Fmedium.jpg?alt=media&token=422a24a4-4c12-4bc8-837f-b2edfaeded30",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/huntington-library%2Fthumbnail.jpg?alt=media&token=0d6e18ce-7a25-44bf-9244-8eeef5dd0a64"
+      },
+      "name" : "The Huntington Library, Art Collections, and Botanical Gardens",
+      "place_id" : "ChIJc1xhAk3bwoARBBlfKQzXKLM",
+      "summary" : "Expansive complex housing art galleries with famous works, rare-book collections & lush gardens. "
+    },
+    "universal-studios" : {
+      "detail_description" : "Universal Studios Hollywood is a film studio and theme park in the Universal City community of the San Fernando Valley region of the city of Los Angeles, California, United States. It is one of the oldest and most famous Hollywood film studios still in use. Its official marketing headline is \"The Entertainment Capital of LA\". It was initially created to offer tours of the real Universal Studios sets and is the first of many full-fledged Universal Studios Theme Parks located across the world. Woody Woodpecker is the mascot for Universal Studios Hollywood.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/universal-studios%2Flarge.jpg?alt=media&token=c4feb8e2-1b7c-4d5e-9ab0-2389b2a696f2",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/universal-studios%2Fmedium.jpg?alt=media&token=3e2cf50c-b5c5-43d8-afae-85d023350a9b",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/universal-studios%2Fthumbnail.jpg?alt=media&token=63169852-9e1c-4168-a6d8-b257554b6cd5"
+      },
+      "name" : "Universal Studios Hollywood",
+      "place_id" : "ChIJzzgyJU--woARcZqceSdQ3dM",
+      "summary" : "Sprawling amusement park with a cinema theme, featuring rides, restaurants, shops & shows."
+    },
+    "yosemite-falls" : {
+      "detail_description" : "Yosemite Falls is the highest waterfall in Yosemite National Park, dropping a total of 2,425 feet from the top of the upper fall to the base of the lower fall.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-falls%2Flarge.jpg?alt=media&token=f19b594f-f5c0-49be-8480-8f11963f2c21",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-falls%2Fmedium.jpg?alt=media&token=733fcb32-2e5c-4492-a257-c1b8b657b50f",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-falls%2Fthumbnail.jpg?alt=media&token=d1db54d0-88c5-4ffe-81d9-1744e6b1eb2f"
+      },
+      "name" : "Yosemite Falls",
+      "place_id" : "ChIJ660lTfvxloARuNGTLd_LBco",
+      "summary" : "Renowned series of mountainside waterfalls totaling 2,425 ft. flowing roughly November-July."
+    },
+    "yosemite-national-park" : {
+      "detail_description" : "Yosemite National Park is set within California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoias, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome. In Yosemite Village are shops, restaurants, the Yosemite Museum and the Ansel Adams Gallery, offering prints of the photographer’s renowned black-and-white landscapes of the area.",
+      "images" : {
+        "large" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-national-park%2Flarge.jpg?alt=media&token=0f7070cc-cd18-477d-9900-f255b38a71f0",
+        "medium" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-national-park%2Fmedium.jpg?alt=media&token=d118a42d-403f-4f6e-b011-89b65baa3a75",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/californication-a77b2.appspot.com/o/yosemite-national-park%2Fthumbnail.jpg?alt=media&token=f9361bd8-290a-41dc-b2cb-5f012dbdf79f"
+      },
+      "name" : "Yosemite National Park",
+      "place_id" : "ChIJxeyK9Z3wloAR_gOA7SycJC0",
+      "summary" : "Iconic national park offers an array of options such as hiking among redwoods & river rafting."
+    }
+  }
+}
