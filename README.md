@@ -16,6 +16,8 @@ Discover only the best points of interest in the California. View detail informa
 - In `Constants.swift`, change the properties with your own instances.
 - Build & run, enjoy.
 
+If you want to set up your own Firebase Database follow this [instructions](../master/Database).
+
 ## Author
 I'm [Ivan Magda](https://www.facebook.com/ivan.magda).
 Email: [imagda15@gmail.com](mailto:imagda15@gmail.com).
