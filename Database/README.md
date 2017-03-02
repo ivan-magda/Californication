@@ -18,7 +18,7 @@ To create your own database please follow this steps:
   }
 }
 ```
-- Update URL types
+- Change the `URL Schemes`:
   - Select the Californication target
   - Info tab and expand URL Types
   - Change the first one with your bundle identifier
