@@ -9,3 +9,17 @@ To create your own database please follow this steps:
 - Select `californication-database.json` file from the `Database` directory
 - Press `Overview` on the left panel and then `Add Firebase to your iOS app`
 - Follow instructions (You only need to replace GoogleService-Info.plist with your own)
+- Set the `Database Rules` as follows:
+```
+{
+  "rules": {
+    ".read": "true",
+    ".write": "auth != null"
+  }
+}
+```
+- Update URL types
+  - Select the Californication target
+  - Info tab and expand URL Types
+  - Change the first one with your bundle identifier
+  - Change the second one with `REVERSED_CLIENT_ID` from the `GoogleService-Info.plist` file
