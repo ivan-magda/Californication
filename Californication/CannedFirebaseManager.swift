@@ -29,11 +29,11 @@ class CannedFirebaseManager: FirebaseManager {
   
   // MARK: Properties
   
-  private let root = FIRDatabase.database().reference()
+  private let root = Database.database().reference()
   
   // MARK: FirebaseManager
   
-  func all(_ completion: @escaping (FIRDataSnapshot) -> ()) {
+  func all(_ completion: @escaping (DataSnapshot) -> ()) {
     root.child("places").observeSingleEvent(of: .value, with: completion)
   }
   

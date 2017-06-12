@@ -38,7 +38,7 @@ class AppConfigurator {
   class func configure() {
     assert(Constants.googleMapsAPIKey.rawValue != "REPLACE_WITH_YOUR_API_KEY",
            "Please goto Constants.swift and replace Google Maps API key with your own.")
-    FIRApp.configure()
+    FirebaseApp.configure()
     GMSServices.provideAPIKey(Constants.googleMapsAPIKey.rawValue)
   }
   

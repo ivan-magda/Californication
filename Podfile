@@ -6,11 +6,11 @@ target 'Californication' do
   inhibit_all_warnings!
   
   # Pods for Californication
-  pod 'Firebase/Database', '3.11.1'
-  pod 'Firebase/Storage', '3.11.1'
+  pod 'Firebase/Database', '4.0.2'
+  pod 'Firebase/Storage', '4.0.2'
   pod 'GoogleMaps', '1.13.2'
   pod 'MBProgressHUD', '1.0'
-  pod 'HCSStarRatingView', '1.4.5'
+  pod 'HCSStarRatingView', '1.5'
   pod 'AlamofireImage', '3.2'
   pod 'AwesomeCache', '5.0'
   

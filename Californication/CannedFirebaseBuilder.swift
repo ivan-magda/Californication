@@ -29,13 +29,13 @@ class CannedFirebaseBuilder: FirebaseBuilder {
   
   // MARK: FirebaseBuilder
   
-  func build(from response: FIRDataSnapshot) -> [FPlace] {
-    return response.children.flatMap { self.placeFromSnapshot($0 as! FIRDataSnapshot) }
+  func build(from response: DataSnapshot) -> [FPlace] {
+    return response.children.flatMap { self.placeFromSnapshot($0 as! DataSnapshot) }
   }
   
   // MARK: Helpers
   
-  private func placeFromSnapshot(_ snapshot: FIRDataSnapshot) -> FPlace? {
+  private func placeFromSnapshot(_ snapshot: DataSnapshot) -> FPlace? {
     let dictionary = snapshot.value as! [String: AnyObject]
     
     guard let placeID = dictionary[FPlace.Key.placeId.rawValue] as? String,

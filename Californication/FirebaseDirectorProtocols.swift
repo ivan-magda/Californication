@@ -28,9 +28,9 @@ protocol FirebaseDirectorFacade {
 }
 
 protocol FirebaseManager {
-  func all(_ completion: @escaping (FIRDataSnapshot) -> ())
+  func all(_ completion: @escaping (DataSnapshot) -> ())
 }
 
 protocol FirebaseBuilder {
-  func build(from response: FIRDataSnapshot) -> [FPlace]
+  func build(from response: DataSnapshot) -> [FPlace]
 }
