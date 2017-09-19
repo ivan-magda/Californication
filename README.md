@@ -1,5 +1,6 @@
 # Californication
 
+[![codebeat badge](https://codebeat.co/badges/2893b492-07d1-4fd7-a201-83d06db3a68f)](https://codebeat.co/projects/github-com-vanyaland-californication-master)
 ![License](https://img.shields.io/npm/l/express.svg)
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 
