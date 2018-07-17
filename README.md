@@ -11,13 +11,13 @@ width="600" height="600" hspace="100">
 Discover only the best points of interest in the California. View detail information about the place and also see it's location on the map.
 
 ## Installation
+If you want to set up your own Firebase Database follow this [instructions](../master/Database).
+
 - Run `pod install` on project directory([CocoaPods Installation](https://guides.cocoapods.org/using/getting-started.html)).
 - Open `Californication.xcworkspace` and build.
 - Obtain an Google API Key with selected Google Maps and Places SDK for iOS.
 - In `Constants.swift`, change the properties with your own instances.
 - Build & run, enjoy.
-
-If you want to set up your own Firebase Database follow this [instructions](../master/Database).
 
 ## Author
 I'm [Ivan Magda](https://www.facebook.com/ivan.magda).
