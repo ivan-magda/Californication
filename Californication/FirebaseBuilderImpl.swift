@@ -25,12 +25,12 @@ import FirebaseDatabase
 
 // MARK: CannedFirebaseBuilder: FirebaseBuilder
 
-class CannedFirebaseBuilder: FirebaseBuilder {
+class FirebaseBuilderImpl: FirebaseBuilder {
   
   // MARK: FirebaseBuilder
   
   func build(from response: DataSnapshot) -> [FPlace] {
-    return response.children.flatMap { self.placeFromSnapshot($0 as! DataSnapshot) }
+    return response.children.compactMap { self.placeFromSnapshot($0 as! DataSnapshot) }
   }
   
   // MARK: Helpers

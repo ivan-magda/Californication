@@ -21,24 +21,34 @@
  */
 
 import Foundation
+import FirebaseDatabase
+import FirebaseAuth
 
-private let _documentsDirectoryURL = FileManager.default
-  .urls(for: .documentDirectory, in: .userDomainMask).first! as URL
-private let _fileURL = _documentsDirectoryURL.appendingPathComponent("Places")
-
-// MARK: DataCentral
-
-final class CannedPlaceCacheManager: PlaceCacheManager {
+class FirebaseManagerImpl: FirebaseManager {
   
-  func save(_ places: [Place]) {
-    NSKeyedArchiver.archiveRootObject(places, toFile: _fileURL.path)
+  private let root = Database.database().reference()
+  private let authManager: FirebaseAuthManager
+  
+  init(authManager: FirebaseAuthManager) {
+    self.authManager = authManager
   }
   
-  func unarchived() -> [Place]? {
-    if FileManager.default.fileExists(atPath: _fileURL.path) {
-      return NSKeyedUnarchiver.unarchiveObject(withFile: _fileURL.path) as? [Place]
+  func all(_ completion: @escaping (DataSnapshot) -> ()) {
+    func fetch() {
+      root.child("places").observeSingleEvent(of: .value, with: completion)
+    }
+    
+    if authManager.isAuthorized() {
+      fetch()
     } else {
-      return nil
+      authManager.signInAnonymously { result in
+        switch result {
+        case .success(_):
+          fetch()
+        case .error(_):
+          completion(DataSnapshot.init())
+        }
+      }
     }
   }
   

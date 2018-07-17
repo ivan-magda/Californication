@@ -6,13 +6,15 @@ target 'Californication' do
   inhibit_all_warnings!
   
   # Pods for Californication
-  pod 'Firebase/Database', '4.0.2'
-  pod 'Firebase/Storage', '4.0.2'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
   pod 'GoogleMaps', '1.13.2'
-  pod 'MBProgressHUD', '1.0'
-  pod 'HCSStarRatingView', '1.5'
-  pod 'AlamofireImage', '3.2'
-  pod 'AwesomeCache', '5.0'
+  pod 'MBProgressHUD'
+  pod 'HCSStarRatingView'
+  pod 'AlamofireImage', :git => 'https://github.com/Alamofire/AlamofireImage.git', :branch => 'swift4.2'
+  pod 'AwesomeCache'
   
   target 'CalifornicationTests' do
     inherit! :search_paths

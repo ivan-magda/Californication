@@ -23,9 +23,14 @@
 import UIKit
 
 extension UIViewController {
-    func presentAlertWithTitle(_ title: String?, message: String?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
+  func presentAlertWithTitle(_ title: String?, message: String?) {
+    assert(Thread.isMainThread)
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Ok", comment: ""),
+      style: .cancel,
+      handler: nil)
+    )
+    present(alert, animated: true, completion: nil)
+  }
 }

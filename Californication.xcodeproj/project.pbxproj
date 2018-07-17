@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4221CF20FE9CA6003FBCB0 /* UIViewController+PreferredStatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4221CE20FE9CA6003FBCB0 /* UIViewController+PreferredStatusBarStyle.swift */; };
+		2CFEE81F20FE7F0400408B47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CFEE81E20FE7F0400408B47 /* GoogleService-Info.plist */; };
+		2CFEE82120FE872600408B47 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFEE82020FE872600408B47 /* FirebaseAuthManager.swift */; };
+		2CFEE82320FE8C1600408B47 /* FirebaseAuthManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFEE82220FE8C1600408B47 /* FirebaseAuthManagerImpl.swift */; };
 		33D4516DC9A3E408C806F94E /* Pods_CalifornicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A275518BE5BC34FDFB39C4AB /* Pods_CalifornicationTests.framework */; };
-		750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */; };
+		750643011D3E43D500E3D691 /* PlaceCacheManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750643001D3E43D500E3D691 /* PlaceCacheManagerImpl.swift */; };
 		7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511026A1D3F003D000385A3 /* PlaceImage.swift */; };
-		7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */; };
 		7524B9731D41DFFB00C540A3 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */; };
 		754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1721D3C69D0008CFE62 /* AppDelegate.swift */; };
 		754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */; };
@@ -26,8 +29,8 @@
 		759CB7751D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */; };
 		75D4C36E1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */; };
 		75D4C3701D3C784200ECCD4F /* FPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C36F1D3C784200ECCD4F /* FPlace.swift */; };
-		75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */; };
-		75D4C3751D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3741D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift */; };
+		75D4C3731D3C795E00ECCD4F /* FirebaseManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3721D3C795E00ECCD4F /* FirebaseManagerImpl.swift */; };
+		75D4C3751D3C7AAC00ECCD4F /* FirebaseBuilderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3741D3C7AAC00ECCD4F /* FirebaseBuilderImpl.swift */; };
 		75D4C3791D3C804000ECCD4F /* FirebaseDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C3781D3C804000ECCD4F /* FirebaseDirector.swift */; };
 		75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */; };
 		75D4C37D1D3C851900ECCD4F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4C37C1D3C851900ECCD4F /* App.swift */; };
@@ -39,7 +42,7 @@
 		75E2D6DD1D59A38200A9CFFF /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */; };
 		75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D84E1D3D9A04000D2932 /* Place.swift */; };
 		75F6D8511D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8501D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift */; };
-		75F6D8531D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8521D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift */; };
+		75F6D8531D3D9D41000D2932 /* GoogleMapsNetworkManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8521D3D9D41000D2932 /* GoogleMapsNetworkManagerImpl.swift */; };
 		75F6D8551D3DA620000D2932 /* GoogleMapsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8541D3DA620000D2932 /* GoogleMapsDirector.swift */; };
 		75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */; };
 		75F6D8591D3DB981000D2932 /* PlaceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6D8581D3DB981000D2932 /* PlaceDirector.swift */; };
@@ -70,10 +73,13 @@
 		009E116CB24B6130208BAC6E /* Pods_CalifornicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalifornicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4CF11D19B357B52405D12A /* Pods-CalifornicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationUITests/Pods-CalifornicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		25AD54A66003CF6EEF4CDAEB /* Pods-CalifornicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		2C4221CE20FE9CA6003FBCB0 /* UIViewController+PreferredStatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PreferredStatusBarStyle.swift"; sourceTree = "<group>"; };
+		2CFEE81E20FE7F0400408B47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CFEE82020FE872600408B47 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		2CFEE82220FE8C1600408B47 /* FirebaseAuthManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManagerImpl.swift; sourceTree = "<group>"; };
 		4D330346C63968B6F5CDE1F7 /* Pods-CalifornicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalifornicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalifornicationTests/Pods-CalifornicationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedPlaceCacheManager.swift; sourceTree = "<group>"; };
+		750643001D3E43D500E3D691 /* PlaceCacheManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCacheManagerImpl.swift; sourceTree = "<group>"; };
 		7511026A1D3F003D000385A3 /* PlaceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImage.swift; sourceTree = "<group>"; };
-		7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7524B9721D41DFFB00C540A3 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
 		754CE16F1D3C69D0008CFE62 /* Californication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Californication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754CE1721D3C69D0008CFE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +101,8 @@
 		759CB7741D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceImageHeaderView.swift; sourceTree = "<group>"; };
 		75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirectorProtocols.swift; sourceTree = "<group>"; };
 		75D4C36F1D3C784200ECCD4F /* FPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPlace.swift; sourceTree = "<group>"; };
-		75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFirebaseManager.swift; sourceTree = "<group>"; };
-		75D4C3741D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedFirebaseBuilder.swift; sourceTree = "<group>"; };
+		75D4C3721D3C795E00ECCD4F /* FirebaseManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManagerImpl.swift; sourceTree = "<group>"; };
+		75D4C3741D3C7AAC00ECCD4F /* FirebaseBuilderImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseBuilderImpl.swift; sourceTree = "<group>"; };
 		75D4C3781D3C804000ECCD4F /* FirebaseDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDirector.swift; sourceTree = "<group>"; };
 		75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewDataSource.swift; sourceTree = "<group>"; };
 		75D4C37C1D3C851900ECCD4F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -108,7 +114,7 @@
 		75E2D6DC1D59A38200A9CFFF /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 		75F6D84E1D3D9A04000D2932 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		75F6D8501D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirectorProtocols.swift; sourceTree = "<group>"; };
-		75F6D8521D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CannedGoogleMapsNetworkManager.swift; sourceTree = "<group>"; };
+		75F6D8521D3D9D41000D2932 /* GoogleMapsNetworkManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsNetworkManagerImpl.swift; sourceTree = "<group>"; };
 		75F6D8541D3DA620000D2932 /* GoogleMapsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirector.swift; sourceTree = "<group>"; };
 		75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDirectorProtocols.swift; sourceTree = "<group>"; };
 		75F6D8581D3DB981000D2932 /* PlaceDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDirector.swift; sourceTree = "<group>"; };
@@ -149,6 +155,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4221D020FE9D35003FBCB0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				75570C891D5474C6001DC58C /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		2CFEE82420FE8EC600408B47 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2CFEE82020FE872600408B47 /* FirebaseAuthManager.swift */,
+				2CFEE82220FE8C1600408B47 /* FirebaseAuthManagerImpl.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		5DEB6B2D50011B000ABFA368 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				75F6D8561D3DB8E4000D2932 /* PlaceDirectorProtocols.swift */,
-				750643001D3E43D500E3D691 /* CannedPlaceCacheManager.swift */,
+				750643001D3E43D500E3D691 /* PlaceCacheManagerImpl.swift */,
 				75F6D8581D3DB981000D2932 /* PlaceDirector.swift */,
 			);
 			name = Director;
@@ -241,22 +264,22 @@
 			path = CalifornicationUITests;
 			sourceTree = "<group>";
 		};
-		756955B91D5AF84B0025B0D2 /* PlaceList */ = {
+		756955B91D5AF84B0025B0D2 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				754CE1741D3C69D0008CFE62 /* PlaceListViewController.swift */,
 				75D4C37A1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift */,
 			);
-			name = PlaceList;
+			name = List;
 			sourceTree = "<group>";
 		};
-		756955BA1D5AF85E0025B0D2 /* PlaceDetails */ = {
+		756955BA1D5AF85E0025B0D2 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				75E2D6D61D599E5800A9CFFF /* PlaceDetailsViewController.swift */,
 				756955B71D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift */,
 			);
-			name = PlaceDetails;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		756955BB1D5B04F00025B0D2 /* TableViewCell */ = {
@@ -274,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				754CE17E1D3C69D0008CFE62 /* Info.plist */,
-				7511026C1D3F08B7000385A3 /* GoogleService-Info.plist */,
+				2CFEE81E20FE7F0400408B47 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,9 +316,9 @@
 		75D4C3681D3C6CA500ECCD4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				756955B91D5AF84B0025B0D2 /* PlaceList */,
-				756955BA1D5AF85E0025B0D2 /* PlaceDetails */,
-				75570C891D5474C6001DC58C /* MapViewController.swift */,
+				756955B91D5AF84B0025B0D2 /* List */,
+				756955BA1D5AF85E0025B0D2 /* Detail */,
+				2C4221D020FE9D35003FBCB0 /* Map */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				75D4C36F1D3C784200ECCD4F /* FPlace.swift */,
+				2CFEE82420FE8EC600408B47 /* Auth */,
 				75D4C3711D3C792700ECCD4F /* Director */,
 			);
 			name = Firebase;
@@ -344,8 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				75D4C36D1D3C756D00ECCD4F /* FirebaseDirectorProtocols.swift */,
-				75D4C3721D3C795E00ECCD4F /* CannedFirebaseManager.swift */,
-				75D4C3741D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift */,
+				75D4C3721D3C795E00ECCD4F /* FirebaseManagerImpl.swift */,
+				75D4C3741D3C7AAC00ECCD4F /* FirebaseBuilderImpl.swift */,
 				75D4C3781D3C804000ECCD4F /* FirebaseDirector.swift */,
 			);
 			name = Director;
@@ -355,7 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				75F6D8501D3D9A66000D2932 /* GoogleMapsDirectorProtocols.swift */,
-				75F6D8521D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift */,
+				75F6D8521D3D9D41000D2932 /* GoogleMapsNetworkManagerImpl.swift */,
 				75F6D8541D3DA620000D2932 /* GoogleMapsDirector.swift */,
 			);
 			name = "Google Maps";
@@ -366,6 +390,7 @@
 			children = (
 				75F6D85A1D3DBF19000D2932 /* GCDUtils.swift */,
 				7564CD241D3DF0E50066EE42 /* UIViewController+PresentAlert.swift */,
+				2C4221CE20FE9CA6003FBCB0 /* UIViewController+PreferredStatusBarStyle.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -455,26 +480,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Ivan Magda";
 				TargetAttributes = {
 					754CE16E1D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6UNHY8UY6E;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					754CE1821D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6UNHY8UY6E;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 754CE16E1D3C69D0008CFE62;
 					};
 					754CE18D1D3C69D0008CFE62 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6UNHY8UY6E;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 754CE16E1D3C69D0008CFE62;
 					};
@@ -506,7 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				754CE17D1D3C69D0008CFE62 /* LaunchScreen.storyboard in Resources */,
-				7511026D1D3F08B7000385A3 /* GoogleService-Info.plist in Resources */,
+				2CFEE81F20FE7F0400408B47 /* GoogleService-Info.plist in Resources */,
 				754CE17A1D3C69D0008CFE62 /* Assets.xcassets in Resources */,
 				754CE1781D3C69D0008CFE62 /* Main.storyboard in Resources */,
 			);
@@ -535,9 +560,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Californication/Pods-Californication-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -550,9 +578,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Californication/Pods-Californication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AwesomeCache/AwesomeCache.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/HCSStarRatingView/HCSStarRatingView.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HCSStarRatingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -565,13 +612,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalifornicationTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9251F78FE50F7DE155168589 /* [CP] Embed Pods Frameworks */ = {
@@ -625,13 +675,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Californication-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2257833088739A3F2324F79 /* [CP] Embed Pods Frameworks */ = {
@@ -655,13 +708,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalifornicationUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -671,8 +727,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4221CF20FE9CA6003FBCB0 /* UIViewController+PreferredStatusBarStyle.swift in Sources */,
 				75E2D6D91D59A34900A9CFFF /* TitleTableViewCell.swift in Sources */,
 				756955B81D5AF60A0025B0D2 /* PlaceDetailsTableViewDataSource.swift in Sources */,
+				2CFEE82120FE872600408B47 /* FirebaseAuthManager.swift in Sources */,
 				75D4C3811D3C8CCE00ECCD4F /* AppConfigurator.swift in Sources */,
 				75E2D6DD1D59A38200A9CFFF /* RatingTableViewCell.swift in Sources */,
 				75E2D6D71D599E5800A9CFFF /* PlaceDetailsViewController.swift in Sources */,
@@ -682,13 +740,14 @@
 				759CB7751D5A0CBD0090C1E5 /* PlaceImageHeaderView.swift in Sources */,
 				75F6D84F1D3D9A04000D2932 /* Place.swift in Sources */,
 				75F6D85E1D3DEA52000D2932 /* PlaceTableViewCell.swift in Sources */,
-				75D4C3731D3C795E00ECCD4F /* CannedFirebaseManager.swift in Sources */,
+				75D4C3731D3C795E00ECCD4F /* FirebaseManagerImpl.swift in Sources */,
 				7511026B1D3F003D000385A3 /* PlaceImage.swift in Sources */,
+				2CFEE82320FE8C1600408B47 /* FirebaseAuthManagerImpl.swift in Sources */,
 				754CE1751D3C69D0008CFE62 /* PlaceListViewController.swift in Sources */,
 				75F6D85B1D3DBF19000D2932 /* GCDUtils.swift in Sources */,
-				75D4C3751D3C7AAC00ECCD4F /* CannedFirebaseBuilder.swift in Sources */,
+				75D4C3751D3C7AAC00ECCD4F /* FirebaseBuilderImpl.swift in Sources */,
 				75F6D8591D3DB981000D2932 /* PlaceDirector.swift in Sources */,
-				75F6D8531D3D9D41000D2932 /* CannedGoogleMapsNetworkManager.swift in Sources */,
+				75F6D8531D3D9D41000D2932 /* GoogleMapsNetworkManagerImpl.swift in Sources */,
 				75D4C37F1D3C8BFB00ECCD4F /* Constants.swift in Sources */,
 				75D4C37B1D3C82A000ECCD4F /* PlaceListTableViewDataSource.swift in Sources */,
 				75E2D6DB1D59A37100A9CFFF /* PlaceDetailTableViewCell.swift in Sources */,
@@ -701,7 +760,7 @@
 				75F6D8571D3DB8E4000D2932 /* PlaceDirectorProtocols.swift in Sources */,
 				754CE1731D3C69D0008CFE62 /* AppDelegate.swift in Sources */,
 				75D4C3791D3C804000ECCD4F /* FirebaseDirector.swift in Sources */,
-				750643011D3E43D500E3D691 /* CannedPlaceCacheManager.swift in Sources */,
+				750643011D3E43D500E3D691 /* PlaceCacheManagerImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,12 +828,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -823,12 +884,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -863,7 +926,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1072CE40450049DEBD6D90B /* Pods-Californication.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
@@ -874,8 +936,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -884,7 +945,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 843AF86846F1E9AD4543490C /* Pods-Californication.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
@@ -894,8 +954,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.Californication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -911,8 +970,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Californication.app/Californication";
 			};
 			name = Debug;
@@ -929,8 +987,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Californication.app/Californication";
 			};
 			name = Release;
@@ -945,8 +1002,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = Californication;
 			};
 			name = Debug;
@@ -962,8 +1018,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.CalifornicationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = Californication;
 			};
 			name = Release;

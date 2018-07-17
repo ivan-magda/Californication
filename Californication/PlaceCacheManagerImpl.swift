@@ -21,20 +21,25 @@
  */
 
 import Foundation
-import FirebaseDatabase
 
-// MARK: CannedFirebaseManager: FirebaseManager
+private let _documentsDirectoryURL = FileManager.default
+  .urls(for: .documentDirectory, in: .userDomainMask).first! as URL
+private let _fileURL = _documentsDirectoryURL.appendingPathComponent("Places")
 
-class CannedFirebaseManager: FirebaseManager {
+// MARK: DataCentral
+
+final class PlaceCacheManagerImpl: PlaceCacheManager {
   
-  // MARK: Properties
+  func save(_ places: [Place]) {
+    NSKeyedArchiver.archiveRootObject(places, toFile: _fileURL.path)
+  }
   
-  private let root = Database.database().reference()
-  
-  // MARK: FirebaseManager
-  
-  func all(_ completion: @escaping (DataSnapshot) -> ()) {
-    root.child("places").observeSingleEvent(of: .value, with: completion)
+  func unarchived() -> [Place]? {
+    if FileManager.default.fileExists(atPath: _fileURL.path) {
+      return NSKeyedUnarchiver.unarchiveObject(withFile: _fileURL.path) as? [Place]
+    } else {
+      return nil
+    }
   }
   
 }

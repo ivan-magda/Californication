@@ -46,6 +46,10 @@ final class PlaceDetailsViewController: UIViewController {
     setup()
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return navigationController == nil ? .default : .lightContent
+  }
+  
   // MARK: Setup
   
   private func setup() {
@@ -56,10 +60,10 @@ final class PlaceDetailsViewController: UIViewController {
   private func configureTableView() {
     tableViewDataSource = PlaceDetailsTableViewDataSource(place)
     tableView.dataSource = tableViewDataSource
-    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 44.0
     
-    headerView = tableView.tableHeaderView as! PlaceImageHeaderView
+    headerView = tableView.tableHeaderView as? PlaceImageHeaderView
     headerView.headerHeight = tableHeaderHeight
     headerView.delegate = self
     tableView.tableHeaderView = nil

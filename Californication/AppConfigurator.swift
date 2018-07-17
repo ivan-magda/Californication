@@ -24,22 +24,24 @@ import Foundation
 import Firebase
 import GoogleMaps
 
-// MARK: AppConfigurator
-
-class AppConfigurator {
+final class AppConfigurator {
   
-  // MARK: Init
-  
-  private init() {
-  }
-  
-  // MARK: Methods
-  
-  class func configure() {
+  func initServices() {
     assert(Constants.googleMapsAPIKey.rawValue != "REPLACE_WITH_YOUR_API_KEY",
            "Please goto Constants.swift and replace Google Maps API key with your own.")
     FirebaseApp.configure()
     GMSServices.provideAPIKey(Constants.googleMapsAPIKey.rawValue)
+  }
+  
+  func theme(with window: UIWindow) {
+    // Mexican red color.
+    window.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
+    
+    // Kaitoke green.
+    let appearance = UINavigationBar.appearance()
+    appearance.barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
+    appearance.tintColor = UIColor.white
+    appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
   }
   
 }

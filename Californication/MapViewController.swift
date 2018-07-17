@@ -50,9 +50,8 @@ class MapViewController: UIViewController {
     configureMapView()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    UIApplication.shared.statusBarStyle = .default
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .default
   }
   
   // MARK: Private

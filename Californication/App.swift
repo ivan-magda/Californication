@@ -22,11 +22,9 @@
 
 import UIKit
 
-// MARK: App
-
-class App {
+final class App {
   
-  // MARK: Properties
+  // MARK: Instance Properties
   
   let storyboard = UIStoryboard(name: "Main", bundle: nil)
   let tabBarController: UITabBarController
@@ -35,14 +33,19 @@ class App {
   
   let placeDirector: PlaceDirector
   
-  // MARK: Init
+  // MARK: - Init
   
   init(_ window: UIWindow) {
-    let fDirector = FirebaseDirector(builder: CannedFirebaseBuilder(),
-                                     databaseManager: CannedFirebaseManager())
-    let gmDirector = GoogleMapsDirector(networkManager: CannedGoogleMapsNetworkManager())
-    placeDirector = PlaceDirector(firebaseDirector: fDirector, googleMapsDirector: gmDirector,
-                                  cacheManager: CannedPlaceCacheManager())
+    let firebaseDirector = FirebaseDirector(
+      builder: FirebaseBuilderImpl(),
+      databaseManager: FirebaseManagerImpl(authManager: FirebaseAuthManagerImpl())
+    )
+    let googleMapsDirector = GoogleMapsDirector(networkManager: GoogleMapsNetworkManagerImpl())
+    placeDirector = PlaceDirector(
+      firebaseDirector: firebaseDirector,
+      googleMapsDirector: googleMapsDirector,
+      cacheManager: PlaceCacheManagerImpl()
+    )
     
     tabBarController = window.rootViewController as! UITabBarController
     

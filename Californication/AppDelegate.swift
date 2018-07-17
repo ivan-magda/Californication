@@ -22,47 +22,28 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  // MARK: Properties
+  // MARK: Instance Properties
   
   var window: UIWindow?
-  var app: App?
+  private var app: App?
   
-  // MARK: UIApplicationDelegate
+  // MARK: - UIApplicationDelegate
   
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    setup()
-    return true
-  }
-  
-  // MARK: Private
-  
-  private func setup() {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     guard let window = window else {
-      fatalError("Application window is nil.")
+        fatalError("Could not instantiate window")
     }
     
-    AppConfigurator.configure()
+    let appConfigurator = AppConfigurator()
+    appConfigurator.initServices()
     
     app = App(window)
-    themeApplication()
-  }
-  
-  private func themeApplication() {
-    // Mexican red color.
-    window!.tintColor = UIColor(red:0.64, green:0.11, blue:0.16, alpha:1.00)
+    appConfigurator.theme(with: window)
     
-    // Kaitoke green.
-    let appearance = UINavigationBar.appearance()
-    appearance.barTintColor = UIColor(red:0.13, green:0.32, blue:0.23, alpha:1.00)
-    appearance.tintColor = UIColor.white
-    appearance.titleTextAttributes = [
-      NSAttributedStringKey.foregroundColor.rawValue : UIColor.white
-    ]
+    return true
   }
   
 }

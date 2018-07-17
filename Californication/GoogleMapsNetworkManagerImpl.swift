@@ -25,7 +25,7 @@ import GoogleMaps
 
 // MARK: CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager
 
-class CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager {
+class GoogleMapsNetworkManagerImpl: GoogleMapsNetworkManager {
   
   // MARK: GoogleMapsNetworkManager
   

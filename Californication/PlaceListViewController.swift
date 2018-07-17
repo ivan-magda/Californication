@@ -68,9 +68,8 @@ final class PlaceListViewController: UIViewController {
     setup()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    UIApplication.shared.statusBarStyle = .lightContent
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
   
   // MARK: Actions
@@ -97,7 +96,7 @@ final class PlaceListViewController: UIViewController {
   // MARK: Configure
   
   private func setup() {
-    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 120
     tableView.dataSource = tableViewDataSource
     tableView.delegate = self
